@@ -1,7 +1,0 @@
-# .htaccess est un fichier caché qui va nous permettre de donner
-# des instructions très précises à notre serveur Apache
-
-# On va demander à Apache de ne pas autoriser l'affichage du dossier "app" depuis 
-# un navigateur (internet)
-# On interdit l'accès à tout le monde (all)
-deny from all
