@@ -17,10 +17,6 @@ html {
   font-size: 100%;
 }
 
-body {
-  font-family: 'Ubuntu', sans-serif;
-}
-
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -54,8 +50,8 @@ b {
 
 p {
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5rem;
+  font-weight: 300;
+  line-height: 1.75rem;
   margin-bottom: 1rem;
 }
 
@@ -134,16 +130,22 @@ body {
   max-width: 1200px;
   margin: auto;
   overflow-x: hidden;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 section {
-  margin: 4rem 0;
+  margin: 6rem 0;
 }
 
 .block {
   border-radius: 1rem;
   box-shadow: var(--shadow-large);
   padding: 2rem;
+}
+
+.block span {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .block.gradient-primary {
@@ -246,10 +248,6 @@ section.skills .skills__items {
   gap: 1rem;
 }
 
-section.skills .skills__items--block {
-
-}
-
 section.skills .skills__items--block .skills__items--logos {
   display: flex;
   flex-direction: row;
@@ -280,8 +278,25 @@ section.skills .skills__items--block .skills__items--logos figure figcaption {
   text-align: center; 
 }
 
+section.about {
+  display: flex;
+  gap: 1rem;
+}
 
+section.about .about__blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 70%;
+}
 
+section.about .about__blocks p {
+  margin-bottom: 0;
+}
+
+section.about .about__link {
+  width: 30%;
+}
 
 
 
