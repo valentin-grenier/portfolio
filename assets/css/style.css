@@ -166,6 +166,41 @@ section {
   background: var(--white-gradient);
 }
 
+/* ===== Components ===== */
+.btn-wrapper {
+  display: inline-block;
+  margin: 1rem 0;
+  transition: all 150ms ease-in-out;
+}
+
+.btn-wrapper:hover {
+  transform: scale(0.98);
+  height: 100%;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--border-radius-large);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+.btn.btn-colored {
+  background: var(--primary-gradient);
+  color: white;
+}
+
+.btn.btn-icon {
+  background: var(--white-gradient);
+  padding: 12px;
+}
+
+.btn.btn-icon img {
+  width: 1.5rem;
+  vertical-align: middle;
+}
+
 /* ==================== */
 /* ===== Homepage ===== */
 /* ==================== */
@@ -368,6 +403,12 @@ section.projects .projects__grid--item-tags span {
   border-radius: var(--border-radius-small);
   text-transform: uppercase;
 }
+
+/* ===== Contact ===== */
+section.contact {
+  text-align: center;
+}
+
 
 
 
