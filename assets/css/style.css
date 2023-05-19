@@ -5,12 +5,14 @@
   --text-color: #1E152A;
 
   --primary-gradient: linear-gradient(#9D8DF1, #6B69E6);
-  --dark-gradient: linear-gradient(90deg, #50485A, #1E152A);
-  --white-gradient: linear-gradient(90deg, #FFF, #F5F5F5);
+  --dark-gradient: linear-gradient(#50485A, #1E152A);
+  --white-gradient: linear-gradient(#FFF, #F5F5F5);
 
   --shadow-large: 0 24px 50px #00000010;
+  --shadow-small: 0 6px 12px #00000010;
 
   --border-radius-large: 1rem;
+  --border-radius-small: 0.5rem;
 }
 
 /* ===== Headings and fonts ===== */
@@ -98,6 +100,11 @@ header .availability {
   align-items: center;
 }
 
+header .availability span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .blob {
 	background: #E84855;
 	border-radius: 50%;
@@ -159,8 +166,11 @@ section {
   background: var(--white-gradient);
 }
 
-
+/* ==================== */
 /* ===== Homepage ===== */
+/* ==================== */
+
+/* ===== Hero ===== */
 section.hero {
   height: 400px;
   display: flex;
@@ -197,6 +207,7 @@ section.hero .hero__highlights strong {
   color: var(--primary-color);
 }
 
+/* ===== Introduction ===== */
 section.introduction {
   display: flex;
   gap: 1rem;
@@ -227,6 +238,7 @@ section.introduction .introduction__image--container img {
   border-radius: var(--border-radius-large);
 }
 
+/* ===== Skills ===== */
 section.skills .skills__title {
   text-align: center;
   width: 80%;
@@ -286,6 +298,7 @@ section.skills .skills__items--block .skills__items--logos figure figcaption {
   text-align: center; 
 }
 
+/* ===== About ===== */
 section.about {
   display: flex;
   gap: 1rem;
@@ -304,6 +317,56 @@ section.about .about__blocks p {
 
 section.about .about__link {
   width: 30%;
+}
+
+section.about .about__link span {
+  font-size: 1.5rem;
+}
+
+/* ===== Experience ===== */
+section.experience {
+  display: flex;
+  gap: 2rem;
+}
+
+section.experience .experience__link {
+  width: 30%;
+}
+
+section.experience .experience__text {
+  width: 70%;
+}
+
+/* ===== Projects ===== */
+section.projects .projects__head {
+  width: 80%;
+}
+
+section.projects .projects__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+section.projects .projects__grid--item {
+  flex-basis: 50%;
+}
+
+section.projects .projects__grid--item-image img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
+  background: lightcyan;
+}
+
+section.projects .projects__grid--item-tags span {
+  background: var(--white-gradient);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-radius: var(--border-radius-small);
+  text-transform: uppercase;
 }
 
 
