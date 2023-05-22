@@ -22,9 +22,9 @@
     <nav class="navigation">
       <ul class="navigation__links">
         <li class="navigation__links--item active"><a href="">Accueil</a></li>
-        <li class="navigation__links--item"><a href="">Mes projets</a></li>
-        <li class="navigation__links--item"><a href="">A propos</a></li>
-        <li class="navigation__links--item"><a href="">Contact</a></li>
+        <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
+        <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
+        <li class="navigation__links--item"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -166,7 +166,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="apropos">
       <div class="about__blocks">
         <h2>Ma personnalité</h2>
         <div class="about__blocks--item block">
@@ -199,7 +199,7 @@
       </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="projets">
       <div class="projects__head">
         <h2>Mes derniers projets <a href="" class="about__link--button colored"></a></h2>
         <p>Acquérir des compétences, c’est bien. Les mettre en application lors de projets personnels ou concrets, c’est encore mieux. Voici quelques-uns de mes projets réalisés ces derniers mois.</p>  
@@ -207,7 +207,9 @@
       <div class="projects__grid">
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
-            <img src="./assets/img/projects/cirque-eloize.png" alt="réalisation Cirque Eloize">
+            <a href="https://cirque-eloize.com/fr/balado/" target="blank">
+              <img src="./assets/img/projects/cirque-eloize.png" alt="réalisation Cirque Eloize">
+            </a>
           </div>
           <div class="projects__grid--item-body">
             <h3>Cirque Eloize</h3>
@@ -222,7 +224,9 @@
         </div>
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
-            <img src="./assets/img/projects/arnauneprim.png" alt="réalisation Arnauné & Prim">
+            <a href="https://arnauneprim.com/" target="blank">
+              <img src="./assets/img/projects/arnauneprim.png" alt="réalisation Arnauné & Prim">
+            </a>
           </div>
           <div class="projects__grid--item-body">
             <h3>Arnauné &#x26; Prim</h3>
@@ -237,7 +241,9 @@
         </div>
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
-            <img src="./assets/img/projects/fabrique-de-matelas.png" alt="réalisation Fabrique de Matelas">
+            <a href="https://matelas.ca/" target="_blank">
+              <img src="./assets/img/projects/fabrique-de-matelas.png" alt="réalisation Fabrique de Matelas">
+            </a>
           </div>
           <div class="projects__grid--item-body">
             <h3>Fabrique de Matelas</h3>
@@ -252,7 +258,7 @@
       </div>
     </section>
 
-    <section class="contact block">
+    <section class="contact block" id="contact">
       <h2>Prenons contact</h2>
       <p>Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous et de discuter d’éventuelles opportunités.</p>
       <div class="contact__buttons">
@@ -279,7 +285,9 @@
         <h3>Valentin Grenier</h3>
         <p>Bonjour, je m'appelle Valentin Grenier et je suis développeur web full-stack. J'ai créé ce site personnel pour avoir ma propre vitrine sur Internet et afin de pouvoir me présenter d'une autre manière qu'avec un simple CV.</p>
         <p><strong>N'hésitez pas à me contacter</strong> si vous souhaitez échanger avec moi ou me rencontrer dans le cadre d'une collaboration.</p>
-        <a href="mailto:valentin.grenier02@gmail.com" class="btn btn-colored">Me contacter</a>
+        <div class="btn-wrapper">
+          <a href="mailto:valentin.grenier02@gmail.com" class="btn btn-colored">Me contacter</a>
+        </div>
       </div>
       <div class="footer__navigation">
         <h3>Trouvez votre chemin</h3>
@@ -299,6 +307,14 @@
     </div>
     
   </footer>
+
+  <div id="scrolltotop">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <g id="Arrow / Arrow_Down_SM">
+      <path id="Vector" d="M12 7V17M12 17L16 13M12 17L8 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
   
 </body>
 

@@ -3,6 +3,7 @@
   --primary-color: #6B69E6;
   --primary-color-shade: #AEADF0;
   --text-color: #1E152A;
+  --grey-color: #F5F5F5;
 
   --primary-gradient: linear-gradient(#9D8DF1, #6B69E6);
   --dark-gradient: linear-gradient(#50485A, #1E152A);
@@ -59,6 +60,15 @@ p {
   margin-bottom: 1rem;
 }
 
+li {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+li a {
+  text-decoration: none;
+}
+
 a {
   color: inherit;
 }
@@ -76,6 +86,10 @@ header {
   justify-content: space-between;
 }
 
+header.block {
+  padding: 1rem 2rem;
+}
+
 header nav.navigation {
   display: flex;
   align-items: center;
@@ -84,6 +98,10 @@ header nav.navigation {
 header ul.navigation__links {
   display: flex;
   gap: 2rem;
+}
+
+header ul.navigation__links li {
+  margin-bottom: 0;
 }
 
 header ul.navigation__links a {
@@ -143,7 +161,7 @@ body {
 }
 
 section {
-  margin: 6rem 0;
+  margin: 8rem 0;
 }
 
 .block {
@@ -175,7 +193,6 @@ section {
 
 .btn-wrapper:hover {
   transform: scale(0.98);
-  height: 100%;
 }
 
 .btn {
@@ -201,13 +218,33 @@ section {
   vertical-align: middle;
 }
 
+#scrolltotop {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  height: 3rem;
+  width: 3rem;
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--shadow-small);
+  cursor: pointer;
+}
+
+#scrolltotop svg {
+  transform: rotate(180deg);
+}
+
+#scrolltotop path {
+  stroke: var(--primary-color);
+}
+
 /* ==================== */
 /* ===== Homepage ===== */
 /* ==================== */
 
 /* ===== Hero ===== */
 section.hero {
-  height: 400px;
+  height: 300px;
   display: flex;
 
 }
@@ -397,8 +434,9 @@ section.projects .projects__grid--item-image img {
 }
 
 section.projects .projects__grid--item-tags span {
-  background: var(--white-gradient);
+  background: var(--grey-color);
   padding: 0.5rem 1rem;
+  font-weight: 400;
   font-size: 0.8rem;
   border-radius: var(--border-radius-small);
   text-transform: uppercase;
@@ -406,6 +444,25 @@ section.projects .projects__grid--item-tags span {
 
 /* ===== Contact ===== */
 section.contact {
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__container .footer__text {
+  max-width: 35rem;
+}
+
+.footer__container h3 {
+  margin-bottom: 1rem;
+}
+
+.footer__bottom {
+  margin: 2rem 0;
   text-align: center;
 }
 
