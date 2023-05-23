@@ -14,39 +14,43 @@
 
   --border-radius-large: 1rem;
   --border-radius-small: 0.5rem;
+
+  --fw-text: 400;
+  --fw-text-bold: 500;
 }
 
 /* ===== Headings and fonts ===== */
 
 html {
   font-size: 100%;
+  cursor: none;
 }
 
 h1 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--fw-text-bold);
   margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: var(--fw-text-bold);
   margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: var(--fw-text-bold);
   margin-bottom: 0.5rem;
 }
 
 h3 strong {
-  font-weight: 500;
+  font-weight: var(--fw-text-bold);
   color: var(--primary-color);
 }
 
 strong {
-  font-weight: 700;
+  font-weight: var(--fw-text-bold);
 }
 
 b {
@@ -55,13 +59,13 @@ b {
 
 p {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: var(--fw-text);
   line-height: 1.75rem;
   margin-bottom: 1rem;
 }
 
 li {
-  font-weight: 300;
+  font-weight: var(--fw-text);
   margin-bottom: 1rem;
 }
 
@@ -73,6 +77,9 @@ a {
   color: inherit;
 }
 
+li:hover, a:hover, button:hover {
+  cursor: none !important;
+}
 
 
 /* ===== Header ===== */
@@ -102,6 +109,11 @@ header ul.navigation__links {
 
 header ul.navigation__links li {
   margin-bottom: 0;
+  transition: opacity 200ms ease;
+}
+
+header ul.navigation__links li:hover {
+  opacity: 0.5;
 }
 
 header ul.navigation__links a {
@@ -110,7 +122,7 @@ header ul.navigation__links a {
 
 header ul.navigation__links li.navigation__links--item.active {
   color: var(--primary-color);
-  font-weight: 700;
+  font-weight: var(--fw-text-bold);
 }
 
 header .availability {
@@ -120,7 +132,7 @@ header .availability {
 
 header .availability span {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: var(--fw-text);
 }
 
 .blob {
@@ -172,12 +184,12 @@ section {
 
 .block span {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: var(--fw-text-bold);
 }
 
 .block.gradient-primary {
-  background: var(--primary-gradient);
   color: white;
+  background: var(--primary-gradient);
 }
 
 .block.gradient-white {
@@ -192,14 +204,14 @@ section {
 }
 
 .btn-wrapper:hover {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .btn {
   padding: 12px 24px;
   border-radius: var(--border-radius-large);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-text-bold);
   font-size: .95rem;
 }
 
@@ -221,13 +233,19 @@ section {
 #scrolltotop {
   position: fixed;
   right: 2rem;
-  bottom: 2rem;
+  bottom: -4rem;
   height: 3rem;
   width: 3rem;
+  border: none;
   background: white;
   border-radius: 50%;
   box-shadow: var(--shadow-small);
   cursor: pointer;
+  transition: all 700ms ease-in-out;
+}
+
+#scrolltotop.show {
+  bottom: 2rem;
 }
 
 #scrolltotop svg {
@@ -244,9 +262,9 @@ section {
 
 /* ===== Hero ===== */
 section.hero {
-  height: 300px;
+  height: var(--fw-text)px;
   display: flex;
-
+  position: relative;
 }
 
 section.hero .hero__title {
@@ -277,6 +295,47 @@ section.hero .hero__highlights p {
 
 section.hero .hero__highlights strong {
   color: var(--primary-color);
+}
+
+section.hero .hero__icons img {
+  position: absolute;
+  width: 4rem;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-small);
+  border-radius: var(--border-radius-large);
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+section.hero .hero__icons img#laptop {
+  left: 5rem;
+  bottom: 4rem;
+  animation-delay: 1.25s;
+}
+
+section.hero .hero__icons img#developer {
+  right: 4rem;
+  bottom: 1rem;
+  animation-delay: 0.5s;
+}
+
+section.hero .hero__icons img#phone {
+  bottom: 15rem;
+  right: 10rem;
+  animation-delay: 1s;
+}
+
+section.hero .hero__icons img#light {
+  left: 9rem;
+  top: -3rem;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }  
 }
 
 /* ===== Introduction ===== */

@@ -10,12 +10,25 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
 </head>
 
 <body>
+
+  <script src="https://unpkg.com/kursor"></script>
+  <script>
+      new kursor({
+        type: 1,
+        color: "#1E152A"
+      })
+  </script>
+
 
   <header class="block">
 
@@ -30,7 +43,7 @@
 
     <div class="availability">
       <div class="blob red"></div>
-      <span>Indisponible jusqu'au 4 août 2023</span>
+      <span>Indisponible jusqu'au 17 août 2023</span>
     </div>
 
   </header>
@@ -38,7 +51,7 @@
   <main>
     <section class="hero">
       <div class="hero__title">
-        <h1 class=" block gradient-primary">Valentin Grenier, enchanté&nbsp;!</h1>
+        <h1 class=" block gradient-primary animate__animated animate__fadeInDown animate__slower">Valentin Grenier, enchanté&nbsp;!</h1>
         <p>
           <strong>Je suis un développeur web full-stack</strong> passionné par la création d'interfaces web répondants
           à des problématiques&nbsp;complexes.
@@ -55,6 +68,12 @@
             <p><strong>5 années</strong><br>en freelance</p>
           </div>
         </div>
+      </div>
+      <div class="hero__icons">
+        <img src="./assets/img/icons/laptop.png" alt="Ordinateur" id="laptop">
+        <img src="./assets/img/icons/technologist.png" alt="Développeur" id="developer">
+        <img src="./assets/img/icons/phone.png" alt="Téléphone" id="phone">
+        <img src="./assets/img/icons/light.png" alt="Ampoule" id="light">
       </div>
     </section>
 
@@ -292,13 +311,13 @@
       <div class="footer__navigation">
         <h3>Trouvez votre chemin</h3>
         <ul class="footer__navigation--links">
-          <li class="active">Accueil</li>
-          <li><a>Mes projets</a></li>
-          <li><a>A propos</a></li>
-          <li><a href="mailto:valentin.grenier02@gmail.com">Entrons en contact</a></li>
-          <li><a>Politique de confidentialité</a></li>
-          <li><a>Mentions légales</a></li>
-          <li><a>A propos de ce site</a></li>
+          <li class="navigation__links--item"><a href="#">Accueil</a></li>
+          <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
+          <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
+          <li class="navigation__links--item"><a href="mailto:valentin.grenier02@gmail.com">Entrons en contact</a></li>
+          <!-- <li class="navigation__links--item"><a href="">Politique de confidentialité</a></li>
+          <li class="navigation__links--item"><a href="">Mentions légales</a></li>
+          <li class="navigation__links--item"><a href="">A propos de ce site</a></li> -->
         </ul>
       </div>
     </div>
@@ -308,14 +327,15 @@
     
   </footer>
 
-  <div id="scrolltotop">
+  <button id="scrolltotop">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <g id="Arrow / Arrow_Down_SM">
       <path id="Vector" d="M12 7V17M12 17L16 13M12 17L8 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
     </svg>
-  </div>
+  </button>
   
+  <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
