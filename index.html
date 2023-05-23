@@ -21,7 +21,7 @@
 
 <body>
 
-  <script src="https://unpkg.com/kursor"></script>
+  <!-- <script src="https://unpkg.com/kursor"></script> -->
   <script>
       new kursor({
         type: 1,
@@ -32,18 +32,28 @@
 
   <header class="block">
 
-    <nav class="navigation">
-      <ul class="navigation__links">
-        <li class="navigation__links--item active"><a href="">Accueil</a></li>
-        <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
-        <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
-        <li class="navigation__links--item"><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header__content">
+      <div class="availability">
+        <div class="blob red"></div>
+        <span>En mission</span>
+      </div>
+  
+      <button class="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
 
-    <div class="availability">
-      <div class="blob red"></div>
-      <span>Indisponible jusqu'au 17 août 2023</span>
+    <div class="header__navigation">
+      <nav class="navigation">
+        <ul class="navigation__links">
+          <li class="navigation__links--item active"><a href="">Accueil</a></li>
+          <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
+          <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
+          <li class="navigation__links--item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
 
   </header>
@@ -83,11 +93,11 @@
           <p>Je m’appelle Valentin et je suis tombé dans le monde du développement web en 2018. Autodidacte au départ, c’est en parallèle de mes études en école de commerce et communication que j’ai décidé d’apprendre le développement web, tout d’abord sur WordPress, avec comme ambition de pouvoir vivre de ma passion.</p>
           <p>Plutôt que de créer un CV basique et de l’intégrer avec HTML et CSS, j’ai choisi une approche différente et qui reflète ma personnalité : un site web soigné, épuré, et "pixel-perfect".</p>
         </div>
-        <div class="introduction__image block gradient-primary">
+        <!-- <div class="introduction__image block gradient-primary">
           <div class="introduction__image--container">
             <img src="./assets/img/val_transp.png" alt="photo Valentin Grenier">
           </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="skills">
@@ -238,7 +248,6 @@
             <span>WordPress</span>
             <span>PHP</span>
             <span>ACF Pro</span>
-            <span>Web design</span>
           </div>
         </div>
         <div class="projects__grid--item">
@@ -255,7 +264,6 @@
             <span>WordPress</span>
             <span>PHP</span>
             <span>ACF Pro</span>
-            <span>Web design</span>
           </div>
         </div>
         <div class="projects__grid--item">

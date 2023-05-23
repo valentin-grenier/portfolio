@@ -2,6 +2,10 @@ const app =
 {
   init: function()
   {
+    // Burger menu
+    const burger = document.querySelector('button.burger-menu');
+    burger.addEventListener('click', app.openBurger);
+
     // Scroll to top button
     const button = document.querySelector('#scrolltotop');
     button.addEventListener('click', app.handleClick);
@@ -27,6 +31,15 @@ const app =
       button.classList.remove('show');
     }
   },
+
+  openBurger: function()
+  {
+    const header = document.querySelector('header');
+    const nav = document.querySelector('.header__navigation');
+
+    header.classList.toggle('show');
+    nav.classList.toggle('show');
+  }
 
 }
 

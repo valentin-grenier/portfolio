@@ -23,7 +23,7 @@
 
 html {
   font-size: 100%;
-  cursor: none;
+  /* cursor: none; */
   scroll-behavior: smooth;
 }
 
@@ -78,9 +78,9 @@ a {
   color: inherit;
 }
 
-li:hover, a:hover, button:hover {
+/* li:hover, a:hover, button:hover {
   cursor: none !important;
-}
+} */
 
 
 /* ===== Header ===== */
@@ -164,6 +164,24 @@ header .availability span {
 	}
 }
 
+button.burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+}
+
+button.burger-menu div {
+  height: 3px;
+  width: 24px;
+  background: var(--text-color);
+  border-radius: 1rem;
+}
+
 /* ===== Layout ===== */
 
 body {
@@ -192,20 +210,6 @@ section {
 .block.gradient-primary {
   color: white;
   background: var(--primary-gradient);
-  background-size: 400% 400%;
-  animation: anim 2.5s infinite ease-in-out;
-}
-
-@keyframes anim {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
 }
 
 .block.gradient-white {
@@ -246,7 +250,7 @@ section {
   vertical-align: middle;
 }
 
-#scrolltotop {
+button#scrolltotop {
   position: fixed;
   right: 2rem;
   bottom: -4rem;
@@ -257,18 +261,23 @@ section {
   border-radius: 50%;
   box-shadow: var(--shadow-small);
   cursor: pointer;
-  transition: all 700ms ease-in-out;
+  transition: bottom 700ms ease-in-out;
 }
 
-#scrolltotop.show {
+button#scrolltotop.show:hover {
+  bottom: 2.5rem;
+  transition: bottom 300ms ease;
+}
+
+button#scrolltotop.show {
   bottom: 2rem;
 }
 
-#scrolltotop svg {
+button#scrolltotop svg {
   transform: rotate(180deg);
 }
 
-#scrolltotop path {
+button#scrolltotop path {
   stroke: var(--primary-color);
 }
 
@@ -289,9 +298,11 @@ section.hero .hero__title {
 }
 
 section.hero .hero__title h1 {
+  text-align: center;
   width: fit-content;
   margin: auto auto 2rem;
   padding: 1rem;
+  z-index: 99;
 }
 
 section.hero .hero__title p {
@@ -317,6 +328,7 @@ section.hero .hero__icons img {
   position: absolute;
   width: 4rem;
   padding: 0.75rem;
+  background: white;
   box-shadow: var(--shadow-small);
   border-radius: var(--border-radius-large);
   animation-name: floating;
@@ -543,12 +555,118 @@ section.contact {
 
 
 
+/* ====================== */
+/* ===== Responsive ===== */
+/* ====================== */
+
+@media screen and (max-width: 1250px)
+{
+  /* === Layout === */
+  body {
+    padding: 0 2rem;
+  }
+
+  section {
+    margin: 4rem 0;
+  }
+
+  .block {
+    width: 80%;
+  }
 
 
+  /* === Header === */
+  header.block {
+    flex-direction: column;
+    height: 2rem;
+    overflow: hidden;
+  }
 
+  header.block.show {
+    height: 14rem;
+    gap: 2rem;
+  }
 
+  header button.burger-menu {
+    display: flex;
+  }
 
+  header .header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  header .header__navigation {
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+  }
+  
+  header .header__navigation.show {
+    display: block;
+    opacity: 1;
+  }
+
+  header .header__navigation nav {
+    justify-content: center;
+  }
+
+  header .header__navigation ul.navigation__links {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  /* === Footer === */
+  .footer__container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* === Homepage sections === */
+  section.hero .hero__title,
+  section.introduction .introduction__text,
+  section.about .about__blocks,
+  section.experience .experience__text,
+  section.projects .projects__head {
+    width: 100%;
+  }
+
+  section.about,
+  section.hero .hero__highlights,
+  section.experience,
+  section.projects .projects__grid {
+    flex-direction: column;
+  }
+
+  section.experience .experience__link {
+    width: auto;
+  }
+
+  section.hero .hero__icons,
+  section.about .about__link {
+    display: none;
+  }
+
+  section.hero .hero__highlights {
+    gap: 1rem;
+  }
+
+  section.skills .skills__items {
+    grid-template-columns: 1fr;
+  }
+
+  section.projects .projects__grid {
+    gap: 4rem;
+  }
+
+  section.projects .projects__grid--item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+}
 
 
 
