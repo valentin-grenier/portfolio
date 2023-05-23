@@ -2,6 +2,7 @@ const app =
 {
   init: function()
   {
+    // Scroll to top button
     const button = document.querySelector('#scrolltotop');
     button.addEventListener('click', app.handleClick);
 
@@ -25,7 +26,8 @@ const app =
     {
       button.classList.remove('show');
     }
-  }
+  },
+
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
