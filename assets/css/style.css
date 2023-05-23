@@ -23,7 +23,7 @@
 
 html {
   font-size: 100%;
-  /* cursor: none; */
+  cursor: none;
   scroll-behavior: smooth;
 }
 
@@ -78,9 +78,9 @@ a {
   color: inherit;
 }
 
-/* li:hover, a:hover, button:hover {
+li:hover, a:hover, button:hover {
   cursor: none !important;
-} */
+}
 
 
 /* ===== Header ===== */
@@ -96,6 +96,11 @@ header {
 
 header.block {
   padding: 1rem 2rem;
+  margin: 1.5rem 0;
+}
+
+header .header__navigation {
+  display: flex;
 }
 
 header nav.navigation {
@@ -200,6 +205,11 @@ section {
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow-large);
   padding: 2rem;
+  margin: 0 auto;
+}
+
+.block.block.gradient-primary h2 {
+  margin-bottom: 0;
 }
 
 .block span {
@@ -532,6 +542,7 @@ section.projects .projects__grid--item-tags span {
 /* ===== Contact ===== */
 section.contact {
   text-align: center;
+  margin: 4rem 0;
 }
 
 /* ===== Footer ===== */
@@ -559,13 +570,18 @@ section.contact {
 /* ===== Responsive ===== */
 /* ====================== */
 
-@media screen and (max-width: 1250px)
+
+@media (max-width: 1200px)
 {
-  /* === Layout === */
   body {
     padding: 0 2rem;
   }
+}
 
+/* ===== Tablets ===== */
+@media screen and (max-width: 992px)
+{
+  /* === Layout === */
   section {
     margin: 4rem 0;
   }
@@ -574,16 +590,28 @@ section.contact {
     width: 80%;
   }
 
+  /* === Components === */
+  button#scrolltotop {
+    right: 1rem;
+    bottom: -2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  button#scrolltotop.show {
+    bottom: 1rem;
+  }
+
 
   /* === Header === */
   header.block {
     flex-direction: column;
-    height: 2rem;
+    height: 0%;
     overflow: hidden;
   }
 
   header.block.show {
-    height: 14rem;
+    height: 100%;
     gap: 2rem;
   }
 
@@ -598,13 +626,11 @@ section.contact {
   }
 
   header .header__navigation {
-    opacity: 0;
-    transition: all 300ms ease-in-out;
+    display: none;
   }
-  
+
   header .header__navigation.show {
     display: block;
-    opacity: 1;
   }
 
   header .header__navigation nav {
@@ -639,12 +665,17 @@ section.contact {
     flex-direction: column;
   }
 
+  section.hero .hero__title h1 {
+    font-size: 1.5rem;
+  }
+
   section.experience .experience__link {
     width: auto;
   }
 
   section.hero .hero__icons,
-  section.about .about__link {
+  section.about .about__link,
+  section.introduction .block.gradient-primary {
     display: none;
   }
 
