@@ -17,7 +17,6 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 
@@ -26,14 +25,6 @@
 </head>
 
 <body>
-
-  <script src="https://unpkg.com/kursor"></script>
-  <script>
-      new kursor({
-        type: 1,
-        color: "#1E152A"
-      })
-  </script>
 
   <header class="block">
 
@@ -201,8 +192,11 @@
     </section>
 
     <section class="about" id="apropos">
+      <div class="about__link block gradient-primary">
+        <h2>A propos</h2>
+        <a href="" class="about__link--button"></a>
+      </div>
       <div class="about__blocks">
-        <h2>Ma personnalité</h2>
         <div class="about__blocks--item block">
           <h3>Passionné et dévoué</h3>
           <p>J’adore mon métier et je ne vois pas le temps passer quand je tape des lignes de code. Je sais pourquoi je me lève le matin, et j'aime relever chaque jour de nouveaux défis.</p>
@@ -212,14 +206,11 @@
           <p>J’apprécie pouvoir gérer une équipe et la tirer vers le haut. Je suis convaincu que l’esprit d’équipe est essentiel pour accomplir de magnifiques choses.</p>
         </div>
         <div class="about__blocks--item block">
-          <h3>Toujours à la recherche de nouveaux défis </h3>
+          <h3>Toujours à la recherche de nouveaux&nbsp;défis </h3>
           <p>Je m’intéresse constamment à des environnements et à des sujets qui me sont inconnus. Je continue de me former régulièrement et je ne cesse jamais de travailler sur des projets personnels ou professionnels.</p>
         </div>
       </div>
-      <div class="about__link block gradient-primary">
-        <span>A propos</span>
-        <a href="" class="about__link--button"></a>
-      </div>
+      
     </section>
 
     <section class="experience">
