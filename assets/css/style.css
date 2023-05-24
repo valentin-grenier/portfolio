@@ -1,11 +1,11 @@
 :root
 {
-  --primary-color: #6B69E6;
+  --primary-color: #5452C5;
   --primary-color-shade: #AEADF0;
   --text-color: #1E152A;
   --grey-color: #F5F5F5;
 
-  --primary-gradient: linear-gradient(#9D8DF1, #6B69E6);
+  --primary-gradient: linear-gradient(#9D8DF1, var(--primary-color));
   --dark-gradient: linear-gradient(#50485A, #1E152A);
   --white-gradient: linear-gradient(#FFF, #F5F5F5);
 
@@ -529,12 +529,11 @@ section.projects .projects__grid--item {
 }
 
 section.projects .projects__grid--item-image img {
-  width: 100%;
+  max-width: 350px;
   object-fit: cover;
   margin-bottom: 1rem;
   border-radius: var(--border-radius-small);
   box-shadow: var(--shadow-small);
-  background: lightcyan;
 }
 
 section.projects .projects__grid--item-tags span {

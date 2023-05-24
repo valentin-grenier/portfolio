@@ -8,6 +8,7 @@
   <title>Valentin Grenier - Développeur Web Full Stack</title>
 
   <!-- SEO -->
+  <meta name="description" content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript.">
   <meta property="og:title" content="Valentin Grenier - Développeur Web Full-Stack">
   <meta property="og:description" content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript.">
   <meta property="og:image" content="./assets/thumbnail.png">
@@ -22,6 +23,8 @@
 
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -34,7 +37,7 @@
         <span>Indisponible</span>
       </div>
   
-      <button class="burger-menu">
+      <button class="burger-menu" aria-label="Burger menu">
         <div></div>
         <div></div>
         <div></div>
@@ -44,7 +47,7 @@
     <div class="header__navigation">
       <nav class="navigation">
         <ul class="navigation__links">
-          <li class="navigation__links--item active"><a href="">Accueil</a></li>
+          <li class="navigation__links--item active"><a href="/">Accueil</a></li>
           <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
           <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
           <li class="navigation__links--item"><a href="#contact">Contact</a></li>
@@ -194,7 +197,6 @@
     <section class="about" id="apropos">
       <div class="about__link block gradient-primary">
         <h2>A propos</h2>
-        <a href="" class="about__link--button"></a>
       </div>
       <div class="about__blocks">
         <div class="about__blocks--item block">
@@ -216,7 +218,6 @@
     <section class="experience">
       <div class="experience__link block gradient-primary">
         <h2>Mon parcours</h2>
-        <a href="" class="about__link--button"></a>
       </div>
       <div class="experience__text">
         <p>Mon parcours est plutôt atypique. J’ai commencé mes études post-bac dans le domaine du management, puis j’ai obtenu un master en communication et stratégie digitale. En parallèle, de mon cursus universitaire, je me suis formé en autodidacte sur le développement web et plus spécifiquement sur WordPress, avant de me lancer en freelance en tant que développeur WordPress et web designer.</p>
@@ -226,14 +227,14 @@
 
     <section class="projects" id="projets">
       <div class="projects__head">
-        <h2>Mes derniers projets <a href="" class="about__link--button colored"></a></h2>
+        <h2>Mes derniers projets</h2>
         <p>Acquérir des compétences, c’est bien. Les mettre en application lors de projets personnels ou concrets, c’est encore mieux. Voici quelques-uns de mes projets réalisés ces derniers mois.</p>  
       </div>
       <div class="projects__grid">
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
             <a href="https://cirque-eloize.com/fr/balado/" target="blank">
-              <img src="./assets/img/projects/cirque-eloize.png" alt="réalisation Cirque Eloize">
+              <img src="./assets/img/projects/cirque-eloize.jpg" alt="réalisation Cirque Eloize">
             </a>
           </div>
           <div class="projects__grid--item-body">
@@ -249,7 +250,7 @@
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
             <a href="https://arnauneprim.com/" target="blank">
-              <img src="./assets/img/projects/arnauneprim.png" alt="réalisation Arnauné & Prim">
+              <img src="./assets/img/projects/arnauneprim.jpg" alt="réalisation Arnauné & Prim">
             </a>
           </div>
           <div class="projects__grid--item-body">
@@ -265,7 +266,7 @@
         <div class="projects__grid--item">
           <div class="projects__grid--item-image">
             <a href="https://matelas.ca/" target="_blank">
-              <img src="./assets/img/projects/fabrique-de-matelas.png" alt="réalisation Fabrique de Matelas">
+              <img src="./assets/img/projects/fabrique-de-matelas.jpg" alt="réalisation Fabrique de Matelas">
             </a>
           </div>
           <div class="projects__grid--item-body">
@@ -331,7 +332,7 @@
     
   </footer>
 
-  <button id="scrolltotop">
+  <button id="scrolltotop" aria-label="Retourner en haut de la page">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <g id="Arrow / Arrow_Down_SM">
       <path id="Vector" d="M12 7V17M12 17L16 13M12 17L8 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
