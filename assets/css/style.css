@@ -437,9 +437,15 @@ section.skills .skills__items--block .skills__items--logos {
   gap: 1rem;
 }
 
-section.skills .skills__items--block .skills__items--logos figure {
+.skills__items--block:nth-child(1) .skills__items--logos figure,
+.skills__items--block:nth-child(2) .skills__items--logos figure {
+  width: 40%;
+}
+
+.skills__items--block:nth-child(3) .skills__items--logos figure {
   width: 30%;
 }
+
 
 section.skills .skills__items--block .skills__items--logos figure img {
   width: 40px;
@@ -526,6 +532,15 @@ section.projects .projects__grid {
 
 section.projects .projects__grid--item {
   flex-basis: 50%;
+}
+
+section.projects .projects__grid--item-image {
+  transition: all 200ms ease-in-out;
+}
+
+section.projects .projects__grid--item-image:hover {
+  transform: scale(0.98);
+  filter: grayscale(100%);
 }
 
 section.projects .projects__grid--item-image img {
