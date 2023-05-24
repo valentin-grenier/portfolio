@@ -59,8 +59,8 @@ Les contributions sont les bienvenues ! Si vous avez une quelconque suggestion, 
 
 ### Contact
 
-LinkedIn : [Valentin Grenier]('https://www.linkedin.com/in/valentin-grenier/')
+LinkedIn : [Valentin Grenier](https://www.linkedin.com/in/valentin-grenier/)
 
-Twitter : [@valentingrn]('https://twitter.com/valentingrn')
+Twitter : [@valentingrn](https://twitter.com/valentingrn)
 
-Lien du projet : [https://github.com/valentin-grenier/portfolio]('https://github.com/valentin-grenier/portfolio')
+Lien du projet : [https://github.com/valentin-grenier/portfolio](https://github.com/valentin-grenier/portfolio)
