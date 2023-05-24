@@ -2,7 +2,7 @@ const app =
 {
   init: function()
   {
-    // Burger menu
+    // Burger menu open
     const burger = document.querySelector('button.burger-menu');
     burger.addEventListener('click', app.openBurger);
 
