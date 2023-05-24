@@ -20,4 +20,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        args: --remote-root /home/bnetconspp/valentingrenier/
+        args: --remote-root /home/bnetconspp/valentingrenier
