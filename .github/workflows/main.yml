@@ -1,0 +1,23 @@
+name: Déploiement du code
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Vérification du code
+      uses: actions/checkout@v2
+
+    - name: Connexion au serveur FTP
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /path/to/destination/folder
