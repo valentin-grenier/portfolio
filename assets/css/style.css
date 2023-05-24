@@ -585,6 +585,16 @@ section.contact {
   text-align: center;
 }
 
+.footer__bottom a {
+  color: var(--primary-color);
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+}
+
+.footer__bottom a:hover {
+  opacity: 0.5;
+}
+
 
 
 /* ====================== */
