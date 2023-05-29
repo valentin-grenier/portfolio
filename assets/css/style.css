@@ -437,11 +437,12 @@ section.skills .skills__items--block .skills__items--logos {
   gap: 1rem;
 }
 
-.skills__items--block:nth-child(1) .skills__items--logos figure,
+
 .skills__items--block:nth-child(2) .skills__items--logos figure {
   width: 40%;
 }
 
+.skills__items--block:nth-child(1) .skills__items--logos figure,
 .skills__items--block:nth-child(3) .skills__items--logos figure {
   width: 30%;
 }
