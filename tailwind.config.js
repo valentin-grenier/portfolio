@@ -1,17 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./public/*.html'],
+
   theme: {
-    colors: {
-      'purple': '#5452C5',
-      'purple-shade': '#9D8DF1',
-      'dark': '#1E152A',
-      'white': '#FFFFFF'
-    },
     fontFamily: {
       sans: ['Ubuntu', 'sans-serif'],
     },
+    
     extend: {
+      colors: {
+        'purple': '#5452C5',
+        'purple-shade': '#9D8DF1',
+        'dark': '#1E152A',
+        'white': '#FFFFFF'
+      },
+      boxShadow: {
+        sm: '0 24px 25px #00000010',
+        md: '0 24px 50px #00000010'
+      },
       backgroundImage: (theme) => ({
         'gradient-primary': `linear-gradient(to bottom, ${theme('colors.purple-shade')}, ${theme('colors.purple')})`,
       }),

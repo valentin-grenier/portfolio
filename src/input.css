@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.content-block {
+	@apply
+	rounded-xl
+	shadow-md
+	py-4
+	px-8
+	my-8
+	leading-relaxed;
+}
+
+.content-block strong {
+	@apply text-purple;
+}
+
+
 .blob {
   background: #E84855;
 	border-radius: 50%;
