@@ -2,18 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Common heading styles ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-medium;
+}
+
+/* ===== Individual text styles ===== */
+h1 {
+  @apply text-3xl mb-4;
+}
+
+h2 {
+  @apply text-2xl mb-4;
+}
+
+h3 {
+  @apply text-xl mb-2;
+}
+
+p {
+	@apply text-sm mb-6 leading-7;
+}
+
+strong {
+	@apply font-medium;
+}
+
+hr.small-line {
+	@apply border-2 border-purple rounded-xl w-16 mx-auto mb-4;
+}
+
+/* ===== Layout styles ===== */
+section {
+	@apply my-12;
+}
+
 .content-block {
 	@apply
 	rounded-xl
 	shadow-md
 	py-4
 	px-8
-	my-8
+	my-4
 	leading-relaxed;
+}
+
+.blocks {
+	@apply flex flex-col gap-2;
 }
 
 .content-block strong {
 	@apply text-purple;
+}
+
+.language-icons {
+	@apply flex flex-row flex-wrap  justify-center;
+}
+
+.language-icons figure {
+	@apply w-1/3 mb-4;
+}
+
+.language-icons img {
+	@apply w-8 mx-auto filter grayscale;
 }
 
 
