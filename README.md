@@ -18,13 +18,13 @@ Ce projet est destiné à évoluer dans le temps au fur et à mesure de ma forma
 
 - [x] Landing page avec HTML, CSS et Javascript
 - [ ] Refonte landing page -> TailwindCSS
+- [ ] Mise à niveau -> React/Node.js
 - [ ] Ajout pages supplémentaires
   - [ ] Projets
   - [ ] A propos
-- [ ] Mise à niveau -> Laravel
-  - [ ] Création d'un back office
-  - [ ] Ajout page individuelle pour chaque projet
-  - [ ] Ajout page contact avec formulaire
+- [ ] Création d'un back office
+- [ ] Ajout page individuelle pour chaque projet
+- [ ] Ajout page contact avec formulaire
 
 
 ### Visualiser le projet en local
