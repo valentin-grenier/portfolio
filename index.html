@@ -1,367 +1,548 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Valentin Grenier - Développeur Web Full Stack</title>
+    <title>Valentin Grenier - Développeur Web Full Stack</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript.">
-  <meta property="og:title" content="Valentin Grenier - Développeur Web Full-Stack">
-  <meta property="og:description" content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript.">
-  <meta property="og:image" content="./assets/img/thumbnail.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Valentin Grenier - Portfolio">
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript."
+    />
+    <meta
+      property="og:title"
+      content="Valentin Grenier - Développeur Web Full-Stack"
+    />
+    <meta
+      property="og:description"
+      content="Je suis développeur web full-stack basé à Toulouse. Je travaille avec principalement avec PHP et Javascript."
+    />
+    <meta property="og:image" content="./assets/img/thumbnail.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Valentin Grenier - Portfolio" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./assets/css/reset.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=ubuntu:300,300i,400,400i,500,500i,700,700i"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
+    <!-- Plausible Analytics -->
+    <script
+      defer
+      data-domain="valentingrenier.fr"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </head>
 
-  <!-- Plausible Analytics -->
-  <script defer data-domain="valentingrenier.fr" src="https://plausible.io/js/script.js"></script>
-</head>
+  <body>
+    <header class="block">
+      <div class="header__content">
+        <div class="availability">
+          <div class="blob red"></div>
+          <span>En formation</span>
+        </div>
 
-<body>
-
-  <header class="block">
-
-    <div class="header__content">
-      <div class="availability">
-        <div class="blob red"></div>
-        <span>En formation</span>
+        <button class="burger-menu" aria-label="Burger menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
       </div>
-  
-      <button class="burger-menu" aria-label="Burger menu">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-    </div>
 
-    <div class="header__navigation">
-      <nav class="navigation">
-        <ul class="navigation__links">
-          <li class="navigation__links--item active"><a href="/">Accueil</a></li>
-          <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
-          <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
-          <li class="navigation__links--item"><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div class="header__navigation">
+        <nav class="navigation">
+          <ul class="navigation__links">
+            <li class="navigation__links--item active">
+              <a href="/">Accueil</a>
+            </li>
+            <li class="navigation__links--item">
+              <a href="#projets">Mes projets</a>
+            </li>
+            <li class="navigation__links--item">
+              <a href="#apropos">A propos</a>
+            </li>
+            <li class="navigation__links--item">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  </header>
+    <main>
+      <section class="hero">
+        <div class="hero__title">
+          <h1
+            class="block gradient-primary animate__animated animate__fadeInDown animate__slower"
+          >
+            Valentin Grenier, enchanté&nbsp;!
+          </h1>
+          <p>
+            <strong>Je suis développeur web full-stack</strong> passionné par la
+            création d'interfaces web répondants à des
+            problématiques&nbsp;complexes.
+          </p>
 
-  <main>
-    <section class="hero">
-      <div class="hero__title">
-        <h1 class=" block gradient-primary animate__animated animate__fadeInDown animate__slower">Valentin Grenier, enchanté&nbsp;!</h1>
-        <p>
-          <strong>Je suis développeur web full-stack</strong> passionné par la création d'interfaces web répondants
-          à des problématiques&nbsp;complexes.
-        </p>
-
-        <div class="hero__highlights block">
-          <div class="hero__highlights--item">
-            <p><strong>+15 sites</strong><br>développés</p>
-          </div>
-          <div class="hero__highlights--item">
-            <p><strong>+30 entreprises</strong><br>accompagnées</p>
-          </div>
-          <div class="hero__highlights--item">
-            <p><strong>5 années</strong><br>en freelance</p>
+          <div class="hero__highlights block">
+            <div class="hero__highlights--item">
+              <p><strong>+15 sites</strong><br />développés</p>
+            </div>
+            <div class="hero__highlights--item">
+              <p><strong>+30 entreprises</strong><br />accompagnées</p>
+            </div>
+            <div class="hero__highlights--item">
+              <p><strong>5 années</strong><br />en freelance</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="hero__icons">
-        <img src="./assets/img/icons/laptop.png" alt="Ordinateur" id="laptop">
-        <img src="./assets/img/icons/technologist.png" alt="Développeur" id="developer">
-        <img src="./assets/img/icons/phone.png" alt="Téléphone" id="phone">
-        <img src="./assets/img/icons/light.png" alt="Ampoule" id="light">
-      </div>
-    </section>
+        <div class="hero__icons">
+          <img
+            src="./assets/img/icons/laptop.png"
+            alt="Ordinateur"
+            id="laptop"
+          />
+          <img
+            src="./assets/img/icons/technologist.png"
+            alt="Développeur"
+            id="developer"
+          />
+          <img src="./assets/img/icons/phone.png" alt="Téléphone" id="phone" />
+          <img src="./assets/img/icons/light.png" alt="Ampoule" id="light" />
+        </div>
+      </section>
 
-    <section class="introduction">
+      <section class="introduction">
         <div class="introduction__text block">
           <h2>Bienvenue sur mon site personnel</h2>
-          <p>Je m’appelle Valentin et je suis tombé dans le monde du développement web en 2018. Autodidacte au départ, c’est en parallèle de mes études en école de commerce et communication que j’ai décidé d’apprendre le développement web, tout d’abord sur WordPress, avec comme ambition de pouvoir vivre de ma passion.</p>
-          <p>Plutôt que de créer un CV basique et de l’intégrer avec HTML et CSS, j’ai choisi une approche différente et qui reflète ma personnalité : un site web soigné, épuré, et "pixel-perfect".</p>
+          <p>
+            Je m’appelle Valentin et je suis tombé dans le monde du
+            développement web en 2018. Autodidacte au départ, c’est en parallèle
+            de mes études en école de commerce et communication que j’ai décidé
+            d’apprendre le développement web, tout d’abord sur WordPress, avec
+            comme ambition de pouvoir vivre de ma passion.
+          </p>
+          <p>
+            Plutôt que de créer un CV basique et de l’intégrer avec HTML et CSS,
+            j’ai choisi une approche différente et qui reflète ma personnalité :
+            un site web soigné, épuré, et "pixel-perfect".
+          </p>
         </div>
         <div class="introduction__image block gradient-primary">
           <div class="introduction__image--container">
-            <img src="./assets/img/val_transp.png" alt="photo Valentin Grenier">
+            <img
+              src="./assets/img/val_transp.png"
+              alt="photo Valentin Grenier"
+            />
           </div>
         </div>
-    </section>
+      </section>
 
-    <section class="skills">
-      <div class="skills__title">
-        <h2>Mon savoir-faire</h2>
-        <p>Opérationnel du front-end au back-end, j'utilise des technologies dans l'ère du temps pour la maintenabilité de mes projets et pour répondre à des problématiques précises.</p>
-      </div>
-      <div class="skills__items">
-        <div class="skills__items--block block">
-          <h3>Technologies <strong>front-end</strong></h3>
-          <p>J'aime concevoir de belles interfaces modernes, épurées et axées sur l'expérience utilisateur.</p>
-          <div class="skills__items--logos">
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/html.svg" alt="logo HTML">
-              <figcaption>HTML</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/css.svg" alt="logo CSS">
-              <figcaption>CSS</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/javascript.svg" alt="logo Javascript">
-              <figcaption>Javascript</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/react.svg" alt="logo React">
-              <figcaption>React</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/bootstrap.svg" alt="logo Bootstrap">
-              <figcaption>Bootstrap</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/tailwind.svg" alt="logo TailwindCSS">
-              <figcaption>Tailwind</figcaption>
-            </figure>
+      <section class="skills">
+        <div class="skills__title">
+          <h2>Mon savoir-faire</h2>
+          <p>
+            Opérationnel du front-end au back-end, j'utilise des technologies
+            dans l'ère du temps pour la maintenabilité de mes projets et pour
+            répondre à des problématiques précises.
+          </p>
+        </div>
+        <div class="skills__items">
+          <div class="skills__items--block block">
+            <h3>Technologies <strong>front-end</strong></h3>
+            <p>
+              J'aime concevoir de belles interfaces modernes, épurées et axées
+              sur l'expérience utilisateur.
+            </p>
+            <div class="skills__items--logos">
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/html.svg" alt="logo HTML" />
+                <figcaption>HTML</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/css.svg" alt="logo CSS" />
+                <figcaption>CSS</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img
+                  src="./assets/img/svg/javascript.svg"
+                  alt="logo Javascript"
+                />
+                <figcaption>Javascript</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/react.svg" alt="logo React" />
+                <figcaption>React</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img
+                  src="./assets/img/svg/bootstrap.svg"
+                  alt="logo Bootstrap"
+                />
+                <figcaption>Bootstrap</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img
+                  src="./assets/img/svg/tailwind.svg"
+                  alt="logo TailwindCSS"
+                />
+                <figcaption>Tailwind</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="skills__items--block block">
+            <h3>Technologies <strong>back-end</strong></h3>
+            <p>
+              Passer du côté obscure de la Force pour gérer l'architecture d'un
+              site, sa base de données ou encore son hébergement.
+            </p>
+            <div class="skills__items--logos">
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/nodejs.svg" alt="logo Node.js" />
+                <figcaption>Node.js</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/mongodb.svg" alt="logo MongoDB" />
+                <figcaption>MongoDB</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/api.svg" alt="logo API" />
+                <figcaption>API REST</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/php.svg" alt="logo PHP" />
+                <figcaption>PHP</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/laravel.svg" alt="logo Laravel" />
+                <figcaption>Laravel</figcaption>
+              </figure>
+
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/mysql.svg" alt="logo MySQL" />
+                <figcaption>MySQL</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="skills__items--block block">
+            <h3>Compétences <strong>transverses</strong></h3>
+            <p>
+              De WordPress avancé jusqu'aux notions en UX et UI design, je sais
+              contribuer à un projet avec mes connaissances.
+            </p>
+            <div class="skills__items--logos">
+              <figure class="skills__items--logos-single">
+                <img
+                  src="./assets/img/svg/wordpress.svg"
+                  alt="logo WordPress"
+                />
+                <figcaption>WordPress</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/github.svg" alt="logo Git" />
+                <figcaption>Git</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/linux.svg" alt="logo Linux" />
+                <figcaption>Linux</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/google.svg" alt="logo SEO" />
+                <figcaption>SEO</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img
+                  src="./assets/img/svg/scrum.svg"
+                  alt="logo méthode SCRUM"
+                />
+                <figcaption>SCRUM</figcaption>
+              </figure>
+              <figure class="skills__items--logos-single">
+                <img src="./assets/img/svg/light.svg" alt="logo UX/UI" />
+                <figcaption>UX/UI</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
-        <div class="skills__items--block block">
-          <h3>Technologies <strong>back-end</strong></h3>
-          <p>Passer du côté obscure de la Force pour gérer l'architecture d'un site, sa base de données ou encore son hébergement.</p>
-          <div class="skills__items--logos">
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/php.svg" alt="logo PHP">
-              <figcaption>PHP</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/laravel.svg" alt="logo Laravel">
-              <figcaption>Laravel</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/api.svg" alt="logo API">
-              <figcaption>API REST</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/mysql.svg" alt="logo MySQL">
-              <figcaption>MySQL</figcaption>
-            </figure>
-            <!-- <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/nodejs.svg" alt="logo Node.js">
-              <figcaption>Node.js</figcaption>
-            </figure> -->
+      </section>
+
+      <section class="about" id="apropos">
+        <div class="about__link block gradient-primary">
+          <h2>A propos</h2>
+        </div>
+        <div class="about__blocks">
+          <div class="about__blocks--item block">
+            <h3>Passionné et dévoué</h3>
+            <p>
+              J’adore mon métier et je ne vois pas le temps passer quand je tape
+              des lignes de code. Je sais pourquoi je me lève le matin, et
+              j'aime relever chaque jour de nouveaux défis.
+            </p>
+          </div>
+          <div class="about__blocks--item block">
+            <h3>Bon esprit d'équipe</h3>
+            <p>
+              J’apprécie pouvoir gérer une équipe et la tirer vers le haut. Je
+              suis convaincu que l’esprit d’équipe est essentiel pour accomplir
+              de magnifiques choses.
+            </p>
+          </div>
+          <div class="about__blocks--item block">
+            <h3>Toujours à la recherche de nouveaux&nbsp;défis</h3>
+            <p>
+              Je m’intéresse constamment à des environnements et à des sujets
+              qui me sont inconnus. Je continue de me former régulièrement et je
+              ne cesse jamais de travailler sur des projets personnels ou
+              professionnels.
+            </p>
           </div>
         </div>
-        <div class="skills__items--block block">
-          <h3>Compétences <strong>transverses</strong></h3>
-          <p>De WordPress avancé jusqu'aux notions en UX et UI design, je sais contribuer à un projet avec mes connaissances.</p>
-          <div class="skills__items--logos">
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/wordpress.svg" alt="logo WordPress">
-              <figcaption>WordPress</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/github.svg" alt="logo Git">
-              <figcaption>Git</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/linux.svg" alt="logo Linux">
-              <figcaption>Linux</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/google.svg" alt="logo SEO">
-              <figcaption>SEO</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/scrum.svg" alt="logo méthode SCRUM">
-              <figcaption>SCRUM</figcaption>
-            </figure>
-            <figure class="skills__items--logos-single">
-              <img src="./assets/img/svg/light.svg" alt="logo UX/UI">
-              <figcaption>UX/UI</figcaption>
-            </figure>
+      </section>
+
+      <section class="experience">
+        <div class="experience__link block gradient-primary">
+          <h2>Mon parcours</h2>
+        </div>
+        <div class="experience__text">
+          <p>
+            Mon parcours est plutôt atypique. J’ai commencé mes études post-bac
+            dans le domaine du management, puis j’ai obtenu un master en
+            communication et stratégie digitale. En parallèle, de mon cursus
+            universitaire, je me suis formé en autodidacte sur le développement
+            web et plus spécifiquement sur WordPress, avant de me lancer en
+            freelance en tant que développeur WordPress et web designer.
+          </p>
+          <p>
+            Mais j’ai voulu voir encore plus loin pour travailler sur des
+            projets autres que la création et l’actualisation de sites
+            WordPress. C’est pourquoi j’ai rejoints l’école O’clock pour une
+            formation intensive de 6 mois, afin d’obtenir un Titre Professionnel
+            de Développeur Web et Web Mobile, certifiant mes compétences et ma
+            détermination.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects" id="projets">
+        <div class="projects__head">
+          <h2>Mes derniers projets</h2>
+          <p>
+            Acquérir des compétences, c’est bien. Les mettre en application lors
+            de projets personnels ou concrets, c’est encore mieux. Voici
+            quelques-uns de mes projets réalisés ces derniers mois.
+          </p>
+        </div>
+        <div class="projects__grid">
+          <div class="projects__grid--item">
+            <div class="projects__grid--item-image">
+              <a href="https://chucknorris.valentingrenier.fr" target="blank">
+                <img
+                  src="./assets/img/projects/chuck-norris-jokes.jpg"
+                  alt="réalisation Chuck Norris Jokes"
+                />
+              </a>
+            </div>
+            <div class="projects__grid--item-body">
+              <h3>Chuck Norris Jokes</h3>
+              <p>
+                Utilisation de l'API "Chuck Norris API" pour récupérer des
+                données, changement d'image à chaque chargement.
+              </p>
+            </div>
+            <div class="projects__grid--item-tags">
+              <span>API REST</span>
+              <span>Tailwind CSS</span>
+              <span>Javascript</span>
+            </div>
+          </div>
+          <div class="projects__grid--item">
+            <div class="projects__grid--item-image">
+              <a href="https://cirque-eloize.com/fr/balado/" target="blank">
+                <img
+                  src="./assets/img/projects/cirque-eloize.jpg"
+                  alt="réalisation Cirque Eloize"
+                />
+              </a>
+            </div>
+            <div class="projects__grid--item-body">
+              <h3>Cirque Eloize</h3>
+              <p>
+                Réalisation d'une landing page pour le lancement d'une série de
+                podcasts d'un cirque au Canada
+              </p>
+            </div>
+            <div class="projects__grid--item-tags">
+              <span>WordPress</span>
+              <span>PHP</span>
+              <span>ACF Pro</span>
+            </div>
+          </div>
+          <div class="projects__grid--item">
+            <div class="projects__grid--item-image">
+              <a href="https://arnauneprim.com/" target="blank">
+                <img
+                  src="./assets/img/projects/arnauneprim.jpg"
+                  alt="réalisation Arnauné & Prim"
+                />
+              </a>
+            </div>
+            <div class="projects__grid--item-body">
+              <h3>Arnauné &#x26; Prim</h3>
+              <p>
+                Développement d'un site WordPress de plus de 20 pages pour une
+                étude de commissaires de justice
+              </p>
+            </div>
+            <div class="projects__grid--item-tags">
+              <span>WordPress</span>
+              <span>PHP</span>
+              <span>ACF Pro</span>
+            </div>
+          </div>
+          <div class="projects__grid--item">
+            <div class="projects__grid--item-image">
+              <a href="https://matelas.ca/" target="_blank">
+                <img
+                  src="./assets/img/projects/fabrique-de-matelas.jpg"
+                  alt="réalisation Fabrique de Matelas"
+                />
+              </a>
+            </div>
+            <div class="projects__grid--item-body">
+              <h3>Fabrique de Matelas</h3>
+              <p>
+                Développement d'un questionnaire pour aider à choisir un matelas
+                selon ses habitudes de sommeil
+              </p>
+            </div>
+            <div class="projects__grid--item-tags">
+              <span>WordPress</span>
+              <span>PHP</span>
+              <span>ACF Pro</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="about" id="apropos">
-      <div class="about__link block gradient-primary">
-        <h2>A propos</h2>
-      </div>
-      <div class="about__blocks">
-        <div class="about__blocks--item block">
-          <h3>Passionné et dévoué</h3>
-          <p>J’adore mon métier et je ne vois pas le temps passer quand je tape des lignes de code. Je sais pourquoi je me lève le matin, et j'aime relever chaque jour de nouveaux défis.</p>
-        </div>
-        <div class="about__blocks--item block">
-          <h3>Bon esprit d'équipe</h3>
-          <p>J’apprécie pouvoir gérer une équipe et la tirer vers le haut. Je suis convaincu que l’esprit d’équipe est essentiel pour accomplir de magnifiques choses.</p>
-        </div>
-        <div class="about__blocks--item block">
-          <h3>Toujours à la recherche de nouveaux&nbsp;défis </h3>
-          <p>Je m’intéresse constamment à des environnements et à des sujets qui me sont inconnus. Je continue de me former régulièrement et je ne cesse jamais de travailler sur des projets personnels ou professionnels.</p>
-        </div>
-      </div>
-      
-    </section>
-
-    <section class="experience">
-      <div class="experience__link block gradient-primary">
-        <h2>Mon parcours</h2>
-      </div>
-      <div class="experience__text">
-        <p>Mon parcours est plutôt atypique. J’ai commencé mes études post-bac dans le domaine du management, puis j’ai obtenu un master en communication et stratégie digitale. En parallèle, de mon cursus universitaire, je me suis formé en autodidacte sur le développement web et plus spécifiquement sur WordPress, avant de me lancer en freelance en tant que développeur WordPress et web designer.</p>
-        <p>Mais j’ai voulu voir encore plus loin pour travailler sur des projets autres que la création et l’actualisation de sites WordPress. C’est pourquoi j’ai rejoints l’école O’clock pour une formation intensive de 6 mois, afin d’obtenir un Titre Professionnel de Développeur Web et Web Mobile, certifiant mes compétences et ma détermination.</p>
-      </div>
-    </section>
-
-    <section class="projects" id="projets">
-      <div class="projects__head">
-        <h2>Mes derniers projets</h2>
-        <p>Acquérir des compétences, c’est bien. Les mettre en application lors de projets personnels ou concrets, c’est encore mieux. Voici quelques-uns de mes projets réalisés ces derniers mois.</p>  
-      </div>
-      <div class="projects__grid">
-        <div class="projects__grid--item">
-          <div class="projects__grid--item-image">
-            <a href="https://chucknorris.valentingrenier.fr" target="blank">
-              <img src="./assets/img/projects/chuck-norris-jokes.jpg" alt="réalisation Chuck Norris Jokes">
+      <section class="contact block" id="contact">
+        <h2>Prenons contact</h2>
+        <p>
+          Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous et
+          de discuter d’éventuelles opportunités.
+        </p>
+        <div class="contact__buttons">
+          <div class="btn-wrapper">
+            <a
+              href="mailto:valentin.grenier02@gmail.com"
+              class="btn btn-colored"
+              >Me contacter</a
+            >
+          </div>
+          <div class="btn-wrapper">
+            <a
+              href="https://www.linkedin.com/in/valentin-grenier/"
+              class="btn btn-icon"
+              target="_blank"
+            >
+              <img src="./assets/img/svg/linkedin.svg" alt="Logo LinkedIn" />
             </a>
           </div>
-          <div class="projects__grid--item-body">
-            <h3>Chuck Norris Jokes</h3>
-            <p>Utilisation de l'API "Chuck Norris API" pour récupérer des données, changement d'image à chaque chargement.</p>
-          </div>
-          <div class="projects__grid--item-tags">
-            <span>API REST</span>
-            <span>Tailwind CSS</span>
-            <span>Javascript</span>
-          </div>
-        </div>
-        <div class="projects__grid--item">
-          <div class="projects__grid--item-image">
-            <a href="https://cirque-eloize.com/fr/balado/" target="blank">
-              <img src="./assets/img/projects/cirque-eloize.jpg" alt="réalisation Cirque Eloize">
+          <div class="btn-wrapper">
+            <a
+              href="https://github.com/valentin-grenier"
+              class="btn btn-icon"
+              target="_blank"
+            >
+              <img src="./assets/img/svg/github.svg" alt="Logo Github" />
             </a>
           </div>
-          <div class="projects__grid--item-body">
-            <h3>Cirque Eloize</h3>
-            <p>Réalisation d'une landing page pour le lancement d'une série de podcasts d'un cirque au Canada</p>
-          </div>
-          <div class="projects__grid--item-tags">
-            <span>WordPress</span>
-            <span>PHP</span>
-            <span>ACF Pro</span>
-          </div>
         </div>
-        <div class="projects__grid--item">
-          <div class="projects__grid--item-image">
-            <a href="https://arnauneprim.com/" target="blank">
-              <img src="./assets/img/projects/arnauneprim.jpg" alt="réalisation Arnauné & Prim">
-            </a>
-          </div>
-          <div class="projects__grid--item-body">
-            <h3>Arnauné &#x26; Prim</h3>
-            <p>Développement d'un site WordPress de plus de 20 pages pour une étude de commissaires de justice</p>
-          </div>
-          <div class="projects__grid--item-tags">
-            <span>WordPress</span>
-            <span>PHP</span>
-            <span>ACF Pro</span>
-          </div>
-        </div>
-        <div class="projects__grid--item">
-          <div class="projects__grid--item-image">
-            <a href="https://matelas.ca/" target="_blank">
-              <img src="./assets/img/projects/fabrique-de-matelas.jpg" alt="réalisation Fabrique de Matelas">
-            </a>
-          </div>
-          <div class="projects__grid--item-body">
-            <h3>Fabrique de Matelas</h3>
-            <p>Développement d'un questionnaire pour aider à choisir un matelas selon ses habitudes de sommeil</p>
-          </div>
-          <div class="projects__grid--item-tags">
-            <span>WordPress</span>
-            <span>PHP</span>
-            <span>ACF Pro</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="contact block" id="contact">
-      <h2>Prenons contact</h2>
-      <p>Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous et de discuter d’éventuelles opportunités.</p>
-      <div class="contact__buttons">
-        <div class="btn-wrapper">
-          <a href="mailto:valentin.grenier02@gmail.com" class="btn btn-colored">Me contacter</a>
+    <footer>
+      <div class="footer__container">
+        <div class="footer__text">
+          <h3>Valentin Grenier</h3>
+          <p>
+            Bonjour, je m'appelle Valentin Grenier et je suis développeur web
+            full-stack. J'ai créé ce site personnel pour avoir ma propre vitrine
+            sur Internet et afin de pouvoir me présenter d'une autre manière
+            qu'avec un simple CV.
+          </p>
+          <p>
+            <strong>N'hésitez pas à me contacter</strong> si vous souhaitez
+            échanger avec moi ou me rencontrer dans le cadre d'une
+            collaboration.
+          </p>
+          <div class="btn-wrapper">
+            <a
+              href="mailto:valentin.grenier02@gmail.com"
+              class="btn btn-colored"
+              >Me contacter</a
+            >
+          </div>
         </div>
-        <div class="btn-wrapper">
-          <a href="https://www.linkedin.com/in/valentin-grenier/" class="btn btn-icon" target="_blank">
-            <img src="./assets/img/svg/linkedin.svg" alt="Logo LinkedIn">
-          </a>
-        </div>
-        <div class="btn-wrapper">
-          <a href="https://github.com/valentin-grenier" class="btn btn-icon" target="_blank">
-            <img src="./assets/img/svg/github.svg" alt="Logo Github">
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer__container">
-      <div class="footer__text">
-        <h3>Valentin Grenier</h3>
-        <p>Bonjour, je m'appelle Valentin Grenier et je suis développeur web full-stack. J'ai créé ce site personnel pour avoir ma propre vitrine sur Internet et afin de pouvoir me présenter d'une autre manière qu'avec un simple CV.</p>
-        <p><strong>N'hésitez pas à me contacter</strong> si vous souhaitez échanger avec moi ou me rencontrer dans le cadre d'une collaboration.</p>
-        <div class="btn-wrapper">
-          <a href="mailto:valentin.grenier02@gmail.com" class="btn btn-colored">Me contacter</a>
-        </div>
-      </div>
-      <div class="footer__navigation">
-        <h3>Trouvez votre chemin</h3>
-        <ul class="footer__navigation--links">
-          <li class="navigation__links--item"><a href="#">Accueil</a></li>
-          <li class="navigation__links--item"><a href="#projets">Mes projets</a></li>
-          <li class="navigation__links--item"><a href="#apropos">A propos</a></li>
-          <li class="navigation__links--item"><a href="mailto:valentin.grenier02@gmail.com">Entrons en contact</a></li>
-          <!-- <li class="navigation__links--item"><a href="">Politique de confidentialité</a></li>
+        <div class="footer__navigation">
+          <h3>Trouvez votre chemin</h3>
+          <ul class="footer__navigation--links">
+            <li class="navigation__links--item"><a href="#">Accueil</a></li>
+            <li class="navigation__links--item">
+              <a href="#projets">Mes projets</a>
+            </li>
+            <li class="navigation__links--item">
+              <a href="#apropos">A propos</a>
+            </li>
+            <li class="navigation__links--item">
+              <a href="mailto:valentin.grenier02@gmail.com"
+                >Entrons en contact</a
+              >
+            </li>
+            <!-- <li class="navigation__links--item"><a href="">Politique de confidentialité</a></li>
           <li class="navigation__links--item"><a href="">Mentions légales</a></li>
           <li class="navigation__links--item"><a href="">A propos de ce site</a></li> -->
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="footer__bottom">
-      Créé avec passion à Toulouse - 2023 - <a href="https://github.com/valentin-grenier/portfolio" target="_blank">V1.0</a>
-      <div id="wcb" class="carbonbadge"></div>
-    </div>
+      <div class="footer__bottom">
+        Créé avec passion à Toulouse - 2023 -
+        <a href="https://github.com/valentin-grenier/portfolio" target="_blank"
+          >V1.0</a
+        >
+        <div id="wcb" class="carbonbadge"></div>
+      </div>
 
-    
-    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
-    
-  </footer>
+      <script
+        src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+        defer
+      ></script>
+    </footer>
 
-  <button id="scrolltotop" aria-label="Retourner en haut de la page">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <g id="Arrow / Arrow_Down_SM">
-      <path id="Vector" d="M12 7V17M12 17L16 13M12 17L8 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-    </svg>
-  </button>
-  
-  <script src="./assets/js/app.js"></script>
-</body>
+    <button id="scrolltotop" aria-label="Retourner en haut de la page">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <g id="Arrow / Arrow_Down_SM">
+          <path
+            id="Vector"
+            d="M12 7V17M12 17L16 13M12 17L8 13"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </svg>
+    </button>
 
+    <script src="./assets/js/app.js"></script>
+  </body>
 </html>
