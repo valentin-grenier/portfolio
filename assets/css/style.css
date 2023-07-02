@@ -521,8 +521,9 @@ section.projects .projects__head {
 }
 
 section.projects .projects__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
 }
@@ -533,6 +534,7 @@ section.projects .projects__grid--item {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 40%;
 }
 
 section.projects .projects__grid--item-body {
@@ -631,6 +633,7 @@ section.contact {
 
   .block {
     width: 80%;
+    margin: 2rem auto !important;
   }
 
   h3 {
@@ -718,8 +721,11 @@ section.contact {
   }
 
   section.projects .projects__grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+    flex-direction: column;
+  }
+
+  section.projects .projects__grid--item{
+    width: 100%;
   }
 
   section.hero .hero__title h1 {
