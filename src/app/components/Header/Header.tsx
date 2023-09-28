@@ -9,7 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header>
+    <header className="mb-8">
       <div className="flex items-center justify-between my-4 pl-2 pr-4">
         <div className="flex items-center gap">
           <div className="notification-element notification-orange w-fit"></div>

@@ -13,9 +13,11 @@ const config: Config = {
         base: "18px",
         lg: "18px",
         xl: "24px",
-        "2xl": "32px",
-        "3xl": "48px",
-        "4xl": "64px",
+        "2xl": "28px",
+        "3xl": "32px",
+        "4xl": "40px",
+        "5xl": "48px",
+        "6xl": "64px",
       },
       colors: {
         danube: {
@@ -31,7 +33,12 @@ const config: Config = {
           "900": "#3b4974",
           "950": "#232a43",
           bg: "#F4F4F9",
+          accent: "#5f77cc",
         },
+        light: "#f1f6fc",
+      },
+      backgroundImage: {
+        "gradient-blue": "linear-gradient(to top right, #94B1E5, #425391)",
       },
     },
   },

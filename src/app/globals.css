@@ -15,26 +15,30 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
-  @apply font-bold text-danube-950;
+  @apply font-bold leading-snug;
 }
 
 h1 {
-  @apply text-2xl;
+  @apply text-5xl;
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-2xl mb-4;
 }
 
 h3 {
-  @apply text-lg;
+  @apply text-xl mb-2;
 }
 
 /* Text styles */
 
 p, a, li, span {
   font-family: 'Nunito Sans', sans-serif;
-  @apply text-sm;
+  @apply text-base leading-relaxed;
+}
+
+p {
+  @apply mb-4;
 }
 
 strong {
@@ -99,4 +103,18 @@ strong {
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
 	}
+}
+
+.animate-rotate {
+  animation: animate-rotate 15s linear infinite;
+}
+
+@keyframes animate-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
