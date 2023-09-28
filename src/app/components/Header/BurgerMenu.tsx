@@ -59,11 +59,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
           text={"Github"}
           isLightTheme={true}
         />
-        <ButtonLinkedIn
-          slug={"https://www.linkedin.com/in/valentin-grenier/"}
-          text={"LinkedIn"}
-          isLightTheme={true}
-        />
+        <ButtonLinkedIn text={"LinkedIn"} isLightTheme={true} />
       </div>
     </nav>
   );

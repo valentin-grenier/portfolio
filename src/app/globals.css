@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl mb-4;
+  @apply text-2xl mb-4 text-danube-950;
 }
 
 h3 {

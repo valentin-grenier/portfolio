@@ -4,7 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 interface IButtonGithub {
   slug: string;
   text: string;
-  isLightTheme: boolean;
+  isLightTheme?: boolean;
 }
 
 export default function ButtonGithub({
