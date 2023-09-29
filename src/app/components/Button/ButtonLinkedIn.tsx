@@ -2,13 +2,11 @@ import Link from "next/link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 interface IButtonLinkedIn {
-  slug: string;
   text: string;
-  isLightTheme: boolean;
+  isLightTheme?: boolean;
 }
 
 export default function ButtonLinkedIn({
-  slug,
   text,
   isLightTheme,
 }: IButtonLinkedIn) {
@@ -18,9 +16,9 @@ export default function ButtonLinkedIn({
     : "bg-[#0077B5] text-danube-50";
 
   return (
-    <div className={`${themeColor} w-fit px-4 py-2 rounded-lg `}>
+    <div className={`${themeColor} w-fit px-4 py-2 rounded-lg`}>
       <Link
-        href={slug}
+        href={"https://www.linkedin.com/in/valentin-grenier/"}
         className={"flex items-center font-title font-semibold text-md"}
         target="_blank"
       >

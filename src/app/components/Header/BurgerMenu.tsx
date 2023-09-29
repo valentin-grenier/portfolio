@@ -12,7 +12,7 @@ interface IBurgerMenu {
 export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
   return (
     <nav
-      className={`bg-danube-950 flex flex-col gap-8 py-8 px-4 absolute top-0 w-full h-full transition-all duration-500 ease-in-out ${
+      className={`bg-danube-950 flex flex-col gap-8 py-8 px-4 absolute top-0 w-full h-full transition-all duration-500 ease-in-out z-50 ${
         isOpen ? " right-0" : "-right-full"
       }`}
     >
@@ -25,27 +25,27 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
 
       {/* Headline */}
       <div className="text-danube-50">
-        <span className="text-xl font-title font-semibold">
+        <span className="text-3xl font-title font-semibold">
           Valentin Grenier
         </span>
         <br />
-        <span className="text-lg">Développeur web front-end</span>
+        <span className="text-xl">Développeur web front-end</span>
       </div>
 
       <hr className="border-2 opacity-10" />
 
       {/* Menu */}
       <ul className="flex flex-col gap-4 font-semibold text-danube-50 rounded-lg">
-        <Link href="/" className="font-title text-lg">
+        <Link href="/" className="font-title text-xl">
           Accueil
         </Link>
-        <Link href="/" className="font-title text-lg">
+        <Link href="/" className="font-title text-xl">
           Projets
         </Link>
-        <Link href="/" className="font-title text-lg">
+        <Link href="/" className="font-title text-xl">
           Profil
         </Link>
-        <Link href="/" className="font-title text-lg">
+        <Link href="/" className="font-title text-xl">
           Contact
         </Link>
       </ul>
@@ -59,11 +59,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
           text={"Github"}
           isLightTheme={true}
         />
-        <ButtonLinkedIn
-          slug={"https://www.linkedin.com/in/valentin-grenier/"}
-          text={"LinkedIn"}
-          isLightTheme={true}
-        />
+        <ButtonLinkedIn text={"LinkedIn"} isLightTheme={true} />
       </div>
     </nav>
   );
