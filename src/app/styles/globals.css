@@ -7,8 +7,8 @@
 
 /* * ===== App styles ===== */
 
-body {
-  @apply text-danube-900 bg-danube-bg;
+html {
+	overflow-x: hidden !important;
 }
 
 /* Headings styles */
@@ -159,4 +159,16 @@ strong {
 	font-size: 0.75rem !important;
 	margin-top: 1rem;
 	color: #5F77CC !important;
+}
+
+
+
+@keyframes showBurger {
+	from {
+		width: 0%;
+	}
+
+	to {
+		width: 100%;
+	}
 }

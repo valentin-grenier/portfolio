@@ -2,6 +2,7 @@ import LunchDining from "@mui/icons-material/LunchDining";
 import BurgerMenu from "./BurgerMenu";
 import { useState } from "react";
 import MenuItem from "./MenuItem";
+import AnotherBurger from "./AnotherBurger";
 
 export default function Header() {
   // Toggle burger menu
@@ -49,7 +50,8 @@ export default function Header() {
         </button>
       </div>
 
-      <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} /> */}
+      {/* <AnotherBurger isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </header>
   );
 }

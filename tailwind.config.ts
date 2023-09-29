@@ -45,6 +45,9 @@ const config: Config = {
       transitionProperty: {
         position: "top, bottom, left, right",
       },
+      animation: {
+        showBurger: "showBurger 1s ease-in-out",
+      },
     },
   },
   plugins: [],

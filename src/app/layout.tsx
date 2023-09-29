@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="text-default overflow-x-hidden max-w-[1280px] mx-auto">
+      <body className="text-danube-900 text-default bg-danube-bg">
         {children}
       </body>
     </html>
