@@ -53,15 +53,15 @@ export default function App() {
     <>
       <Header />
 
-      <main>
+      <main className="overflow-hidden">
         {/* Hero */}
-        <div className="bg-gradient-blue text-center text-light mx-2 p-4 rounded-xl h-80 lg:h-96 flex flex-col justify-center relative overflow-hidden">
+        <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-96 flex flex-col justify-center relative overflow-hidden">
           <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
-            Valentin Grenier, enchanté !
+            Valentin Grenier, enchanté&nbsp;!
           </h1>
           <p className="font-title font-medium text-lg lg:mx-auto lg:w-1/3 z-10">
-            Développeur web front-end spécialisé sur{" "}
-            <strong className="text-danube-300">React</strong> et{" "}
+            Développeur web front-end spécialisé sur&nbsp;
+            <strong className="text-danube-300">React</strong> et&nbsp;
             <strong className="text-danube-300">WordPress</strong>
           </p>
 
@@ -76,26 +76,26 @@ export default function App() {
             alt="logo WordPress"
             className="absolute -bottom-[48px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
           />
-        </div>
+        </Section>
 
         {/* Data */}
-        <Section className="flex gap md:gap-16 lg:gap-32 justify-center pt-16">
+        <Section className="flex gap-2 md:gap-16 lg:gap-32 justify-between md:justify-center pt-16">
           <div className="text-center">
-            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+            <p className="font-title font-semibold text-sm lg:text-lg leading-snug mb-0">
               <strong className="text-xl lg:text-4xl">+15 </strong>
               <br /> sites
               <br /> conçus
             </p>
           </div>
           <div className="text-center">
-            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+            <p className="font-title font-semibold text-sm lg:text-lg leading-snug mb-0">
               <strong className="text-xl lg:text-4xl">+30 </strong>
               <br /> entreprises
               <br /> accompagnées
             </p>
           </div>
           <div className="text-center">
-            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+            <p className="font-title font-semibold text-sm lg:text-lg leading-snug mb-0">
               <strong className="text-xl lg:text-4xl">+5 </strong>
               <br /> années <br />
               en freelance
@@ -135,8 +135,8 @@ export default function App() {
         <Section className="flex flex-col gap-6">
           <h2 className="text-center">Mon savoir-faire</h2>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative overflow-hidden col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="relative overflow-hidden lg:col-span-2">
               <CardSkill
                 title="Front-end"
                 text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
