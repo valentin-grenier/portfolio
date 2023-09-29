@@ -113,7 +113,6 @@ export default function App() {
                 className="relative lg:absolute left-1/2 -translate-x-1/2 lg:-bottom-4 xl:-bottom-28"
               />
             }
-            className="xl:h-full"
           >
             <h2>
               <strong>Bienvenue</strong> sur mon site personnel
