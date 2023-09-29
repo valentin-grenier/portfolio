@@ -1,19 +1,16 @@
-import LunchDining from "@mui/icons-material/LunchDining";
+"use client";
+
+import MenuItem from "./MenuItem";
 import BurgerMenu from "./BurgerMenu";
 import { useState } from "react";
-import MenuItem from "./MenuItem";
-import AnotherBurger from "./AnotherBurger";
 
 export default function Header() {
-  // Toggle burger menu
-  const [isOpen, setIsOpen] = useState(false);
-
   // Availability (0: no / 1: maybe / 2: yes)
   const [availability, setAvailability] = useState(2);
 
   return (
     <header className="my-8">
-      <div className="flex items-center justify-between my-4 pl-2 pr-4">
+      <div className="flex lg:flex-row-reverse items-center justify-between my-4 pl-2 pr-4">
         <div className="flex items-center gap-2">
           <div
             className={`w-fit notification-element notification-${
@@ -42,12 +39,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        <button
-          className="bg-white p-2 rounded-lg lg:hidden"
-          onClick={() => setIsOpen(true)}
-        >
-          <LunchDining fontSize="medium" className="text-danube-900" />
-        </button>
+        <BurgerMenu />
       </div>
 
       {/* <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} /> */}

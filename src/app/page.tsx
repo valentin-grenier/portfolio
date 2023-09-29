@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import logoReactLight from "../../public/images/svg/reactLight.svg";
 import logoWordPressLight from "../../public/images/svg/wordpressLight.svg";
@@ -7,48 +5,20 @@ import logoPHPLight from "../../public/images/svg/phpLight.svg";
 
 import profilePicture from "../../public/images/pdp_val_transp.png";
 
-import Header from "./components/Header/Header";
-import Section from "./components/Section/Section";
-import Block from "./components/Block/Block";
-import CardSkill from "./components/Card/CardSkill";
+import Header from "../components/Header/Header";
+import Section from "../components/Section/Section";
+import Block from "../components/Block/Block";
+import CardSkill from "../components/Card/CardSkill";
 
-import { useEffect } from "react";
-import CardPersonnality from "./components/Card/CardPersonnality";
-import ButtonLink from "./components/Button/ButtonLink";
-import Carousel from "./components/Carousel/Carousel";
-import ButtonLinkedIn from "./components/Button/ButtonLinkedIn";
-import ButtonGithub from "./components/Button/ButtonGithub";
-import Footer from "./components/Footer/Footer";
-import ButtonContainer from "./components/Button/ButtonContainer";
+import CardPersonnality from "../components/Card/CardPersonnality";
+import ButtonLink from "../components/Button/ButtonLink";
+import Carousel from "../components/Carousel/Carousel";
+import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
+import ButtonGithub from "../components/Button/ButtonGithub";
+import Footer from "../components/Footer/Footer";
+import ButtonContainer from "../components/Button/ButtonContainer";
 
-export default function App() {
-  // get data from Strapi
-  async function fetchData() {
-    const url = "http://localhost:1337/api/CardSkill";
-    const token =
-      "ea29ffe8f9cffd645a8d3ec13f2984654e330e5076a44f575e04194bc90b39283eb55f509068c80139602d14d142fe1f471cbfbd716a4d94b7b831949d7742e18aab6697149135a1042fc80c5f7b0548facea06ef9158f4a8717b614bb2cfa3775bb80380e716826584ae2d4e1562e70b2c6d04bdb00807c6a1598a9f3deaf40";
-
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "applications/json",
-        },
-      });
-
-      const data = await response.json();
-
-      console.log(data.data);
-    } catch (error) {
-      console.error("Erreur => ", error);
-    }
-  }
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
+export default function Home() {
   return (
     <>
       <Header />
@@ -74,7 +44,7 @@ export default function App() {
           <Image
             src={logoWordPressLight}
             alt="logo WordPress"
-            className="absolute -bottom-[48px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
+            className="absolute -bottom-[48px] lg:-bottom-[96px] -left-12 w-32 md:w-48 lg:w-64 -rotate-[20deg]"
           />
         </Section>
 
