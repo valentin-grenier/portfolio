@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="text-default overflow-x-hidden">{children}</body>
+      <body className="text-default overflow-x-hidden max-w-[1280px] mx-auto">
+        {children}
+      </body>
     </html>
   );
 }

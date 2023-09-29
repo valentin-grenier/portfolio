@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/styles/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -11,7 +12,7 @@ const config: Config = {
       fontSize: {
         xs: "15px",
         sm: "16px",
-        base: "18px",
+        base: "16px",
         lg: "18px",
         xl: "24px",
         "2xl": "28px",
@@ -40,6 +41,9 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-blue": "linear-gradient(to top right, #94B1E5, #425391)",
+      },
+      transitionProperty: {
+        position: "top, bottom, left, right",
       },
     },
   },

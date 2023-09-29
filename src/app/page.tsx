@@ -15,11 +15,11 @@ import CardSkill from "./components/Card/CardSkill";
 import { useEffect } from "react";
 import CardPersonnality from "./components/Card/CardPersonnality";
 import ButtonLink from "./components/Button/ButtonLink";
-import CardProject from "./components/Card/CardProject";
 import Carousel from "./components/Carousel/Carousel";
 import ButtonLinkedIn from "./components/Button/ButtonLinkedIn";
 import ButtonGithub from "./components/Button/ButtonGithub";
 import Footer from "./components/Footer/Footer";
+import ButtonContainer from "./components/Button/ButtonContainer";
 
 export default function App() {
   // get data from Strapi
@@ -55,9 +55,11 @@ export default function App() {
 
       <main>
         {/* Hero */}
-        <div className="bg-gradient-blue text-center text-light mx-2 p-4 rounded-xl h-80 flex flex-col justify-center relative overflow-hidden">
-          <h1 className="text-3xl mb-6 z-10">Valentin Grenier, enchanté !</h1>
-          <p className="font-title font-medium text-lg">
+        <div className="bg-gradient-blue text-center text-light mx-2 p-4 rounded-xl h-80 lg:h-96 flex flex-col justify-center relative overflow-hidden">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
+            Valentin Grenier, enchanté !
+          </h1>
+          <p className="font-title font-medium text-lg lg:mx-auto lg:w-1/3 z-10">
             Développeur web front-end spécialisé sur{" "}
             <strong className="text-danube-300">React</strong> et{" "}
             <strong className="text-danube-300">WordPress</strong>
@@ -66,35 +68,37 @@ export default function App() {
           <Image
             src={logoReactLight}
             alt="logo react"
-            className="absolute -top-8 -right-[80px] w-40 animate-rotate"
+            className="absolute -top-8 -right-[80px] w-40 md:w-64 animate-rotate"
           />
 
           <Image
             src={logoWordPressLight}
             alt="logo WordPress"
-            className="absolute -bottom-[48px] -left-12 w-32 animate-rotate"
+            className="absolute -bottom-[48px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
           />
         </div>
 
         {/* Data */}
-        <Section className="flex flex-col gap-4 justify-center">
+        <Section className="flex gap md:gap-16 lg:gap-32 justify-center pt-16">
           <div className="text-center">
-            <p className="font-title font-semibold text-lg">
-              <strong className="text-2xl">+15 </strong>
-              <br /> sites conçus
+            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+              <strong className="text-xl lg:text-4xl">+15 </strong>
+              <br /> sites
+              <br /> conçus
             </p>
           </div>
           <div className="text-center">
-            <p className="font-title font-semibold text-lg">
-              <strong className="text-2xl">+30 </strong>
+            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+              <strong className="text-xl lg:text-4xl">+30 </strong>
               <br /> entreprises
               <br /> accompagnées
             </p>
           </div>
           <div className="text-center">
-            <p className="font-title font-semibold text-lg">
-              <strong className="text-2xl">+5 </strong>
-              <br /> années en freelance
+            <p className="font-title font-semibold text-sm lg:text-lg lg:leading-snug mb-0">
+              <strong className="text-xl lg:text-4xl">+5 </strong>
+              <br /> années <br />
+              en freelance
             </p>
           </div>
         </Section>
@@ -102,7 +106,14 @@ export default function App() {
         {/* Introduction */}
         <Section>
           <Block
-            image={<Image src={profilePicture} alt="photo Valentin Grenier" />}
+            image={
+              <Image
+                src={profilePicture}
+                alt="photo Valentin Grenier"
+                className="relative lg:absolute left-1/2 -translate-x-1/2 lg:-bottom-4 xl:-bottom-28"
+              />
+            }
+            className="xl:h-full"
           >
             <h2>
               <strong>Bienvenue</strong> sur mon site personnel
@@ -114,11 +125,8 @@ export default function App() {
               communication que j’ai décidé d’apprendre le développement web,
               tout d’abord sur <strong>WordPress</strong>, avec plus tard
               l'ambition de pouvoir accomplir mon rêve : devenir développeur
-              web.
-            </p>
-            <p>
-              Plutôt que de créer un CV basique en HTML et CSS, j’ai choisi une
-              approche différente et qui reflète ma personnalité :{" "}
+              web. Plutôt que de créer un CV basique en HTML et CSS, j’ai choisi
+              une approche différente et qui reflète ma personnalité :{" "}
               <strong>un site web soigné et créatif</strong>.
             </p>
           </Block>
@@ -128,46 +136,47 @@ export default function App() {
         <Section className="flex flex-col gap-6">
           <h2 className="text-center">Mon savoir-faire</h2>
 
-          <div className="relative overflow-hidden">
-            <CardSkill
-              title="Front-end"
-              text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
-            />
-            <Image
-              src={logoReactLight}
-              alt=""
-              className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
-            />
-          </div>
-          <div className="relative overflow-hidden">
-            <CardSkill
-              title="Back-end"
-              text="Je maîtrise le développement back-end, me permettant de créer des solutions complètes et fonctionnelles."
-            />
-            <Image
-              src={logoPHPLight}
-              alt=""
-              className="absolute -top-4 -right-8 w-28 -rotate-[20deg] opacity-25"
-            />
-          </div>
-
-          <div className="relative overflow-hidden">
-            <CardSkill
-              title="Autres compétences"
-              text="Je sais intervenir sur un projet en ayant une vision globale de toutes les parties impliquées."
-            />
-            <Image
-              src={logoWordPressLight}
-              alt=""
-              className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative overflow-hidden col-span-2">
+              <CardSkill
+                title="Front-end"
+                text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
+              />
+              <Image
+                src={logoReactLight}
+                alt=""
+                className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
+              />
+            </div>
+            <div className="relative overflow-hidden">
+              <CardSkill
+                title="Back-end"
+                text="Je maîtrise le développement back-end, me permettant de créer des solutions complètes et fonctionnelles."
+              />
+              <Image
+                src={logoPHPLight}
+                alt=""
+                className="absolute -bottom-8 -right-8 w-28 -rotate-[20deg] opacity-25"
+              />
+            </div>
+            <div className="relative overflow-hidden">
+              <CardSkill
+                title="Autres compétences"
+                text="Je sais intervenir sur un projet en ayant une vision globale de toutes les parties impliquées."
+              />
+              <Image
+                src={logoWordPressLight}
+                alt=""
+                className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
+              />
+            </div>
           </div>
         </Section>
 
         {/* Ma personnalité */}
         <Section>
           <h2>Ma personnalité</h2>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col lg:flex-row gap-12 md:mt-8">
             <CardPersonnality
               title="Passionné et dévoué"
               text="J’adore mon métier et je ne vois pas le temps passer quand je développe des applications web. Cette passion me pousse à toujours rechercher de nouvelles techniques et technologies pour améliorer mes compétences."
@@ -181,14 +190,16 @@ export default function App() {
               text="Je cherche constamment à me dépasser à chaque nouveau projet, et je m'intéresse régulièrement à des sujets inconnus. Cette soif d'apprentissage me motive à rester à la pointe de la technologie."
             />
           </div>
-          <ButtonLink title={"En savoir plus"} slug={"/a-propos"} />
+          <ButtonContainer>
+            <ButtonLink title={"En savoir plus"} slug={"/a-propos"} />
+          </ButtonContainer>
         </Section>
 
         {/* Mon parcours */}
         <Section>
-          <Block>
+          <Block width="3/4">
             <h2 className="text-center">Mon parcours</h2>
-            <p>
+            <p className="mb-4">
               Mon parcours est plutôt atypique. J’ai commencé mes études
               post-bac dans le domaine du management, puis j’ai obtenu un master
               en communication et stratégie digitale. En parallèle, de mon
@@ -207,25 +218,30 @@ export default function App() {
               </strong>
               , certifiant mes compétences et ma détermination.
             </p>
-            <ButtonLink title={"En savoir plus"} slug={"/a-propos#parcours"} />
+            <ButtonContainer>
+              <ButtonLink
+                title={"En savoir plus"}
+                slug={"/a-propos#parcours"}
+              />
+            </ButtonContainer>
           </Block>
         </Section>
 
         {/* Mes derniers projets */}
-        <Section className="pr-0">
-          <h2>Mes derniers projets</h2>
+        <Section className="px-0">
+          <h2 className="px-4">Mes derniers projets</h2>
           <Carousel />
         </Section>
 
         {/* On en parle ? */}
         <Section>
-          <Block>
+          <Block width="1/2">
             <h2 className="text-center">On en parle&nbsp;?</h2>
             <p className=" text-center mb-0">
               Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous
               et de discuter d’éventuelles opportunités.
             </p>
-            <div className="flex flex-col gap-4 items-center">
+            <ButtonContainer>
               <ButtonLink
                 title={"Contactez-moi"}
                 slug={"mailto:valentin@studio-val.fr"}
@@ -235,7 +251,7 @@ export default function App() {
                 slug={"https://github.com/valentin-grenier"}
                 text={"Mes repos"}
               />
-            </div>
+            </ButtonContainer>
           </Block>
         </Section>
       </main>

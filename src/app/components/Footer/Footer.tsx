@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="my-8">
-      <div className="mb-8">
+    <footer className="flex flex-col md:flex-row md:justify-between my-8 px-4">
+      <div className="mb-8 md:mb-0">
         <p className="font-title font-semibold text-center">
           Créé avec passion à{" "}
           <strong className="text-danube-accent">Toulouse</strong> - 2023

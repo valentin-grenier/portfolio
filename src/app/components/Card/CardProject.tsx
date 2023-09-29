@@ -1,12 +1,13 @@
 interface ICardProject {
   image: string;
   tags: string[];
+  className?: string;
 }
 
-export default function CardProject({ image, tags }: ICardProject) {
+export default function CardProject({ image, tags, className }: ICardProject) {
   return (
     <div
-      className="w-full h-72 bg-no-repeat bg-cover rounded-2xl relative"
+      className={`w-full h-72 bg-no-repeat bg-cover rounded-2xl relative ${className}`}
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
