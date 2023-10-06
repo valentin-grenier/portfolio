@@ -198,7 +198,7 @@ export default function Home() {
           <h2 className="px-4">Mes derniers projets</h2>
           <Carousel />
           <ButtonContainer position="center" className="mt-16">
-            <ButtonLink title={"Voir tous mes projets"} slug={"/a-propos"} />
+            <ButtonLink title={"Voir tous mes projets"} slug={"/projets"} />
           </ButtonContainer>
         </Section>
 
