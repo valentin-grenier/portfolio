@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import logoReactLight from "../../public/images/svg/reactLight.svg";
 import logoWordPressLight from "../../public/images/svg/wordpressLight.svg";
@@ -7,48 +5,20 @@ import logoPHPLight from "../../public/images/svg/phpLight.svg";
 
 import profilePicture from "../../public/images/pdp_val_transp.png";
 
-import Header from "./components/Header/Header";
-import Section from "./components/Section/Section";
-import Block from "./components/Block/Block";
-import CardSkill from "./components/Card/CardSkill";
+import Header from "../components/Header/Header";
+import Section from "../components/Section/Section";
+import Block from "../components/Block/Block";
+import CardSkill from "../components/Card/CardSkill";
 
-import { useEffect } from "react";
-import CardPersonnality from "./components/Card/CardPersonnality";
-import ButtonLink from "./components/Button/ButtonLink";
-import Carousel from "./components/Carousel/Carousel";
-import ButtonLinkedIn from "./components/Button/ButtonLinkedIn";
-import ButtonGithub from "./components/Button/ButtonGithub";
-import Footer from "./components/Footer/Footer";
-import ButtonContainer from "./components/Button/ButtonContainer";
+import CardPersonnality from "../components/Card/CardPersonnality";
+import ButtonLink from "../components/Button/ButtonLink";
+import Carousel from "../components/Carousel/Carousel";
+import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
+import ButtonGithub from "../components/Button/ButtonGithub";
+import Footer from "../components/Footer/Footer";
+import ButtonContainer from "../components/Button/ButtonContainer";
 
-export default function App() {
-  // get data from Strapi
-  async function fetchData() {
-    const url = "http://localhost:1337/api/CardSkill";
-    const token =
-      "ea29ffe8f9cffd645a8d3ec13f2984654e330e5076a44f575e04194bc90b39283eb55f509068c80139602d14d142fe1f471cbfbd716a4d94b7b831949d7742e18aab6697149135a1042fc80c5f7b0548facea06ef9158f4a8717b614bb2cfa3775bb80380e716826584ae2d4e1562e70b2c6d04bdb00807c6a1598a9f3deaf40";
-
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "applications/json",
-        },
-      });
-
-      const data = await response.json();
-
-      console.log(data.data);
-    } catch (error) {
-      console.error("Erreur => ", error);
-    }
-  }
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
+export default function Home() {
   return (
     <>
       <Header />
@@ -56,7 +26,7 @@ export default function App() {
       <main className="overflow-hidden">
         {/* Hero */}
         <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-96 flex flex-col justify-center relative overflow-hidden">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
+          <h1 className="text-3xl text-danube-50 md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
             Valentin Grenier, enchanté&nbsp;!
           </h1>
           <p className="font-title font-medium text-lg lg:mx-auto lg:w-1/3 z-10">
@@ -74,7 +44,7 @@ export default function App() {
           <Image
             src={logoWordPressLight}
             alt="logo WordPress"
-            className="absolute -bottom-[48px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
+            className="absolute -bottom-[48px] lg:-bottom-[96px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
           />
         </Section>
 
@@ -189,7 +159,7 @@ export default function App() {
               text="Je cherche constamment à me dépasser à chaque nouveau projet, et je m'intéresse régulièrement à des sujets inconnus. Cette soif d'apprentissage me motive à rester à la pointe de la technologie."
             />
           </div>
-          <ButtonContainer>
+          <ButtonContainer position="center">
             <ButtonLink title={"En savoir plus"} slug={"/a-propos"} />
           </ButtonContainer>
         </Section>
@@ -217,7 +187,7 @@ export default function App() {
               </strong>
               , certifiant mes compétences et ma détermination.
             </p>
-            <ButtonContainer>
+            <ButtonContainer position="center">
               <ButtonLink
                 title={"En savoir plus"}
                 slug={"/a-propos#parcours"}
@@ -240,7 +210,7 @@ export default function App() {
               Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous
               et de discuter d’éventuelles opportunités.
             </p>
-            <ButtonContainer>
+            <ButtonContainer position="center">
               <ButtonLink
                 title={"Contactez-moi"}
                 slug={"mailto:valentin@studio-val.fr"}

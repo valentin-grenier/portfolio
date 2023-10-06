@@ -15,15 +15,15 @@ html {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
-  @apply font-bold leading-snug;
+  @apply font-bold leading-snug text-danube-950;
 }
 
 h1 {
-  @apply text-5xl;
+  @apply text-6xl mb-8;
 }
 
 h2 {
-  @apply text-2xl mb-4 text-danube-950;
+  @apply text-2xl mb-4;
 }
 
 h3 {
@@ -32,13 +32,17 @@ h3 {
 
 /* Text styles */
 
-p, a, li, span {
+body {
   font-family: 'Poppins', sans-serif;
   @apply text-base leading-loose font-normal;
 }
 
 strong {
   @apply text-danube-600;
+}
+
+button {
+	@apply active:bg-transparent;
 }
 
 /* Custom classes */

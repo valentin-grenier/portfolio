@@ -1,4 +1,4 @@
-import "./styles/globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="text-danube-900 text-default bg-danube-bg">
+      <body className="text-danube-900 text-default bg-danube-bg max-w-[1280px] mx-auto">
         {children}
       </body>
     </html>
