@@ -13,7 +13,7 @@ export default function ButtonContainer({
 }: IButtonContainer) {
   return (
     <div
-      className={`flex flex-col md:flex-row items-${position} gap-4 ${className} mt-6 lg:mt-12`}
+      className={`flex flex-col md:flex-row items-${position} justify-${position} gap-4 ${className} mt-6 lg:mt-12`}
     >
       {children}
     </div>
