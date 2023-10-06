@@ -26,7 +26,7 @@ export default function Home() {
       <main className="overflow-hidden">
         {/* Hero */}
         <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-96 flex flex-col justify-center relative overflow-hidden">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
+          <h1 className="text-3xl text-danube-50 md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
             Valentin Grenier, enchanté&nbsp;!
           </h1>
           <p className="font-title font-medium text-lg lg:mx-auto lg:w-1/3 z-10">
@@ -44,7 +44,7 @@ export default function Home() {
           <Image
             src={logoWordPressLight}
             alt="logo WordPress"
-            className="absolute -bottom-[48px] lg:-bottom-[96px] -left-12 w-32 md:w-48 lg:w-64 -rotate-[20deg]"
+            className="absolute -bottom-[48px] lg:-bottom-[96px] -left-12 w-32 md:w-48 lg:w-64 animate-rotate"
           />
         </Section>
 
@@ -159,7 +159,7 @@ export default function Home() {
               text="Je cherche constamment à me dépasser à chaque nouveau projet, et je m'intéresse régulièrement à des sujets inconnus. Cette soif d'apprentissage me motive à rester à la pointe de la technologie."
             />
           </div>
-          <ButtonContainer>
+          <ButtonContainer position="center">
             <ButtonLink title={"En savoir plus"} slug={"/a-propos"} />
           </ButtonContainer>
         </Section>
@@ -187,7 +187,7 @@ export default function Home() {
               </strong>
               , certifiant mes compétences et ma détermination.
             </p>
-            <ButtonContainer>
+            <ButtonContainer position="center">
               <ButtonLink
                 title={"En savoir plus"}
                 slug={"/a-propos#parcours"}
@@ -210,7 +210,7 @@ export default function Home() {
               Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous
               et de discuter d’éventuelles opportunités.
             </p>
-            <ButtonContainer>
+            <ButtonContainer position="center">
               <ButtonLink
                 title={"Contactez-moi"}
                 slug={"mailto:valentin@studio-val.fr"}

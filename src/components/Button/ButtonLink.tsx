@@ -11,7 +11,7 @@ export default function ButtonLink({ title, slug, isExternal }: IButtonLink) {
     <Link
       href={slug}
       target={isExternal ? "_blank" : "_self"}
-      className="bg-danube-800 text-danube-50 rounded-lg font-title font-semibold text-md px-4 py-2"
+      className="bg-danube-800 text-danube-50 rounded-lg font-title font-semibold text-md px-4 py-2 w-fit"
     >
       {title}
     </Link>
