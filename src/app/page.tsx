@@ -159,9 +159,6 @@ export default function Home() {
               text="Je cherche constamment à me dépasser à chaque nouveau projet, et je m'intéresse régulièrement à des sujets inconnus. Cette soif d'apprentissage me motive à rester à la pointe de la technologie."
             />
           </div>
-          <ButtonContainer position="center">
-            <ButtonLink title={"En savoir plus"} slug={"/a-propos"} />
-          </ButtonContainer>
         </Section>
 
         {/* Mon parcours */}
@@ -200,6 +197,9 @@ export default function Home() {
         <Section className="px-0">
           <h2 className="px-4">Mes derniers projets</h2>
           <Carousel />
+          <ButtonContainer position="center" className="mt-16">
+            <ButtonLink title={"Voir tous mes projets"} slug={"/a-propos"} />
+          </ButtonContainer>
         </Section>
 
         {/* On en parle ? */}
