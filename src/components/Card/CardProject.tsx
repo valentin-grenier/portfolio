@@ -16,7 +16,7 @@ export default function CardProject({
   return (
     <Link href={slug}>
       <div
-        className={`w-auto h-72 md:h-80 bg-no-repeat bg-cover rounded-2xl relative ${className}`}
+        className={`w-auto h-56 md:h-80 bg-no-repeat bg-cover rounded-2xl relative ${className}`}
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
