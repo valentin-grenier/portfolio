@@ -46,22 +46,27 @@ export default function Carousel() {
         <CardProject
           image={"https://picsum.photos/200"}
           tags={["WordPress", "PHP", "ACF"]}
+          slug={""}
         />
         <CardProject
           image={"https://picsum.photos/200"}
           tags={["WordPress", "PHP", "ACF"]}
+          slug={""}
         />
         <CardProject
           image={"https://picsum.photos/200"}
           tags={["WordPress", "PHP", "ACF"]}
+          slug={""}
         />
         <CardProject
           image={"https://picsum.photos/200"}
           tags={["WordPress", "PHP", "ACF"]}
+          slug={""}
         />
         <CardProject
           image={"https://picsum.photos/200"}
           tags={["WordPress", "PHP", "ACF"]}
+          slug={""}
         />
       </Slider>
     </div>

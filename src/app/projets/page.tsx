@@ -50,31 +50,37 @@ export default function Projets() {
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={"/projets/1"}
             />
             <CardProject
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={""}
             />
             <CardProject
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={""}
             />
             <CardProject
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={""}
             />
             <CardProject
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={""}
             />
             <CardProject
               image={""}
               tags={["PHP", "React"]}
               className="bg-red-400"
+              slug={""}
             />
           </div>
         </Section>
