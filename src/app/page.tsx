@@ -197,7 +197,7 @@ export default function Home() {
         <Section className="px-0">
           <h2 className="px-4">Mes derniers projets</h2>
           <Carousel />
-          <ButtonContainer position="center" className="mt-16">
+          <ButtonContainer position="center" className="mt-20 lg:mt-24">
             <ButtonLink title={"Voir tous mes projets"} slug={"/projets"} />
           </ButtonContainer>
         </Section>
@@ -210,7 +210,7 @@ export default function Home() {
               Faisons connaissance ! Je serai ravi de pouvoir échanger avec vous
               et de discuter d’éventuelles opportunités.
             </p>
-            <ButtonContainer position="center">
+            <ButtonContainer position="center" direction="col">
               <ButtonLink
                 title={"Contactez-moi"}
                 slug={"mailto:valentin@studio-val.fr"}

@@ -14,11 +14,11 @@ export default function Project() {
     <>
       <Header />
 
-      <main>
+      <main className="[&>*:first-child]:pt-4">
         {/* Introduction */}
         <Section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h1>Codit</h1>
+            <h1 className="text-center md:text-left">Codit</h1>
             <p>
               Le projet Codit est issu d'une formation chez O'Clock. Il s'agit
               d'une plateforme de présentation de projets et de code pour les
