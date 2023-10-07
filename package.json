@@ -14,10 +14,11 @@
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "axios": "^1.5.1",
-    "next": "latest",
+    "next": "^13.5.4",
     "react": "latest",
     "react-dom": "latest",
     "react-slick": "^0.29.0",
+    "sharp": "^0.32.6",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
