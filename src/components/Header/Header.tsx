@@ -8,6 +8,8 @@ export default function Header() {
   // Availability (0: no / 1: maybe / 2: yes)
   const [availability, setAvailability] = useState(2);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="my-8">
       <div className="flex lg:flex-row-reverse items-center justify-between my-4 pl-2 pr-4">
@@ -39,11 +41,8 @@ export default function Header() {
           </ul>
         </nav>
 
-        <BurgerMenu />
+        <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-
-      {/* <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} /> */}
-      {/* <AnotherBurger isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </header>
   );
 }
