@@ -5,8 +5,8 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 interface ICardExperience {
   title: string;
   date: string;
-  school: string;
-  company: string;
+  school?: string;
+  company?: string;
   text: string;
 }
 

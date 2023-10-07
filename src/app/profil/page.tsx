@@ -166,7 +166,7 @@ export default function Profile() {
         <h2>Mon parcours en quelques mots</h2>
         <div className="flex flex-col w-full xl:w-2/3">
           <CardExperience
-            title={'Titre Professionnel "Développeur web et web mobile"'}
+            title={"Titre Professionnel Développeur web et web mobile"}
             date={"2023"}
             school={"École O'clock"}
             company={""}
