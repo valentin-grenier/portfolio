@@ -15,7 +15,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
     <>
       {/* Button */}
       <button
-        className="bg-white p-2 rounded-lg lg:hidden"
+        className="bg-white px-2 py-1 rounded-lg lg:hidden"
         onClick={() => setIsOpen(true)}
       >
         <LunchDining fontSize="medium" className="text-danube-900" />
@@ -36,27 +36,27 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
         <div className="flex flex-col gap-8">
           {/* Headline */}
           <div className="text-danube-50">
-            <span className="text-3xl font-title font-semibold">
+            <span className="text-2xl font-title font-semibold">
               Valentin Grenier
             </span>
             <br />
-            <span className="text-xl">Développeur web front-end</span>
+            <span className="text-lg">Développeur web front-end</span>
           </div>
 
           <hr className="border-2 opacity-10" />
 
           {/* Menu */}
           <ul className="flex flex-col gap-4 font-semibold text-danube-50 rounded-lg">
-            <Link href="/" className="font-title text-xl">
+            <Link href="/" className="font-title text-lg">
               Accueil
             </Link>
-            <Link href="/projets" className="font-title text-xl">
+            <Link href="/projets" className="font-title text-lg">
               Projets
             </Link>
-            <Link href="/profil" className="font-title text-xl">
+            <Link href="/profil" className="font-title text-lg">
               Profil
             </Link>
-            <Link href="/contact" className="font-title text-xl">
+            <Link href="/contact" className="font-title text-lg">
               Contact
             </Link>
           </ul>
