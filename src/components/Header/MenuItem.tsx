@@ -17,7 +17,7 @@ export default function MenuItem({ slug, text, className }: IMenuItem) {
   return (
     <Link
       href={slug}
-      className={`px-4 font-bold relative transition-all lg:right-0 lg:hover:right-1 lg:duration-150 ${
+      className={`px-4 font-bold relative transition-all lg:left-0 lg:hover:left-1 lg:duration-150 ${
         currentPage === slug && currentItemColor
       } ${className}`}
     >
