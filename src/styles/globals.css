@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(https://fonts.bunny.net/css?family=poppins:400,400i,600,600i,700,700i);
-@import url(https://fonts.bunny.net/css?family=nunito-sans:400,400i,500,500i,600,600i,700,700i);
+/* @import url(https://fonts.bunny.net/css?family=poppins:400,400i,600,600i,700,700i);
+@import url(https://fonts.bunny.net/css?family=nunito-sans:400,400i,500,500i,600,600i,700,700i); */
 
 /* * ===== App styles ===== */
 
@@ -14,7 +14,6 @@ html {
 /* Headings styles */
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Poppins', sans-serif;
   @apply font-bold leading-snug text-danube-950;
 }
 
@@ -33,7 +32,6 @@ h3 {
 /* Text styles */
 
 body {
-  font-family: 'Poppins', sans-serif;
   @apply text-base leading-loose font-normal;
 }
 
@@ -46,9 +44,9 @@ button {
 }
 
 /* Custom classes */
-.font-title {
+/* .font-title {
   font-family: 'Poppins', sans-serif;
-}
+} */
 
 .notification-element {
 	border-radius: 50%;
