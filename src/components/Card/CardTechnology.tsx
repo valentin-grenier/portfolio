@@ -13,7 +13,7 @@ export default function CardTechnology({ logo, title }: ICardTechnology) {
         alt={"logo"}
         className="w-16 saturate-0 lg:hover:saturate-100 transition-all"
       />
-      <span>{title}</span>
+      <span className="capitalize">{title}</span>
     </div>
   );
 }
