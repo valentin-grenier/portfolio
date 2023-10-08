@@ -12,8 +12,6 @@ import CardTechnology from "@/components/Card/CardTechnology";
 export default function Project() {
   return (
     <>
-      <Header />
-
       <main className="[&>*:first-child]:pt-4">
         {/* Introduction */}
         <Section className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -92,8 +90,6 @@ export default function Project() {
           </ButtonContainer>
         </Section>
       </main>
-
-      <Footer />
     </>
   );
 }
