@@ -12,8 +12,6 @@ import CardProject from "@/components/Card/CardProject";
 export default function Projets() {
   return (
     <>
-      <Header />
-
       <main>
         {/* Introduction */}
         <Section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -49,44 +47,12 @@ export default function Projets() {
             <CardProject
               image={""}
               tags={["PHP", "React"]}
-              className="bg-red-400"
+              className="bg-red-200"
               slug={"/projets/1"}
-            />
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-400"
-              slug={""}
-            />
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-400"
-              slug={""}
-            />
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-400"
-              slug={""}
-            />
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-400"
-              slug={""}
-            />
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-400"
-              slug={""}
             />
           </div>
         </Section>
       </main>
-
-      <Footer />
     </>
   );
 }

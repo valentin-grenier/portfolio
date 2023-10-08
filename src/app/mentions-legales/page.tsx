@@ -5,7 +5,6 @@ import Section from "@/components/Section/Section";
 export default function LegalNotice() {
   return (
     <>
-      <Header />
       <Section>
         <h1>Mentions légales</h1>
         <p>
@@ -39,8 +38,6 @@ export default function LegalNotice() {
           exercitationem quia eveniet alias, cupiditate doloribus.
         </p>
       </Section>
-
-      <Footer />
     </>
   );
 }

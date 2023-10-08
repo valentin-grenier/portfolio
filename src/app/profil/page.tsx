@@ -17,7 +17,6 @@ import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
 export default function Profile() {
   return (
     <>
-      <Header />
       <Section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="h-64 lg:h-96 overflow-hidden rounded-2xl relative order-last md:order-first">
           <Image
@@ -216,7 +215,6 @@ export default function Profile() {
           </ButtonContainer>
         </div>
       </Section>
-      <Footer />
     </>
   );
 }

@@ -21,8 +21,6 @@ import ButtonContainer from "../components/Button/ButtonContainer";
 export default function Home() {
   return (
     <>
-      <Header />
-
       <main className="overflow-hidden">
         {/* Hero */}
         <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-96 flex flex-col justify-center relative overflow-hidden">
@@ -224,8 +222,6 @@ export default function Home() {
           </Block>
         </Section>
       </main>
-
-      <Footer />
     </>
   );
 }

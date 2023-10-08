@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 interface IMenuItem {
   slug: string;
@@ -17,7 +18,6 @@ export default function MenuItem({ slug, text, className }: IMenuItem) {
   return (
     <Link
       href={slug}
-      passHref
       className={`px-4 font-bold relative transition-all lg:left-0 lg:hover:left-1 lg:duration-150 ${
         currentPage === slug && currentItemColor
       } ${className}`}
