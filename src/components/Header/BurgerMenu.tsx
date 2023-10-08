@@ -47,16 +47,32 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
 
           {/* Menu */}
           <ul className="flex flex-col gap-4 font-semibold text-danube-50 rounded-lg">
-            <Link href="/" className="font-title text-lg">
+            <Link
+              href="/"
+              className="font-title text-lg"
+              onClick={() => setIsOpen(false)}
+            >
               Accueil
             </Link>
-            <Link href="/projets" className="font-title text-lg">
+            <Link
+              href="/projets"
+              className="font-title text-lg"
+              onClick={() => setIsOpen(false)}
+            >
               Projets
             </Link>
-            <Link href="/profil" className="font-title text-lg">
+            <Link
+              href="/profil"
+              className="font-title text-lg"
+              onClick={() => setIsOpen(false)}
+            >
               Profil
             </Link>
-            <Link href="/contact" className="font-title text-lg">
+            <Link
+              href="/contact"
+              className="font-title text-lg"
+              onClick={() => setIsOpen(false)}
+            >
               Contact
             </Link>
           </ul>
