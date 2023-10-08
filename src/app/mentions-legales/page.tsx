@@ -1,11 +1,9 @@
-import { axiosInstance } from "@/axios/axios";
+import { allProjects } from "@/axios/axios";
 import Section from "@/components/Section/Section";
 
 async function getData() {
   try {
-    const res = await axiosInstance.get(
-      "http://localhost:1337/api/legal-notice"
-    );
+    const res = await allProjects.get("");
 
     if (!res) {
       throw new Error("Failed fetching data");
