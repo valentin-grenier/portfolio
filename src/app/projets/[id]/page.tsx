@@ -37,7 +37,7 @@ export default async function Project({ params }: { params: { id: string } }) {
         <Section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h1
-              className="text-center md:text-left"
+              className="text-center md:text-left leading-none"
               dangerouslySetInnerHTML={{ __html: data.title.rendered }}
             ></h1>
             <div dangerouslySetInnerHTML={{ __html: content.introduction }} />
