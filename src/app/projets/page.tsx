@@ -22,7 +22,7 @@ interface ICardProject {
 async function getData() {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt"
+      "projects?acf_format=standard&_fields=id,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt&per_page=100"
     );
 
     if (!res) {

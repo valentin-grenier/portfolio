@@ -41,7 +41,11 @@ export default async function Project({ params }: { params: { id: string } }) {
               dangerouslySetInnerHTML={{ __html: data.title.rendered }}
             ></h1>
             <div dangerouslySetInnerHTML={{ __html: content.introduction }} />
-            <ButtonContainer className="justify-center lg:justify-start flex-row">
+            <ButtonContainer
+              position="center"
+              direction="row"
+              className="lg:justify-start"
+            >
               {content.github_link && (
                 <ButtonGithub
                   slug={content.github_link}
@@ -78,19 +82,27 @@ export default async function Project({ params }: { params: { id: string } }) {
         <Section>
           <h2>Quelques mots sur le projet</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <Image
-              src={content.image.url}
-              alt={content.main_image.alt}
-              className="rounded-2xl order-last lg:order-first"
-              layout="responsive"
-              width={450}
-              height={600}
-            />
-            <div>
-              <div dangerouslySetInnerHTML={{ __html: content.description }} />
-            </div>
-          </div>
+          {content.image.url ? (
+            <>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <Image
+                  src={content.image.url}
+                  alt={content.main_image.alt}
+                  className="rounded-2xl order-last lg:order-first"
+                  layout="responsive"
+                  width={450}
+                  height={600}
+                />
+                <div>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: content.description }}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: content.description }} />
+          )}
         </Section>
 
         <Section>
