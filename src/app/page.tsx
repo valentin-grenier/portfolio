@@ -17,8 +17,11 @@ import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
 import ButtonGithub from "../components/Button/ButtonGithub";
 import Footer from "../components/Footer/Footer";
 import ButtonContainer from "../components/Button/ButtonContainer";
+import { axiosInstance } from "@/axios/axios";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <>
       <main className="overflow-hidden">
@@ -194,7 +197,7 @@ export default function Home() {
         {/* Mes derniers projets */}
         <Section className="px-0">
           <h2 className="px-4">Mes derniers projets</h2>
-          <Carousel />
+          <Carousel projects={projects} />
           <ButtonContainer position="center" className="mt-20 lg:mt-24">
             <ButtonLink title={"Voir tous mes projets"} slug={"/projets"} />
           </ButtonContainer>
@@ -224,4 +227,22 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+async function getProjects() {
+  try {
+    const res = await axiosInstance.get(
+      "projects?acf_format=standard&_fields=id,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
+    );
+
+    if (!res) {
+      throw new Error("Failed fetching data");
+    }
+
+    const data = await res.data;
+
+    return data;
+  } catch (error) {
+    return error;
+  }
 }
