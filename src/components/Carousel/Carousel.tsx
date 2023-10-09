@@ -50,6 +50,7 @@ export default function Carousel({ projects }: ICarousel) {
 
   const settings = {
     dots: true,
+    arrows: false,
     infinite: false,
     speed: 300,
     slidesToShow: slidesToShow,
