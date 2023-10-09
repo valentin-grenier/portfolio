@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import Section from "@/components/Section/Section";
 
 import Image from "next/image";
@@ -76,7 +74,7 @@ export default async function Projets() {
         <Section>
           <Filter />
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {data.map((item: ICardProject, key: number) => (
+            {data.map((item: ICardProject) => (
               <CardProject
                 image={item.acf.thumbnail.url}
                 tags={item.acf.stacks.slice(0, 2)}
