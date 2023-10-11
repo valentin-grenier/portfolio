@@ -2,24 +2,22 @@ import Image from "next/image";
 import logoReactLight from "../../public/images/svg/reactLight.svg";
 import logoWordPressLight from "../../public/images/svg/wordpressLight.svg";
 import logoPHPLight from "../../public/images/svg/phpLight.svg";
-
 import profilePicture from "../../public/images/pdp_val_transp.png";
 
-import Header from "../components/Header/Header";
+import { axiosInstance } from "@/axios/axios";
+
 import Section from "../components/Section/Section";
 import Block from "../components/Block/Block";
 import CardSkill from "../components/Card/CardSkill";
-
 import CardPersonnality from "../components/Card/CardPersonnality";
 import ButtonLink from "../components/Button/ButtonLink";
 import Carousel from "../components/Carousel/Carousel";
 import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
 import ButtonGithub from "../components/Button/ButtonGithub";
-import Footer from "../components/Footer/Footer";
 import ButtonContainer from "../components/Button/ButtonContainer";
-import { axiosInstance } from "@/axios/axios";
 
 export default async function Home() {
+  const skills = await getSkills();
   const projects = await getProjects();
 
   return (
@@ -111,10 +109,12 @@ export default async function Home() {
               <CardSkill
                 title="Front-end"
                 text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
+                images={skills}
+                stack="Front"
               />
               <Image
                 src={logoReactLight}
-                alt=""
+                alt="logo React"
                 className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
               />
             </div>
@@ -122,10 +122,12 @@ export default async function Home() {
               <CardSkill
                 title="Back-end"
                 text="Je maîtrise le développement back-end, me permettant de créer des solutions complètes et fonctionnelles."
+                images={skills}
+                stack="Back"
               />
               <Image
                 src={logoPHPLight}
-                alt=""
+                alt="logo PHP"
                 className="absolute -bottom-8 -right-8 w-28 -rotate-[20deg] opacity-25"
               />
             </div>
@@ -133,10 +135,12 @@ export default async function Home() {
               <CardSkill
                 title="Autres compétences"
                 text="Je sais intervenir sur un projet en ayant une vision globale de toutes les parties impliquées."
+                images={skills}
+                stack="Misc"
               />
               <Image
                 src={logoWordPressLight}
-                alt=""
+                alt="logo WordPress"
                 className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
               />
             </div>
@@ -233,6 +237,24 @@ async function getProjects() {
   try {
     const res = await axiosInstance.get(
       "projects?acf_format=standard&_fields=id,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
+    );
+
+    if (!res) {
+      throw new Error("Failed fetching data");
+    }
+
+    const data = await res.data;
+
+    return data;
+  } catch (error) {
+    return error;
+  }
+}
+
+async function getSkills() {
+  try {
+    const res = await axiosInstance.get(
+      "skill?acf_format=standard&_fields=id,title.rendered,acf.icon.url,acf.icon.alt,acf.stack&order=asc&per_page=100"
     );
 
     if (!res) {

@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "portfolio-back.local",
+        protocol: "https",
+        hostname: "back.valentingrenier.fr",
         port: "",
         pathname: "/wp-content/uploads/**",
       },

@@ -28,7 +28,7 @@ async function getData(id: string) {
 
 export default async function Project({ params }: { params: { id: string } }) {
   const data = await getData(params.id);
-  const content = data.acf;
+  const content = await data.acf;
 
   return (
     <>

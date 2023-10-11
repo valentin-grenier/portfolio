@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://portfolio-back.local/wp-json/wp/v2/",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
