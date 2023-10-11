@@ -4,23 +4,58 @@ import { ReactElement } from "react";
 interface ISkills {
   title: string;
   text: string;
-  images?: {
-    item: ReactElement;
-    key: string;
-  };
+  images: ISkill;
+  stack?: "Front" | "Back" | "Misc";
   className?: string;
 }
 
-export default function CardSkill({ title, text, images, className }: ISkills) {
+export interface ISkill {
+  [x: string]: any;
+  id: number;
+  title: {
+    rendered: string;
+  };
+  acf: {
+    icon: {
+      url: string;
+      alt: string;
+    };
+    stack: string;
+  };
+}
+
+export default function CardSkill({
+  title,
+  text,
+  images,
+  stack,
+  className,
+}: ISkills) {
+  const skills = images.filter(
+    (item: { acf: { stack: string | undefined } }) => item.acf.stack === stack
+  );
+
   return (
     <div className={`bg-white p-5 rounded-2xl ${className}`}>
       <h3 className="text-danube-accent">{title}</h3>
-      <p className="mb-0">{text}</p>
-      {/* {images.map((item, key) => {
-        <div key={item.id}>
-          <Image src={item.src} alt={item.alt} />
-        </div>;
-      })} */}
+      <p className="mb-8">{text}</p>
+      <div className="flex flex-wrap gap-y-6 lg:gap-4 justify-between lg:justify-start">
+        {skills.map((item: ISkill) => (
+          <div
+            className="w-1/3 lg:w-fit flex flex-col items-center"
+            key={item.id}
+          >
+            <Image
+              src={item.acf.icon.url}
+              alt={item.acf.icon.alt}
+              className="w-12 lg:w-10 h-auto saturate-0 lg:hover:saturate-100 transition-all"
+              width={0}
+              height={0}
+            />
+            <span className="text-xs">{item.title.rendered}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

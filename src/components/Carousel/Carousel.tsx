@@ -6,7 +6,23 @@ import "slick-carousel/slick/slick-theme.css";
 import CardProject from "../Card/CardProject";
 import { useState, useEffect } from "react";
 
-export default function Carousel() {
+interface ICarousel {
+  projects: IProjectCard;
+}
+
+interface IProjectCard {
+  map: any;
+  id: number;
+  acf: {
+    thumbnail: {
+      url: string;
+      alt: string;
+    };
+    stacks: string[];
+  };
+}
+
+export default function Carousel({ projects }: ICarousel) {
   const [slidesToShow, setSlidesToShow] = useState(1.1);
 
   useEffect(() => {
@@ -34,6 +50,7 @@ export default function Carousel() {
 
   const settings = {
     dots: true,
+    arrows: false,
     infinite: false,
     speed: 300,
     slidesToShow: slidesToShow,
@@ -43,31 +60,14 @@ export default function Carousel() {
   return (
     <div className="relative h-full">
       <Slider {...settings}>
-        <CardProject
-          image={"https://picsum.photos/200"}
-          tags={["WordPress", "PHP", "ACF"]}
-          slug={""}
-        />
-        <CardProject
-          image={"https://picsum.photos/200"}
-          tags={["WordPress", "PHP", "ACF"]}
-          slug={""}
-        />
-        <CardProject
-          image={"https://picsum.photos/200"}
-          tags={["WordPress", "PHP", "ACF"]}
-          slug={""}
-        />
-        <CardProject
-          image={"https://picsum.photos/200"}
-          tags={["WordPress", "PHP", "ACF"]}
-          slug={""}
-        />
-        <CardProject
-          image={"https://picsum.photos/200"}
-          tags={["WordPress", "PHP", "ACF"]}
-          slug={""}
-        />
+        {projects.map((item: IProjectCard) => (
+          <CardProject
+            image={item.acf.thumbnail.url}
+            tags={item.acf.stacks.slice(0, 2)}
+            slug={`/projets/${item.id}`}
+            key={item.id}
+          />
+        ))}
       </Slider>
     </div>
   );

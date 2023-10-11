@@ -8,12 +8,8 @@ interface ICardTechnology {
 export default function CardTechnology({ logo, title }: ICardTechnology) {
   return (
     <div className="bg-white flex flex-col gap-2 items-center w-fit p-2 rounded-xl">
-      <Image
-        src={logo}
-        alt={"logo"}
-        className="w-16 saturate-0 lg:hover:saturate-100 transition-all"
-      />
-      <span>{title}</span>
+      <Image src={logo} alt={"logo"} className="w-fit h-16" />
+      <span className="capitalize">{title}</span>
     </div>
   );
 }

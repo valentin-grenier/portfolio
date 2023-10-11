@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import Section from "@/components/Section/Section";
 
 import Image from "next/image";
@@ -8,8 +6,40 @@ import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import Filter from "@/components/Filter/Filter";
 import CardProject from "@/components/Card/CardProject";
+import { axiosInstance } from "@/axios/axios";
 
-export default function Projets() {
+interface ICardProject {
+  id: number;
+  acf: {
+    thumbnail: {
+      url: string;
+      alt: string;
+    };
+    stacks: string[];
+  };
+}
+
+async function getData() {
+  try {
+    const res = await axiosInstance.get(
+      "projects?acf_format=standard&_fields=id,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt&per_page=100"
+    );
+
+    if (!res) {
+      throw new Error("Failed fetching data from backend");
+    }
+
+    const data = await res.data;
+
+    return data;
+  } catch (error) {
+    console.error("API error:", error);
+  }
+}
+
+export default async function Projets() {
+  const data = await getData();
+
   return (
     <>
       <main>
@@ -44,12 +74,14 @@ export default function Projets() {
         <Section>
           <Filter />
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            <CardProject
-              image={""}
-              tags={["PHP", "React"]}
-              className="bg-red-200"
-              slug={"/projets/1"}
-            />
+            {data.map((item: ICardProject) => (
+              <CardProject
+                image={item.acf.thumbnail.url}
+                tags={item.acf.stacks.slice(0, 2)}
+                slug={`projets/${item.id}`}
+                key={item.id}
+              />
+            ))}
           </div>
         </Section>
       </main>
