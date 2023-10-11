@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ReactElement } from "react";
 
 interface ISkills {
   title: string;
   text: string;
   images: ISkill;
   stack?: "Front" | "Back" | "Misc";
-  className?: string;
+  containerClassName?: string;
+  iconsContainerClassName?: string;
 }
 
 export interface ISkill {
@@ -21,6 +21,8 @@ export interface ISkill {
       alt: string;
     };
     stack: string;
+    long_title: string;
+    skill_description: string;
   };
 }
 
@@ -29,17 +31,20 @@ export default function CardSkill({
   text,
   images,
   stack,
-  className,
+  containerClassName,
+  iconsContainerClassName,
 }: ISkills) {
   const skills = images.filter(
     (item: { acf: { stack: string | undefined } }) => item.acf.stack === stack
   );
 
   return (
-    <div className={`bg-white p-5 rounded-2xl ${className}`}>
+    <div className={`bg-white p-5 rounded-2xl ${containerClassName}`}>
       <h3 className="text-danube-accent">{title}</h3>
       <p className="mb-8">{text}</p>
-      <div className="flex flex-wrap gap-y-6 lg:gap-4 justify-between lg:justify-start">
+      <div
+        className={`flex flex-wrap gap-y-6 lg:gap-4 ${iconsContainerClassName}`}
+      >
         {skills.map((item: ISkill) => (
           <div
             className="w-1/3 lg:w-fit flex flex-col items-center"
@@ -48,7 +53,7 @@ export default function CardSkill({
             <Image
               src={item.acf.icon.url}
               alt={item.acf.icon.alt}
-              className="w-12 lg:w-10 h-auto saturate-0 lg:hover:saturate-100 transition-all"
+              className="w-10 h-auto saturate-0 lg:hover:saturate-100 transition-all"
               width={0}
               height={0}
             />
