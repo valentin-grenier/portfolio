@@ -233,10 +233,11 @@ export default async function Home() {
   );
 }
 
-async function getProjects() {
+// Get skills data from backend
+async function getSkills() {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
+      "skill?acf_format=standard&_fields=id,title.rendered,acf.icon.url,acf.icon.alt,acf.stack&order=asc&per_page=100"
     );
 
     if (!res) {
@@ -251,10 +252,11 @@ async function getProjects() {
   }
 }
 
-async function getSkills() {
+// Get projects data from backend
+async function getProjects() {
   try {
     const res = await axiosInstance.get(
-      "skill?acf_format=standard&_fields=id,title.rendered,acf.icon.url,acf.icon.alt,acf.stack&order=asc&per_page=100"
+      "projects?acf_format=standard&_fields=id,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
     );
 
     if (!res) {

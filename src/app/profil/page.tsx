@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Section from "@/components/Section/Section";
-import CardSkill from "@/components/Card/CardSkill";
+import CardSkill, { ISkill } from "@/components/Card/CardSkill";
 import Image from "next/image";
 
 import valPetit from "../../../public/images/val_petit.jpg";
@@ -13,8 +13,15 @@ import CardExperience from "@/components/Card/CardExperience";
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import ButtonLink from "@/components/Button/ButtonLink";
 import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
+import { axiosInstance } from "@/axios/axios";
+import { Key } from "react";
 
-export default function Profile() {
+export default async function Profile() {
+  const skills = await getSkills();
+  const miscSkills = skills.filter(
+    (item: { acf: { stack: string } }) => item.acf.stack === "Misc"
+  );
+
   return (
     <>
       <Section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -72,27 +79,35 @@ export default function Profile() {
       </Section>
 
       <Section>
-        <h2 className="mb-8">Mes compétences techniques</h2>
+        <h2 className="mb-8 text-center lg:text-start">
+          Mes compétences techniques
+        </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative overflow-hidden">
             <CardSkill
               title="Front-end"
               text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
+              images={skills}
+              stack="Front"
+              iconsContainerClassName="justify-start"
             />
             <Image
               src={logoReactLight}
-              alt=""
+              alt="logo React"
               className="absolute -bottom-8 -right-12 w-32 rotate-[20deg] opacity-25"
             />
           </div>
           <div className="relative overflow-hidden">
             <CardSkill
               title="Back-end"
-              text="Je suis passionné par la création d'interfaces modernes, élégantes et axées sur l'expérience utilisateur."
+              text="Je sais intervenir sur un projet en ayant une vision globale de toutes les parties impliquées."
+              images={skills}
+              stack="Back"
+              iconsContainerClassName="justify-between"
             />
             <Image
               src={logoPHPLight}
-              alt=""
+              alt="logo PHP"
               className="absolute -top-8 -right-12 w-32 rotate-[20deg] opacity-25"
             />
           </div>
@@ -110,59 +125,20 @@ export default function Profile() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"WordPress avancé"}
-            text={
-              "J'ai travaillé avec WordPress pendant de nombreuses années et je suis très à l'aise avec ce CMS. Je peux sans problème développer un site WordPress from scratch, avec un thème sur-mesure ou préconçu, avec Elementor ou avec ACF."
-            }
-          />
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"Git & GitHub"}
-            text={
-              "Utiliser un outil de versioning comme Git pour mieux gérer ses projets et son code, c'est quelque chose que j'ai appris chez O'clock. Je suis à l'aise avec les commits, les pull requests et les code reviews."
-            }
-          />
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"SEO technique"}
-            text={
-              "J'ai développé une bonne compréhension des facteurs techniques qui ont un impact sur l'indexation des sites web dans les résultats de recherche : optimisation de la délivrabilité des contenus, bons formats d'images, meta-données ..."
-            }
-          />
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"Environnement Linux"}
-            text={
-              "Lors de ma formation chez O'clock, j'ai appris à développer sous Linux Ubuntu. Je n'ai donc aucun problème à travailler autant sur Windows, sur MacOs ou sur Linux."
-            }
-          />
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"Méthode Agile (SCRUM)"}
-            text={
-              "Toujours chez O'clock, notamment lors des travaux de groupe, nous avons appris à planifier les sprints, à mettre en place des Daily Scrum, et à effectuer des code reviews."
-            }
-          />
-          <CardSkillSingle
-            logo={""}
-            alt={""}
-            title={"Notions d'UX et UI Design"}
-            text={
-              "J'ai acquis des notions en UX et UI lors de mon master en stratégie digitale, ce qui m'a permis de développer une compréhension approfondie des principes de conception centrée sur l'utilisateur et de la création d'interfaces utilisateur intuitives."
-            }
-          />
+          {miscSkills.map((item: ISkill) => (
+            <CardSkillSingle
+              key={item.id}
+              logo={item.acf.icon.url}
+              alt={item.acf.icon.alt}
+              title={item.acf.long_title}
+              text={item.acf.skill_description}
+            />
+          ))}
         </div>
       </Section>
 
       <Section>
-        <h2>Mon parcours en quelques mots</h2>
+        <h2>Mon parcours en quelques&nbsp;mots</h2>
         <div className="flex flex-col w-full xl:w-2/3">
           <CardExperience
             title={"Titre Professionnel Développeur web et web mobile"}
@@ -217,4 +193,23 @@ export default function Profile() {
       </Section>
     </>
   );
+}
+
+// Get skills data from backend
+async function getSkills() {
+  try {
+    const res = await axiosInstance.get(
+      "skill?acf_format=standard&order=asc&per_page=100"
+    );
+
+    if (!res) {
+      throw new Error("Failed fetching data");
+    }
+
+    const data = await res.data;
+
+    return data;
+  } catch (error) {
+    return error;
+  }
 }
