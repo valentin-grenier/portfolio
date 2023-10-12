@@ -33,29 +33,8 @@ export default function Contact() {
               <ButtonMalt text={"Mon profil Malt"} />
             </ButtonContainer>
           </div>
-          <div>
-            <Form>
-              <Input
-                label={"Votre nom"}
-                type={"text"}
-                name={"name"}
-                placeholder={"ex : Antoine Dupont"}
-              />
-              <Input
-                label={"Votre adresse email"}
-                type={"email"}
-                name={"email"}
-                placeholder={"ex : ad9@stadetoulousain.fr"}
-              />
-              <Textarea
-                label={"Votre message"}
-                rows={4}
-                placeholder={"ex : On prend un café ?"}
-                name={""}
-              />
-              <ButtonSubmit text={"Envoyer"} />
-            </Form>
-          </div>
+
+          <Form />
         </div>
       </Section>
     </>
