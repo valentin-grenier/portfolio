@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonLink from "@/components/Button/ButtonLink";

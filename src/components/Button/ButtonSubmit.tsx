@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IButtonSubmit {
   text: string;
   disabled: boolean;

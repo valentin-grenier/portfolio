@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
+import React from 'react';
 
 interface IMenuItem {
   slug: string;

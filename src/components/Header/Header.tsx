@@ -2,7 +2,7 @@
 
 import MenuItem from "./MenuItem";
 import BurgerMenu from "./BurgerMenu";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Header() {
   // Availability (0: no / 1: maybe / 2: yes)

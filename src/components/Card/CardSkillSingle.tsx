@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from 'react';
 
 interface ICardSkillSingle {
   logo: string;

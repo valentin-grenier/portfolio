@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface ICardPersonnality {
   title: string;
   text: string;

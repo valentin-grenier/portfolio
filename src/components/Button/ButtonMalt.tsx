@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from "next/link";
 import logoMalt from "../../../public/images/svg/malt.svg";
 import Image from "next/image";

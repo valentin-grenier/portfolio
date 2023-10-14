@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from "next/link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 

@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import React from 'react';
 
 const poppins = Poppins({
   subsets: ["latin"],

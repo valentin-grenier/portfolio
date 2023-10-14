@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IInput {
   label: string;
   type: "number" | "email" | "text";

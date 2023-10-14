@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from 'react';
 import logoReactLight from "../../public/images/svg/reactLight.svg";
 import logoWordPressLight from "../../public/images/svg/wordpressLight.svg";
 import logoPHPLight from "../../public/images/svg/phpLight.svg";

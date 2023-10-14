@@ -2,7 +2,7 @@ import Link from "next/link";
 import ButtonGithub from "../Button/ButtonGithub";
 import ButtonLinkedIn from "../Button/ButtonLinkedIn";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { Dispatch, SetStateAction } from "react";
+import React,{ Dispatch, SetStateAction } from "react";
 import LunchDining from "@mui/icons-material/LunchDining";
 
 interface IBurgerMenu {
