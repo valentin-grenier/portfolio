@@ -25,7 +25,7 @@ export default async function Home() {
     <>
       <main className="overflow-hidden">
         {/* Hero */}
-        <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-96 flex flex-col justify-center relative overflow-hidden">
+        <Section className="bg-gradient-blue text-center text-light p-4 mx-4 rounded-xl h-72 lg:h-[80vh] 2xl:max-h-[1000px] flex flex-col justify-center relative overflow-hidden">
           <h1 className="text-3xl text-danube-50 md:text-4xl lg:text-5xl mb-6 lg:mx-auto lg:w-1/2 z-10">
             Valentin Grenier, enchanté&nbsp;!
           </h1>
