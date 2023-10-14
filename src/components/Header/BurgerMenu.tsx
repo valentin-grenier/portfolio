@@ -2,13 +2,39 @@ import Link from "next/link";
 import ButtonGithub from "../Button/ButtonGithub";
 import ButtonLinkedIn from "../Button/ButtonLinkedIn";
 import CancelIcon from "@mui/icons-material/Cancel";
-import React,{ Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import LunchDining from "@mui/icons-material/LunchDining";
+import ButtonContainer from "../Button/ButtonContainer";
+import Hr from "../Hr/Hr";
 
 interface IBurgerMenu {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
+
+interface IMenuItem {
+  name: string;
+  slug: string;
+}
+
+const menuItems = [
+  {
+    name: "Accueil",
+    slug: "/",
+  },
+  {
+    name: "Projets",
+    slug: "/projets",
+  },
+  {
+    name: "Profil",
+    slug: "/profil",
+  },
+  {
+    name: "Contact",
+    slug: "/contact",
+  },
+];
 
 export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
   return (
@@ -22,7 +48,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
       </button>
 
       <nav
-        className={`bg-danube-950 flex-col gap-8 py-8 px-4 fixed top-0 w-full h-full transition-all duration-500 ease-in-out z-50 ${
+        className={`bg-danube-950 flex-col gap-8 pt-16 pb-8 px-4 fixed top-0 w-full h-full transition-all duration-500 ease-in-out z-50 ${
           isOpen ? "left-0" : "left-full"
         }`}
       >
@@ -33,9 +59,9 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
           onClick={() => setIsOpen(false)}
         />
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-end gap-8">
           {/* Headline */}
-          <div className="text-danube-50">
+          <div className="text-danube-50 text-end">
             <span className="text-2xl font-title font-semibold">
               Valentin Grenier
             </span>
@@ -43,51 +69,33 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
             <span className="text-lg">Développeur web front-end</span>
           </div>
 
-          <hr className="border-2 opacity-10" />
+          <Hr />
 
           {/* Menu */}
-          <ul className="flex flex-col gap-4 font-semibold text-danube-50 rounded-lg">
-            <Link
-              href="/"
-              className="font-title text-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Accueil
-            </Link>
-            <Link
-              href="/projets"
-              className="font-title text-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Projets
-            </Link>
-            <Link
-              href="/profil"
-              className="font-title text-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Profil
-            </Link>
-            <Link
-              href="/contact"
-              className="font-title text-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+          <ul className="flex flex-col items-end gap-4 font-semibold text-danube-50 rounded-lg">
+            {menuItems.map((item: IMenuItem, key) => (
+              <Link
+                key={key}
+                href={item.slug}
+                className="font-title text-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
           </ul>
 
-          <hr className="border-2 opacity-10" />
+          <Hr />
 
           {/* Buttons */}
-          <div className="flex gap-4">
+          <ButtonContainer position="end">
             <ButtonGithub
               slug={"https://github.com/valentin-grenier"}
               text={"Github"}
               isLightTheme={true}
             />
             <ButtonLinkedIn text={"LinkedIn"} isLightTheme={true} />
-          </div>
+          </ButtonContainer>
         </div>
       </nav>
     </>
