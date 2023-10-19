@@ -7,42 +7,9 @@ import code from "../../../public/images/code.jpg";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import Filter from "@/components/Filter/Filter";
-import CardProject from "@/components/Card/CardProject";
 import { axiosInstance } from "@/axios/axios";
 
-interface ICardProject {
-  id: number;
-  slug: string;
-  acf: {
-    thumbnail: {
-      url: string;
-      alt: string;
-    };
-    stacks: string[];
-  };
-}
-
-async function getData() {
-  try {
-    const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,slug,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt&per_page=100"
-    );
-
-    if (!res) {
-      throw new Error("Failed fetching data from backend");
-    }
-
-    const data = await res.data;
-
-    return data;
-  } catch (error) {
-    console.error("API error:", error);
-  }
-}
-
 export default async function Projets() {
-  const data = await getData();
-
   return (
     <>
       <main>
@@ -77,16 +44,6 @@ export default async function Projets() {
         {/* Projects grid */}
         <Section>
           <Filter />
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {data.map((item: ICardProject) => (
-              <CardProject
-                image={item.acf.thumbnail.url}
-                tags={item.acf.stacks.slice(0, 2)}
-                slug={`projets/${item.slug}`}
-                key={item.id}
-              />
-            ))}
-          </div>
         </Section>
       </main>
     </>
