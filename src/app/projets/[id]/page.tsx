@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import ButtonGithub from "@/components/Button/ButtonGithub";
@@ -6,7 +6,6 @@ import ButtonLink from "@/components/Button/ButtonLink";
 
 import Section from "@/components/Section/Section";
 import Image from "next/image";
-import logo from "../../../../public/images/svg/reactLight.svg";
 import CardTechnology from "@/components/Card/CardTechnology";
 import { axiosInstance } from "@/axios/axios";
 
@@ -73,10 +72,10 @@ export default async function Project({ params }: { params: { id: string } }) {
             <Image
               src={content.main_image.url}
               alt={content.main_image.alt}
-              className="rounded-2xl"
-              layout="responsive"
-              width={450}
-              height={600}
+              className="rounded-2xl w-full"
+              width={1920}
+              height={1080}
+              priority
             />
           </div>
         </Section>
@@ -111,7 +110,7 @@ export default async function Project({ params }: { params: { id: string } }) {
           <h2 className="text-center">Technologies utilisées</h2>
           <div className="flex flex-wrap justify-center gap-8 my-8">
             {content.stacks.map((item: string, key: number) => (
-              <CardTechnology logo={logo} title={item} key={key} />
+              <CardTechnology title={item} key={key} />
             ))}
           </div>
 
