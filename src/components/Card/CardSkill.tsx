@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from 'react';
+import React from "react";
 
 interface ISkills {
   title: string;
@@ -44,7 +44,7 @@ export default function CardSkill({
       <h3 className="text-danube-accent">{title}</h3>
       <p className="mb-8">{text}</p>
       <div
-        className={`flex flex-wrap gap-y-6 lg:gap-4 ${iconsContainerClassName}`}
+        className={`flex flex-wrap gap-y-6 lg:gap-4 xl:gap-8 ${iconsContainerClassName}`}
       >
         {skills.map((item: ISkill) => (
           <div
