@@ -203,7 +203,7 @@ export default async function Home() {
         <Section className="px-0">
           <h2 className="px-4">Mes derniers projets</h2>
           <Carousel projects={projects} />
-          <ButtonContainer position="center" className="mt-20 lg:mt-24">
+          <ButtonContainer position="center" className="mt-[64px] lg:mt-24">
             <ButtonLink title={"Voir tous mes projets"} slug={"/projets"} />
           </ButtonContainer>
         </Section>

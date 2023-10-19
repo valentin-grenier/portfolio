@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import Section from "@/components/Section/Section";
 
@@ -12,6 +12,7 @@ import { axiosInstance } from "@/axios/axios";
 
 interface ICardProject {
   id: number;
+  slug: string;
   acf: {
     thumbnail: {
       url: string;
@@ -24,7 +25,7 @@ interface ICardProject {
 async function getData() {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt&per_page=100"
+      "projects?acf_format=standard&_fields=id,slug,title,acf.stacks,acf.thumbnail.url,acf.thumbnail.alt&per_page=100"
     );
 
     if (!res) {
@@ -68,6 +69,7 @@ export default async function Projets() {
               src={code}
               alt={"code"}
               className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-2xl"
+              priority
             />
           </div>
         </Section>
@@ -80,7 +82,7 @@ export default async function Projets() {
               <CardProject
                 image={item.acf.thumbnail.url}
                 tags={item.acf.stacks.slice(0, 2)}
-                slug={`projets/${item.id}`}
+                slug={`projets/${item.slug}`}
                 key={item.id}
               />
             ))}
