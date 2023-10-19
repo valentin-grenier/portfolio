@@ -8,14 +8,15 @@ import Section from "@/components/Section/Section";
 import Image from "next/image";
 import CardTechnology from "@/components/Card/CardTechnology";
 import { axiosInstance } from "@/axios/axios";
+import axios from "axios";
 
-async function getData(id: string) {
+async function getData(slug: string) {
   try {
     const res = await axiosInstance.get(
-      `projects/${id}?acf_format=standard&_fields=id,title,acf`
+      `projects?slug=${slug}&acf_format=standard&_fields=id,title,acf`
     );
 
-    if (!res) {
+    if (res.status !== 200) {
       throw new Error("Failed fetching data from backend");
     }
 
@@ -24,12 +25,19 @@ async function getData(id: string) {
     return data;
   } catch (error) {
     console.error("API error:", error);
+    throw error;
   }
 }
 
-export default async function Project({ params }: { params: { id: string } }) {
-  const data = await getData(params.id);
-  const content = await data.acf;
+export default async function Project({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const slug = params.slug;
+  const data = await getData(slug);
+  const project = data[0];
+  const projectContent = await project.acf;
 
   return (
     <>
@@ -39,25 +47,26 @@ export default async function Project({ params }: { params: { id: string } }) {
           <div>
             <h1
               className="text-center md:text-left leading-none"
-              dangerouslySetInnerHTML={{ __html: data.title.rendered }}
+              dangerouslySetInnerHTML={{ __html: project.title.rendered }}
             ></h1>
-            <div dangerouslySetInnerHTML={{ __html: content.introduction }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: projectContent.introduction }}
+            />
             <ButtonContainer
               position="center"
               direction="row"
               className="lg:justify-start"
             >
-              {content.github_link && (
+              {projectContent.github_link && (
                 <ButtonGithub
-                  slug={content.github_link}
+                  slug={projectContent.github_link}
                   text={"Voir le code"}
                 />
               )}
-
-              {content.site_link ? (
+              {projectContent.site_link ? (
                 <ButtonLink
                   title={"Voir le site"}
-                  slug={content.site_link}
+                  slug={projectContent.site_link}
                   isExternal
                   hasExternalIcon
                 />
@@ -70,8 +79,8 @@ export default async function Project({ params }: { params: { id: string } }) {
           </div>
           <div className="flex items-center">
             <Image
-              src={content.main_image.url}
-              alt={content.main_image.alt}
+              src={projectContent.main_image.url}
+              alt={projectContent.main_image.alt}
               className="rounded-2xl w-full"
               width={1920}
               height={1080}
@@ -79,16 +88,14 @@ export default async function Project({ params }: { params: { id: string } }) {
             />
           </div>
         </Section>
-
         <Section>
           <h2>Quelques mots sur le projet</h2>
-
-          {content.image.url ? (
+          {projectContent.image.url ? (
             <>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <Image
-                  src={content.image.url}
-                  alt={content.main_image.alt}
+                  src={projectContent.image.url}
+                  alt={projectContent.main_image.alt}
                   className="rounded-2xl order-last lg:order-first"
                   layout="responsive"
                   width={450}
@@ -96,24 +103,26 @@ export default async function Project({ params }: { params: { id: string } }) {
                 />
                 <div>
                   <div
-                    dangerouslySetInnerHTML={{ __html: content.description }}
+                    dangerouslySetInnerHTML={{
+                      __html: projectContent.description,
+                    }}
                   />
                 </div>
               </div>
             </>
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: content.description }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: projectContent.description }}
+            />
           )}
         </Section>
-
         <Section>
           <h2 className="text-center">Technologies utilisées</h2>
           <div className="flex flex-wrap justify-center gap-8 my-8">
-            {content.stacks.map((item: string, key: number) => (
+            {projectContent.stacks.map((item: string, key: number) => (
               <CardTechnology title={item} key={key} />
             ))}
           </div>
-
           <ButtonContainer position="center">
             <ButtonLink title={"Revenir aux projets"} slug={"/projets"} />
           </ButtonContainer>
