@@ -97,9 +97,9 @@ export default async function Project({
                   src={projectContent.image.url}
                   alt={projectContent.main_image.alt}
                   className="rounded-2xl order-last lg:order-first"
-                  layout="responsive"
                   width={450}
                   height={600}
+                  priority
                 />
                 <div>
                   <div

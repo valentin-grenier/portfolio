@@ -10,7 +10,7 @@ export default function CardTechnology({ title }: ICardTechnology) {
   const logo = title.toLowerCase().replace(".", "").replace(" ", "");
 
   return (
-    <div className="bg-white flex flex-col gap-2 items-center w-fit px-4 py-2 rounded-xl">
+    <div className="bg-white flex flex-col gap-2 items-center w-full p-4 rounded-xl">
       <Image
         src={`/images/svg/${logo}.svg`}
         alt={"logo"}
