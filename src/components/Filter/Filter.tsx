@@ -45,8 +45,7 @@ export default function Filter() {
 
   useEffect(() => {
     handleStackSelect();
-    console.log();
-  }, [selectedStack]);
+  }, [selectedStack, handleStackSelect]);
 
   function handleStackSelect() {
     if (selectedStack === "") {
