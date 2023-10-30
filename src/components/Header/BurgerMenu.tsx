@@ -39,10 +39,11 @@ const menuItems = [
 export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
   return (
     <>
-      {/* Button */}
+      {/* Button Burger Menu */}
       <button
         className="bg-white px-2 py-1 rounded-lg lg:hidden"
         onClick={() => setIsOpen(true)}
+        aria-label="Ouvrir le menu mobile"
       >
         <LunchDining fontSize="medium" className="text-danube-900" />
       </button>
@@ -57,6 +58,7 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
           fontSize="large"
           className="absolute top-4 right-4 text-danube-50 cursor-pointer"
           onClick={() => setIsOpen(false)}
+          aria-label="Fermer le menu mobile"
         />
 
         <div className="flex flex-col items-end gap-8">

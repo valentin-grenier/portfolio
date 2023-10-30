@@ -39,6 +39,7 @@ export default function ButtonScrollToTop() {
         isVisible ? "bottom-4" : "-bottom-8"
       }`}
       onClick={scrollToTop}
+      aria-label="Remonter en haut de la page"
     >
       <KeyboardArrowUpRoundedIcon
         style={{
