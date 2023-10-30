@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -17,6 +17,7 @@ import ButtonLink from "@/components/Button/ButtonLink";
 import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
 import { axiosInstance } from "@/axios/axios";
 import { Key } from "react";
+import ButtonMalt from "@/components/Button/ButtonMalt";
 
 export default async function Profile() {
   const skills = await getSkills();
@@ -80,7 +81,7 @@ export default async function Profile() {
         </div>
       </Section>
 
-      <Section>
+      {/* <Section>
         <h2 className="mb-8 text-center lg:text-start">
           Mes compétences techniques
         </h2>
@@ -114,7 +115,7 @@ export default async function Profile() {
             />
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       <Section>
         <div className="mb-8">
@@ -187,9 +188,10 @@ export default async function Profile() {
               "J'ai aussi fait beaucoup de petits boulots, comme voiturier, convoyeur automobile, réceptionniste, coursier, … Mais si vous voulez en savoir plus, je vous donne rendez-vous sur mon profil LinkedIn !"
             }
           />
-          <ButtonContainer>
+          <ButtonContainer direction="col" position="center">
             <ButtonLink title={"Me contacter"} slug={"/contact"} />
-            <ButtonLinkedIn text={"Mon profil"} />
+            <ButtonLinkedIn text={"Mon profil LinkedIn"} />
+            <ButtonMalt text={"Mon profil Malt"} />
           </ButtonContainer>
         </div>
       </Section>
