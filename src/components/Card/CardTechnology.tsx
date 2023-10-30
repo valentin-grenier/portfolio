@@ -15,8 +15,8 @@ export default function CardTechnology({ title }: ICardTechnology) {
         src={`/images/svg/${logo}.svg`}
         alt={"logo"}
         className="w-fit h-16 saturate-0"
-        width={0}
-        height={0}
+        width={64}
+        height={64}
       />
       <span className="capitalize">{title}</span>
     </div>
