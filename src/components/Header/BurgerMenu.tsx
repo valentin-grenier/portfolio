@@ -76,14 +76,16 @@ export default function BurgerMenu({ isOpen, setIsOpen }: IBurgerMenu) {
           {/* Menu */}
           <ul className="flex flex-col items-end gap-4 font-semibold text-danube-50 rounded-lg">
             {menuItems.map((item: IMenuItem, key) => (
-              <Link
-                key={key}
-                href={item.slug}
-                className="font-title text-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
+              <li>
+                <Link
+                  key={key}
+                  href={item.slug}
+                  className="font-title text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
             ))}
           </ul>
 
