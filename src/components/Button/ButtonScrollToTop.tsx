@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function ButtonScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [innerWidth, setInnerWidth] = useState(0);
 
   useEffect(() => {
     function handleScroll() {
@@ -19,6 +20,9 @@ export default function ButtonScrollToTop() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+
+    // Compute and set innerWidth
+    setInnerWidth(window.innerWidth);
   }, []);
 
   const scrollToTop = () => {
@@ -38,7 +42,7 @@ export default function ButtonScrollToTop() {
     >
       <KeyboardArrowUpRoundedIcon
         style={{
-          fontSize: window.innerWidth <= 768 ? "32px" : "40px",
+          fontSize: innerWidth <= 768 ? "32px" : "40px",
         }}
       />
     </button>
