@@ -14,7 +14,7 @@ export default function ButtonLinkedIn({
   // Switching colors depending on the button theme
   const themeColor = isLightTheme
     ? "bg-danube-50 lg:hover-bg-danube-300 text-danube-950"
-    : "bg-[#0077B5] lg:hover:bg-[#0076b5d5] text-danube-50";
+    : "bg-[#267DAB] lg:hover:bg-[#0076b5d5] text-white";
 
   return (
     <div
@@ -28,7 +28,7 @@ export default function ButtonLinkedIn({
         <LinkedInIcon
           fontSize="medium"
           className={`${
-            isLightTheme ? "text-danube-950" : "text-danube-50"
+            isLightTheme ? "text-danube-950" : "text-white"
           } mr-1`}
         />
         {text}

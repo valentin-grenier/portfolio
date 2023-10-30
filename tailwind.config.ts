@@ -35,7 +35,7 @@ const config: Config = {
           "900": "#3b4974",
           "950": "#232a43",
           bg: "#F4F4F9",
-          accent: "#5f77cc",
+          accent: "#586FCA",
         },
         light: "#f1f6fc",
       },
