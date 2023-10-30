@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import CardProject from "../Card/CardProject";
 import { axiosInstance } from "@/axios/axios";
 import Loader from "../Loader/Loader";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 interface ICardProject {
   id: number;
@@ -61,7 +62,9 @@ export default function Filter() {
   return (
     <>
       <div className="flex gap-4 items-center mb-8">
-        <span>Filtrer</span>
+        <span>
+          <FilterAltIcon />
+        </span>
         <button
           className={`transition-all px-2 py-1 rounded-md ${
             selectedStack === ""

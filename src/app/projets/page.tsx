@@ -7,7 +7,6 @@ import code from "../../../public/images/code.jpg";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import Filter from "@/components/Filter/Filter";
-import { axiosInstance } from "@/axios/axios";
 
 export default async function Projets() {
   return (
@@ -36,6 +35,8 @@ export default async function Projets() {
               src={code}
               alt={"code"}
               className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-2xl"
+              width={1920}
+              height={1280}
               priority
             />
           </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -17,6 +17,7 @@ import ButtonLink from "@/components/Button/ButtonLink";
 import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
 import { axiosInstance } from "@/axios/axios";
 import { Key } from "react";
+import ButtonMalt from "@/components/Button/ButtonMalt";
 
 export default async function Profile() {
   const skills = await getSkills();
@@ -31,7 +32,8 @@ export default async function Profile() {
           <Image
             src={valPetit}
             alt={"Valentin Grenier enfant"}
-            className="absolute bottom-0"
+            width={1920}
+            height={1363}
             priority
           />
         </div>
@@ -54,7 +56,6 @@ export default async function Profile() {
             <Image
               src={valGuadeloupe}
               alt={"Valentin Grenier en Guadeloupe"}
-              className="absolute -bottom-24 md:-bottom-64 lg:-bottom-40"
               priority
             />
           </div>
@@ -80,7 +81,7 @@ export default async function Profile() {
         </div>
       </Section>
 
-      <Section>
+      {/* <Section>
         <h2 className="mb-8 text-center lg:text-start">
           Mes compétences techniques
         </h2>
@@ -114,7 +115,7 @@ export default async function Profile() {
             />
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       <Section>
         <div className="mb-8">
@@ -140,21 +141,27 @@ export default async function Profile() {
       </Section>
 
       <Section>
-        <h2>Mon parcours en quelques&nbsp;mots</h2>
-        <div className="flex flex-col w-full xl:w-2/3">
+        <h2 className="text-center">Mon parcours en quelques&nbsp;mots</h2>
+        <div className="flex flex-col w-full xl:w-2/3 xl:mx-auto">
           <CardExperience
-            title={"Titre Professionnel Développeur web et web mobile"}
+            title={"Développeur Front-end Freelance"}
+            date={"2023 - Présent"}
+            company={"Studio Val"}
+            text={
+              "Après avoir décroché mon Titre Professionnel \"Développeur Web et Web Mobile\", j'ai choisi de me spécialiser sur le développement front-end, en me spécialisant sur l'éco-système JavaScript. J'ai découvert un véritable attrait pour la conception de sites et d'applications avec React, mais cela ne m'empêche pas de continuer à créer des sites WordPress sur-mesure avec PHP."
+            }
+          />
+          <CardExperience
+            title={"Titre Professionnel Développeur Web et Web Mobile"}
             date={"2023"}
             school={"École O'clock"}
-            company={""}
             text={
               "J'ai décidé de rejoindre l'école O'clock pour renforcer mes compétences acquises lors de mes années en freelance. Pendant six mois, dans un format condensé, j'ai revu les bases du développement web et j'ai appris à créer des sites et applications web complexes et structurés."
             }
           />
           <CardExperience
             title={"Développeur WordPress & Web Designer Freelance"}
-            date={"2018 - Présent"}
-            school={""}
+            date={"2018 - 2023"}
             company={"Studio Val"}
             text={
               "Studio Val, c'est le nom que j'ai donné à mon entreprise. Au fil des années, j'ai appris le développement web en autodidacte pour finalement me lancer en freelance dès que j'en ai eu l'occasion. J'ai tout d'abord commencé en parallèle de mes études en management et communication, puis j'ai consacré 100% de mon temps pour développer ce projet une fois mes études terminées. Avec Studio Val, je propose la création, la refonte, et l'actualisation et la maintenance de tout site WordPress. Ayant un attrait pour le design, je propose également à mes clients de maquetter leur futur site avec un design moderne et à l'image de leur entreprise, ce qui me permet de proposer une offre complète."
@@ -173,7 +180,6 @@ export default async function Profile() {
             title={"Bachelor en Management - Cursus Full English"}
             date={"2016 - 2019"}
             school={"TBS Toulouse / TBS Barcelona"}
-            company={""}
             text={
               "Mon entrée dans le monde des études supérieures a débuté par des études en management. Voulant toujours plus de défi, j'ai rejoint la filière \"English Track\" afin de suivre l'intégralité de mes cours en anglais, dès la sortie du lycée. Durant ces trois années, j'ai eu la chance de pouvoir habiter à Bruxelles et de suivre la moitié de mon cursus sur le campus de TBS Barcelone. Je suis donc très à l'aise avec l'anglais (un peu plus qu'avec l'espagnol, j'avoue). J'ai d'ailleurs obtenu le score de 895/990 au TOEIC en 2019."
             }
@@ -181,15 +187,14 @@ export default async function Profile() {
           <CardExperience
             title={""}
             date={""}
-            school={""}
-            company={""}
             text={
               "J'ai aussi fait beaucoup de petits boulots, comme voiturier, convoyeur automobile, réceptionniste, coursier, … Mais si vous voulez en savoir plus, je vous donne rendez-vous sur mon profil LinkedIn !"
             }
           />
-          <ButtonContainer>
+          <ButtonContainer direction="col" position="center">
             <ButtonLink title={"Me contacter"} slug={"/contact"} />
-            <ButtonLinkedIn text={"Mon profil"} />
+            <ButtonLinkedIn text={"Mon profil LinkedIn"} />
+            <ButtonMalt text={"Mon profil Malt"} />
           </ButtonContainer>
         </div>
       </Section>
