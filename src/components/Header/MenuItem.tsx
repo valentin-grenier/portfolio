@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from 'react';
+import React from "react";
 
 interface IMenuItem {
   slug: string;
@@ -16,13 +16,15 @@ export default function MenuItem({ slug, text, className }: IMenuItem) {
   const currentItemColor = "text-danube-accent";
 
   return (
-    <Link
-      href={slug}
-      className={`px-4 font-bold relative transition-all lg:left-0 lg:hover:left-1 lg:duration-150 ${
-        currentPage === slug && currentItemColor
-      } ${className}`}
-    >
-      {text}
-    </Link>
+    <li>
+      <Link
+        href={slug}
+        className={`px-4 font-bold relative transition-all lg:left-0 lg:hover:left-1 lg:duration-150 ${
+          currentPage === slug && currentItemColor
+        } ${className}`}
+      >
+        {text}
+      </Link>
+    </li>
   );
 }
