@@ -219,7 +219,7 @@ export default async function Home() {
             <ButtonContainer position="center" direction="col">
               <ButtonLink
                 title={"Contactez-moi"}
-                slug={"mailto:valentin@studio-val.fr"}
+                slug={"/contact"}
               />
               <ButtonLinkedIn text={"Mon profil"} />
               <ButtonGithub
@@ -257,7 +257,7 @@ async function getSkills() {
 async function getProjects() {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
+      "projects?acf_format=standard&_fields=id,slug,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
     );
 
     if (!res) {

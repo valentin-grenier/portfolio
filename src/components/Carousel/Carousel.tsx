@@ -14,6 +14,7 @@ interface ICarousel {
 interface IProjectCard {
   map: any;
   id: number;
+  slug: string;
   acf: {
     thumbnail: {
       url: string;
@@ -65,7 +66,7 @@ export default function Carousel({ projects }: ICarousel) {
           <CardProject
             image={item.acf.thumbnail.url}
             tags={item.acf.stacks.slice(0, 2)}
-            slug={`/projets/${item.id}`}
+            slug={`/projets/${item.slug}`}
             key={item.id}
           />
         ))}
