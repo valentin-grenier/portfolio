@@ -54,7 +54,7 @@ export default function CardSkill({
             <Image
               src={item.acf.icon.url}
               alt={item.acf.icon.alt}
-              className="w-10 h-auto saturate-0 lg:hover:saturate-100 transition-all"
+              className="w-10 h-auto transition-all"
               width={0}
               height={0}
             />
