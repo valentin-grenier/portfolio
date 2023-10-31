@@ -1,59 +1,33 @@
 import React from "react";
+import { Metadata } from "next";
+import { replaceHTMLCharacters } from "@/lib/hooks";
 
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonLink from "@/components/Button/ButtonLink";
-
 import Section from "@/components/Section/Section";
 import Image from "next/image";
 import CardTechnology from "@/components/Card/CardTechnology";
-import { axiosInstance } from "@/axios/axios";
-import { Metadata } from "next";
-import { replaceHTMLCharacters } from "@/lib/hooks";
-
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-// Async function fetching data from backend
-export async function getData(slug: string) {
-  try {
-    const res = await axiosInstance.get(
-      `projects?slug=${slug}&acf_format=standard&_fields=id,title,acf,yoast_head_json`
-    );
-
-    if (res.status !== 200) {
-      throw new Error("Failed fetching data from backend");
-    }
-
-    const data = await res.data;
-
-    return data;
-  } catch (error) {
-    console.error("API error:", error);
-    throw error;
-  }
-}
+import { ProjectData, ProjectParams, getProject } from "@/lib/getProject";
 
 // SEO meta tags
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getData(params.slug);
-  const data = post[0];
-  if (!post) {
+export async function generateMetadata({
+  params,
+}: ProjectParams): Promise<Metadata> {
+  const project: ProjectData = await getProject(params.slug);
+  if (!project) {
     return {
       title: "Not found",
       description: "The page is not found",
     };
   }
 
-  const titleRaw = data.yoast_head_json.title;
+  const titleRaw = project.yoast_head_json.title;
   const title = titleRaw.replace(/&[^;]+;/g, replaceHTMLCharacters);
 
   return {
     title: title,
-    description: data.yoast_head_json.description,
+    description: project.yoast_head_json.description,
   };
 }
 
@@ -64,8 +38,7 @@ export default async function Project({
   params: { slug: string };
 }) {
   const slug = params.slug;
-  const data = await getData(slug);
-  const project = data[0];
+  const project = await getProject(slug);
   const projectContent = await project.acf;
 
   return (

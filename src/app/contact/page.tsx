@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Section from "@/components/Section/Section";
@@ -10,6 +10,13 @@ import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonMalt from "@/components/Button/ButtonMalt";
 import ButtonContainer from "@/components/Button/ButtonContainer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact · Valentin Grenier, Développeur Web Front-End",
+  description:
+    "Prêt à collaborer sur un projet ? Contactez-moi pour discuter de vos idées. Je suis impatient de travailler ensemble pour réaliser votre projet.",
+};
 
 export default function Contact() {
   return (
