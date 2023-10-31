@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardProject from "../Card/CardProject";
 import { useState, useEffect } from "react";
+import { ICardProject, ICarousel } from "@/app/@types";
 
 export default function Carousel({ projects }: ICarousel) {
   const [slidesToShow, setSlidesToShow] = useState(1.1);

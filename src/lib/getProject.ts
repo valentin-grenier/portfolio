@@ -1,3 +1,4 @@
+import { ProjectData } from "@/app/@types";
 import { axiosInstance } from "@/axios/axios";
 
 // Async function fetching data from backend

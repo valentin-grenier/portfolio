@@ -1,3 +1,4 @@
+import { ICardProject } from "@/app/@types";
 import { axiosInstance } from "@/axios/axios";
 
 // Get projects data from backend

@@ -19,6 +19,7 @@ import { Metadata } from "next";
 import CardProject from "@/components/Card/CardProject";
 import { getProjects } from "@/lib/getProjects";
 import { getSkills } from "@/lib/getSkills";
+import { ICardProject } from "./@types";
 
 export const metadata: Metadata = {
   title: "Valentin Grenier · Développeur Web Front-End",

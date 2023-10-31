@@ -8,7 +8,8 @@ import ButtonLink from "@/components/Button/ButtonLink";
 import Section from "@/components/Section/Section";
 import Image from "next/image";
 import CardTechnology from "@/components/Card/CardTechnology";
-import { ProjectData, ProjectParams, getProject } from "@/lib/getProject";
+import { getProject } from "@/lib/getProject";
+import { ProjectData, ProjectParams } from "@/app/@types";
 
 // SEO meta tags
 export async function generateMetadata({

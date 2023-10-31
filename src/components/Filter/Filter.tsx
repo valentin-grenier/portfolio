@@ -5,6 +5,7 @@ import CardProject from "../Card/CardProject";
 import { axiosInstance } from "@/axios/axios";
 import Loader from "../Loader/Loader";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import { ICardProject } from "@/app/@types";
 
 export default function Filter() {
   const [projects, setProjects] = useState([]);

@@ -1,6 +1,6 @@
-interface IProjects {}
+export interface IProjects {}
 
-interface ICardProject {
+export interface ICardProject {
   map: any;
   id: number;
   slug: string;
@@ -13,17 +13,17 @@ interface ICardProject {
   };
 }
 
-interface ICarousel {
+export interface ICarousel {
   projects: ICardProject;
 }
 
-interface ProjectParams {
+export interface ProjectParams {
   params: {
     slug: string;
   };
 }
 
-interface ProjectData {
+export interface ProjectData {
   id: number;
   title: {
     rendered: string;
