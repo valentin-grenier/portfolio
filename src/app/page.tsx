@@ -12,11 +12,11 @@ import Block from "../components/Block/Block";
 import CardSkill from "../components/Card/CardSkill";
 import CardPersonnality from "../components/Card/CardPersonnality";
 import ButtonLink from "../components/Button/ButtonLink";
-import Carousel from "../components/Carousel/Carousel";
 import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
 import ButtonGithub from "../components/Button/ButtonGithub";
 import ButtonContainer from "../components/Button/ButtonContainer";
 import { Metadata } from "next";
+import CardProject from "@/components/Card/CardProject";
 
 export const metadata: Metadata = {
   title: "Valentin Grenier · Développeur Web Front-End",
@@ -208,9 +208,18 @@ export default async function Home() {
 
         {/* Mes derniers projets */}
         <Section className="px-0">
-          <h2 className="px-4">Mes derniers projets</h2>
-          <Carousel projects={projects} />
-          <ButtonContainer position="center" className="mt-[64px] lg:mt-24">
+          <h2 className="px-4 text-center mb-12">Mes derniers projets</h2>
+          <div className="grid items-center justify-center grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {projects.map((item: ICardProject) => (
+              <CardProject
+                image={item.acf.thumbnail.url}
+                tags={item.acf.stacks.slice(0, 2)}
+                slug={item.slug}
+                key={item.id}
+              />
+            ))}
+          </div>
+          <ButtonContainer position="center">
             <ButtonLink title={"Voir tous mes projets"} slug={"/projets"} />
           </ButtonContainer>
         </Section>
@@ -261,7 +270,7 @@ async function getSkills() {
 async function getProjects() {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&_fields=id,slug,acf.thumbnail.url,acf.thumbnail.alt,acf.stacks&per_page=6"
+      "projects?acf_format=standard&per_page=4"
     );
 
     if (!res) {
