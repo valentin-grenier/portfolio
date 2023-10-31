@@ -14,24 +14,24 @@ import { ProjectData, ProjectParams, getProject } from "@/lib/getProject";
 export async function generateMetadata({
   params,
 }: ProjectParams): Promise<Metadata> {
-  const project: ProjectData = await getProject(params.slug);
-  if (!project) {
+  const res: ProjectData = await getProject(params.slug);
+  if (!res) {
     return {
       title: "Not found",
       description: "The page is not found",
     };
   }
 
-  const titleRaw = project.yoast_head_json.title;
+  const titleRaw = res.yoast_head_json.title;
   const title = titleRaw.replace(/&[^;]+;/g, replaceHTMLCharacters);
 
   return {
     title: title,
-    description: project.yoast_head_json.description,
+    description: res.yoast_head_json.description,
   };
 }
 
-// Component
+// Component rendering
 export default async function Project({
   params,
 }: {
