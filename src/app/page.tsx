@@ -200,7 +200,7 @@ export default async function Home() {
             <ButtonContainer position="center">
               <ButtonLink
                 title={"En savoir plus"}
-                slug={"/a-propos#parcours"}
+                slug={"/profil"}
               />
             </ButtonContainer>
           </Block>
