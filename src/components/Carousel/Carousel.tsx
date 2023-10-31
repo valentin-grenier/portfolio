@@ -45,7 +45,7 @@ export default function Carousel({ projects }: ICarousel) {
   return (
     <div className="relative h-full">
       <Slider {...settings}>
-        {projects.map((item: IProjectCard) => (
+        {projects.map((item: ICardProject) => (
           <CardProject
             image={item.acf.thumbnail.url}
             tags={item.acf.stacks.slice(0, 2)}
