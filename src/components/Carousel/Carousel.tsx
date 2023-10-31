@@ -1,28 +1,11 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardProject from "../Card/CardProject";
 import { useState, useEffect } from "react";
-
-interface ICarousel {
-  projects: IProjectCard;
-}
-
-interface IProjectCard {
-  map: any;
-  id: number;
-  slug: string;
-  acf: {
-    thumbnail: {
-      url: string;
-      alt: string;
-    };
-    stacks: string[];
-  };
-}
 
 export default function Carousel({ projects }: ICarousel) {
   const [slidesToShow, setSlidesToShow] = useState(1.1);

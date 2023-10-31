@@ -15,8 +15,8 @@ export default function CardProject({
   slug,
 }: ICardProject) {
   return (
-    <Link href={slug}>
-      <div className="group relative w-auto h-56 md:h-72 md:w-72 transition-all duration-500 group-hover:bottom-4 overflow-hidden lg:hover:opacity-80">
+    <Link href={"/projets/" + slug} className="flex justify-center">
+      <div className="group relative w-full h-56 md:h-72 transition-all duration-500 group-hover:bottom-4 overflow-hidden lg:hover:opacity-80">
         <div
           className={`bg-danube-200 bg-no-repeat bg-cover bg-center absolute inset-0 rounded-2xl transition-all ${className}`}
           style={{ backgroundImage: `url(${image})` }}
