@@ -14,7 +14,7 @@ export default function CardTechnology({ title }: ICardTechnology) {
       <Image
         src={`/images/svg/${logo}.svg`}
         alt={"logo"}
-        className="w-fit h-16 saturate-0"
+        className="w-fit h-16"
         width={64}
         height={64}
       />
