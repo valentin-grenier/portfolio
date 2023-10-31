@@ -17,6 +17,8 @@ import ButtonGithub from "../components/Button/ButtonGithub";
 import ButtonContainer from "../components/Button/ButtonContainer";
 import { Metadata } from "next";
 import CardProject from "@/components/Card/CardProject";
+import { getProjects } from "@/lib/getProjects";
+import { getSkills } from "@/lib/getSkills";
 
 export const metadata: Metadata = {
   title: "Valentin Grenier · Développeur Web Front-End",
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const skills = await getSkills();
-  const projects = await getProjects();
+  const projects: any = await getProjects();
 
   return (
     <>
@@ -198,10 +200,7 @@ export default async function Home() {
               , certifiant mes compétences et ma détermination.
             </p>
             <ButtonContainer position="center">
-              <ButtonLink
-                title={"En savoir plus"}
-                slug={"/profil"}
-              />
+              <ButtonLink title={"En savoir plus"} slug={"/profil"} />
             </ButtonContainer>
           </Block>
         </Section>
@@ -245,42 +244,4 @@ export default async function Home() {
       </main>
     </>
   );
-}
-
-// Get skills data from backend
-async function getSkills() {
-  try {
-    const res = await axiosInstance.get(
-      "skill?acf_format=standard&_fields=id,title.rendered,acf.icon.url,acf.icon.alt,acf.stack&order=asc&per_page=100"
-    );
-
-    if (!res) {
-      throw new Error("Failed fetching data");
-    }
-
-    const data = await res.data;
-
-    return data;
-  } catch (error) {
-    return error;
-  }
-}
-
-// Get projects data from backend
-async function getProjects() {
-  try {
-    const res = await axiosInstance.get(
-      "projects?acf_format=standard&per_page=4"
-    );
-
-    if (!res) {
-      throw new Error("Failed fetching data");
-    }
-
-    const data = await res.data;
-
-    return data;
-  } catch (error) {
-    return error;
-  }
 }

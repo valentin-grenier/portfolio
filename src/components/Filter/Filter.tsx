@@ -6,18 +6,6 @@ import { axiosInstance } from "@/axios/axios";
 import Loader from "../Loader/Loader";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
-interface ICardProject {
-  id: number;
-  slug: string;
-  acf: {
-    thumbnail: {
-      url: string;
-      alt: string;
-    };
-    stacks: string[];
-  };
-}
-
 export default function Filter() {
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
