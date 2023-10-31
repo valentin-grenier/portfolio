@@ -8,12 +8,20 @@ import Section from "@/components/Section/Section";
 import Image from "next/image";
 import CardTechnology from "@/components/Card/CardTechnology";
 import { axiosInstance } from "@/axios/axios";
-import axios from "axios";
+import { Metadata } from "next";
+import { replaceHTMLCharacters } from "@/lib/hooks";
 
-async function getData(slug: string) {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+// Async function fetching data from backend
+export async function getData(slug: string) {
   try {
     const res = await axiosInstance.get(
-      `projects?slug=${slug}&acf_format=standard&_fields=id,title,acf`
+      `projects?slug=${slug}&acf_format=standard&_fields=id,title,acf,yoast_head_json`
     );
 
     if (res.status !== 200) {
@@ -29,6 +37,27 @@ async function getData(slug: string) {
   }
 }
 
+// SEO meta tags
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getData(params.slug);
+  const data = post[0];
+  if (!post) {
+    return {
+      title: "Not found",
+      description: "The page is not found",
+    };
+  }
+
+  const titleRaw = data.yoast_head_json.title;
+  const title = titleRaw.replace(/&[^;]+;/g, replaceHTMLCharacters);
+
+  return {
+    title: title,
+    description: data.yoast_head_json.description,
+  };
+}
+
+// Component
 export default async function Project({
   params,
 }: {
@@ -44,7 +73,7 @@ export default async function Project({
       <main className="[&>*:first-child]:pt-4">
         {/* Introduction */}
         <Section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+          <div className="lg:mt-12">
             <h1
               className="text-center md:text-left leading-none"
               dangerouslySetInnerHTML={{ __html: project.title.rendered }}

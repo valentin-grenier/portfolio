@@ -7,7 +7,7 @@ interface ISection {
 
 export default function Section({ children, className }: ISection) {
   return (
-    <section className={`py-10 px-4 ${className ? className : ""}`}>
+    <section className={`py-10 lg:py-16 px-4 ${className ? className : ""}`}>
       {children}
     </section>
   );
