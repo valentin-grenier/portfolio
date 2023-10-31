@@ -7,6 +7,13 @@ import code from "../../../public/images/code.jpg";
 import ButtonGithub from "@/components/Button/ButtonGithub";
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import Filter from "@/components/Filter/Filter";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projets · Valentin Grenier, Développeur Web Front-End",
+  description:
+    "Explorez ma galerie de projets web réalisés avec React, NextJS, WordPress et PHP lors de mes projets freelance et personnels.",
+};
 
 export default async function Projets() {
   return (

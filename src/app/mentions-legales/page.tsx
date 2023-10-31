@@ -1,6 +1,13 @@
-import React from 'react';
+import React from "react";
 import { axiosInstance } from "@/axios/axios";
 import Section from "@/components/Section/Section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions légales · Valentin Grenier, Développeur Web Front-End",
+  description:
+    "Consultez les informations légales et la politique de confidentialité de mon site web. Vos données sont entre de bonnes mains.",
+};
 
 async function getData() {
   try {

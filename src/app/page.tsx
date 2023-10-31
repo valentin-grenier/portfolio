@@ -16,6 +16,13 @@ import Carousel from "../components/Carousel/Carousel";
 import ButtonLinkedIn from "../components/Button/ButtonLinkedIn";
 import ButtonGithub from "../components/Button/ButtonGithub";
 import ButtonContainer from "../components/Button/ButtonContainer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Valentin Grenier · Développeur Web Front-End",
+  description:
+    "Découvrez mon univers créatif de développement web avec React, NextJS et WordPress. Explorez mes projets, mon profil et contactez-moi pour discuter de vos besoins.",
+};
 
 export default async function Home() {
   const skills = await getSkills();
@@ -217,10 +224,7 @@ export default async function Home() {
               et de discuter d’éventuelles opportunités.
             </p>
             <ButtonContainer position="center" direction="col">
-              <ButtonLink
-                title={"Contactez-moi"}
-                slug={"/contact"}
-              />
+              <ButtonLink title={"Contactez-moi"} slug={"/contact"} />
               <ButtonLinkedIn text={"Mon profil"} />
               <ButtonGithub
                 slug={"https://github.com/valentin-grenier"}

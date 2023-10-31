@@ -18,6 +18,13 @@ import ButtonLinkedIn from "@/components/Button/ButtonLinkedIn";
 import { axiosInstance } from "@/axios/axios";
 import { Key } from "react";
 import ButtonMalt from "@/components/Button/ButtonMalt";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Profil · Valentin Grenier, Développeur Web Front-End",
+  description:
+    "Découvrez qui je suis en tant que développeur web freelance passionné. Mon parcours, mes compétences et ma vision du développement web.",
+};
 
 export default async function Profile() {
   const skills = await getSkills();
