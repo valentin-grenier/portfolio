@@ -106,7 +106,7 @@ export default function Filter() {
             <CardProject
               image={item.acf.thumbnail.url}
               tags={item.acf.stacks.slice(0, 2)}
-              slug={`projets/${item.slug}`}
+              slug={item.slug}
               key={item.id}
             />
           ))}
