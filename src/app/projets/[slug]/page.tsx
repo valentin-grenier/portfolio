@@ -73,9 +73,11 @@ export default async function Project({
                   hasExternalIcon
                 />
               ) : (
-                <span className="font-semibold text-danube-accent">
-                  En cours de développement
-                </span>
+                <ButtonLink
+                  title={"En cours de développement"}
+                  slug={""}
+                  isDisabled
+                />
               )}
             </ButtonContainer>
           </div>
