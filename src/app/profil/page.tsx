@@ -42,6 +42,7 @@ export default async function Profile() {
             width={1920}
             height={1363}
             priority
+            placeholder="blur"
           />
         </div>
         <div>
@@ -63,7 +64,7 @@ export default async function Profile() {
             <Image
               src={valGuadeloupe}
               alt={"Valentin Grenier en Guadeloupe"}
-              priority
+              placeholder="blur"
             />
           </div>
 

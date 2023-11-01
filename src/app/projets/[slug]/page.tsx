@@ -89,6 +89,7 @@ export default async function Project({
               className="rounded-2xl w-full"
               width={1920}
               height={1080}
+              placeholder="blur"
               priority
             />
           </div>
@@ -102,9 +103,9 @@ export default async function Project({
                   src={projectContent.image.url}
                   alt={projectContent.main_image.alt}
                   className="rounded-2xl order-last lg:order-first"
-                  width={450}
-                  height={600}
-                  priority
+                  width={1920}
+                  height={1080}
+                  placeholder="blur"
                 />
                 <div>
                   <div

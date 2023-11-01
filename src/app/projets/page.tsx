@@ -45,6 +45,7 @@ export default async function Projets() {
               width={1920}
               height={1280}
               priority
+              placeholder="blur"
             />
           </div>
         </Section>

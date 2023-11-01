@@ -91,6 +91,8 @@ export default async function Home() {
                 src={profilePicture}
                 alt="photo Valentin Grenier"
                 className="relative lg:absolute left-1/2 -translate-x-1/2 lg:-bottom-4 xl:-bottom-28"
+                priority
+                placeholder="blur"
               />
             }
           >
