@@ -34,3 +34,7 @@ export interface ProjectData {
     description: string;
   };
 }
+
+export interface ILottieAnimation {
+  lottie: string;
+}
