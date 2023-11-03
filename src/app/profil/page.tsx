@@ -54,6 +54,16 @@ export default async function Profile() {
             formé et j'ai acquis de nouvelles compétences, toujours en
             travaillant avec acharnement pour atteindre mon objectif.
           </p>
+          <ButtonContainer>
+            <ButtonLink
+              title={"Télécharger mon CV"}
+              slug={
+                "https://back.valentingrenier.fr/wp-content/uploads/2023/11/CV-Valentin-Grenier.pdf"
+              }
+              download
+              isExternal
+            />
+          </ButtonContainer>
         </div>
       </Section>
 
