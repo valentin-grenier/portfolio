@@ -12,20 +12,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  let popupStatus = null;
-
-  if (typeof window !== "undefined") {
-    // Get the analytics disclaimer popup status from localStorage
-    popupStatus = sessionStorage.getItem("popup-closed");
-  }
-
   return (
     <Layout>
       <Header />
       {children}
       <ButtonScrollToTop />
-      {popupStatus === "closed" ? "" : <PopupPlausible />}
-
+      <PopupPlausible />
       <Footer />
     </Layout>
   );
