@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
+        xxs: "13px",
         xs: "15px",
         sm: "16px",
         base: "16px",
