@@ -5,7 +5,7 @@ import { axiosInstance } from "@/axios/axios";
 export async function getProjects(): Promise<ICardProject[]> {
   try {
     const res = await axiosInstance.get(
-      "projects?acf_format=standard&per_page=4"
+      "projects?acf_format=standard&per_page=4&orderby=date"
     );
 
     if (!res.data || !Array.isArray(res.data)) {
