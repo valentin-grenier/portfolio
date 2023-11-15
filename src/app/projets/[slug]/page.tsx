@@ -90,6 +90,7 @@ export default async function Project({
               width={1920}
               height={1080}
               placeholder="blur"
+              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0TT1eDwAEegH65cQyFQAAAABJRU5ErkJggg=="
               priority
             />
           </div>
@@ -106,6 +107,7 @@ export default async function Project({
                   width={1920}
                   height={1080}
                   placeholder="blur"
+                  blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0TT1eDwAEegH65cQyFQAAAABJRU5ErkJggg=="
                 />
                 <div>
                   <div
