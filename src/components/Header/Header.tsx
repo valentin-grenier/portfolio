@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 export default function Header() {
   // Availability (0: no / 1: maybe / 2: yes)
-  const [availability, setAvailability] = useState(2);
+  const [availability, setAvailability] = useState(0);
 
   const [isOpen, setIsOpen] = useState(false);
 
