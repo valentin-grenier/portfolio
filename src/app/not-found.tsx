@@ -1,7 +1,12 @@
 import ButtonContainer from "@/components/Button/ButtonContainer";
 import ButtonLink from "@/components/Button/ButtonLink";
-import LottieAnimation from "@/components/LottieAnimation/LottieAnimation";
+import dynamic from "next/dynamic";
 import Section from "@/components/Section/Section";
+
+const LottieAnimation = dynamic(
+  () => import("@/components/LottieAnimation/LottieAnimation"),
+  { ssr: false }
+);
 
 export default function NotFound() {
   const lottie =
