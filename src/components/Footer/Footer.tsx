@@ -16,7 +16,7 @@ export default function Footer() {
             className="font-title font-semibold transition-all relative bottom-0 lg:hover:bottom-1"
             href="https://studio-val.fr"
           >
-            Studio Val
+            <strong>Studio Val</strong>
           </Link>
           <Link
             className="font-title font-semibold transition-all relative bottom-0 lg:hover:bottom-1"
