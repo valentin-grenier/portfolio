@@ -9,6 +9,9 @@ export default function ButtonScrollToTop() {
   const [innerWidth, setInnerWidth] = useState(0);
 
   useEffect(() => {
+    // Compute and set innerWidth
+    setInnerWidth(window.innerWidth);
+
     function handleScroll() {
       setIsVisible(window.scrollY > 200);
     }
@@ -20,9 +23,6 @@ export default function ButtonScrollToTop() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // Compute and set innerWidth
-    setInnerWidth(window.innerWidth);
   }, []);
 
   const scrollToTop = () => {
