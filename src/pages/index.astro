@@ -10,10 +10,44 @@ const links = [
   { label: "studio-val", href: "https://studio-val.fr" },
 ];
 
+const projects = [
+  {
+    label: "wp-rocket",
+    description: "gutenberg blocks development",
+    href: "https://wp-rocket.me",
+  },
+  {
+    label: "rank-math",
+    description: "support page redesign",
+    href: "https://rankmath.com/support/",
+  },
+  {
+    label: "axonaut",
+    description: "blog redesign & development",
+    href: "https://axonaut.com/blog/",
+  },
+  {
+    label: "lemlist",
+    description: "academy development on wordpress",
+    href: "https://academy.lemlist.com/",
+  },
+];
+
 const name = "valentin grenier";
 const taglines = [
   "// web developer · toulouse, france",
   "// wordpress · gutenberg · react · next.js",
+];
+
+const about = [
+  "// hi, i'm valentin — a web developer based in toulouse, france.",
+  "// i build wordpress, gutenberg, and react/next.js things for product teams and saas companies.",
+  "// i care about clean markup, fast pages, and a developer experience that doesn't fight you.",
+];
+
+const status = [
+  "// status: open to freelance.",
+  "// available for wordpress, gutenberg, headless, and front-end work.",
 ];
 ---
 
@@ -25,6 +59,47 @@ const taglines = [
     <Prompt cmd="whoami" />
     <h1 class="output output--name">{name}</h1>
     {taglines.map((line) => <p class="output output--dim">{line}</p>)}
+  </section>
+
+  <section class="block">
+    <Prompt cmd="cat about.txt" />
+    {about.map((line) => <p class="output output--dim">{line}</p>)}
+  </section>
+
+  <section class="block">
+    <Prompt cmd="cat status.txt" />
+    {status.map((line) => <p class="output output--dim">{line}</p>)}
+  </section>
+
+  <section class="block">
+    <Prompt cmd="ls projects/" />
+    <nav class="links" aria-label="Projects">
+      <ul role="list">
+        {
+          projects.map((project, i) => (
+            <li>
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+              >
+                <span class="num" aria-hidden="true">
+                  [{String(i + 1).padStart(2, "0")}]
+                </span>
+                <span class="label">
+                  {project.label} — {project.description}
+                </span>
+                <span class="arrow" aria-hidden="true">
+                  ↗
+                </span>
+                <span class="sr-only">(opens in a new tab)</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </section>
 
   <section class="block">
