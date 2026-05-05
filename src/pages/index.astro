@@ -2,6 +2,7 @@
 import "@fontsource/jetbrains-mono/latin-400.css";
 import "@fontsource/jetbrains-mono/latin-500.css";
 import "../styles/main.scss";
+import Prompt from "../components/Prompt.astro";
 
 const links = [
   { label: "linkedin", href: "https://www.linkedin.com/in/valentin-grenier/" },
@@ -15,11 +16,13 @@ const name = "valentin grenier";
 const displayName = "Valentin Grenier";
 const taglines = [
   "// web developer · toulouse, france",
-  "// react · next.js · typescript · wordpress",
+  "// wordpress · gutenberg · react · next.js",
 ];
 const sourceUrl = "https://github.com/valentin-grenier/portfolio";
 const pageTitle = `${displayName} — Web developer`;
 const year = new Date().getFullYear();
+
+const windowTitle = "valentin@portfolio: ~";
 ---
 
 <!--
@@ -43,61 +46,70 @@ const year = new Date().getFullYear();
     <title>{pageTitle}</title>
   </head>
   <body>
-    <main class="page">
-      <header class="head">
-        <h1 class="name">
-          <span class="prompt" aria-hidden="true">&gt;</span>
-          <span class="name-text">{name}</span><span
-            class="cursor"
-            aria-hidden="true">_</span
-          >
-        </h1>
-        {taglines.map((line) => <p class="tagline">{line}</p>)}
+    <main class="terminal" aria-label="Terminal window">
+      <header class="terminal__chrome" aria-hidden="true">
+        <span class="dots">
+          <span class="dot dot--close"></span>
+          <span class="dot dot--min"></span>
+          <span class="dot dot--max"></span>
+        </span>
+        <span class="terminal__title">{windowTitle}</span>
+        <span class="dots dots--spacer"></span>
       </header>
 
-      <nav class="links" aria-label="Social links">
-        <div class="cmd" aria-hidden="true">
-          <span class="prompt">&gt;</span> ls socials/
-        </div>
-        <ul role="list">
-          {
-            links.map((link, i) => (
-              <li>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="link"
-                >
-                  <span class="num" aria-hidden="true">
-                    [{String(i + 1).padStart(2, "0")}]
-                  </span>
-                  <span class="label">{link.label}</span>
-                  <span class="arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                  <span class="sr-only">(opens in a new tab)</span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+      <div class="terminal__body">
+        <section class="block">
+          <Prompt cmd="whoami" />
+          <h1 class="output output--name">{name}</h1>
+          {taglines.map((line) => <p class="output output--dim">{line}</p>)}
+        </section>
 
-      <footer class="foot">
-        <span>© {year}</span>
-        <span class="sep" aria-hidden="true">·</span>
-        <a
-          href={sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="src"
-        >
-          source
-          <span class="sr-only">(opens in a new tab)</span>
-        </a>
-      </footer>
+        <section class="block">
+          <Prompt cmd="ls socials/" />
+          <nav class="links" aria-label="Social links">
+            <ul role="list">
+              {
+                links.map((link, i) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="link"
+                    >
+                      <span class="num" aria-hidden="true">
+                        [{String(i + 1).padStart(2, "0")}]
+                      </span>
+                      <span class="label">{link.label}</span>
+                      <span class="arrow" aria-hidden="true">
+                        ↗
+                      </span>
+                      <span class="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </section>
+
+        <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+      </div>
     </main>
+
+    <footer class="foot">
+      <span>© {year}</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="src"
+      >
+        source
+        <span class="sr-only">(opens in a new tab)</span>
+      </a>
+    </footer>
 
     <script is:inline>
       console.log(

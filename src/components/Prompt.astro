@@ -1,0 +1,17 @@
+---
+// A single shell prompt line: `user@host:path$ cmd`.
+// The whole line is decorative (aria-hidden) — it provides visual context
+// only. Surrounding semantic elements carry the meaning for AT.
+
+interface Props {
+  /** Command shown after the `$`. If omitted, content goes via the slot. */
+  cmd?: string;
+}
+
+const { cmd } = Astro.props;
+const user = "valentin";
+const host = "portfolio";
+const path = "~";
+---
+
+<p class="prompt-line" aria-hidden="true"><span class="ps-user">{user}</span><span class="ps-sep">@</span><span class="ps-host">{host}</span><span class="ps-sep">:</span><span class="ps-path">{path}</span><span class="ps-dollar">$</span> {cmd ? <span class="ps-cmd">{cmd}</span> : <slot />}</p>
