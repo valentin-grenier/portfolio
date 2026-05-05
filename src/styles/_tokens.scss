@@ -1,0 +1,50 @@
+// ---------------------------------------------------------------------------
+// Design tokens — exposed as CSS custom properties for runtime tweakability.
+//
+// Contrast ratios are computed against --bg (#000):
+//   --fg        ≈ 17.4 : 1   AAA
+//   --fg-dim    ≈  6.7 : 1   AAA (normal text)
+//   --fg-muted  ≈  4.6 : 1   AA  (normal text, used for visible secondary text)
+//   --fg-decor  ≈  1.6 : 1   intentionally low — decorative only, must be
+//                            paired with aria-hidden so it's never spoken
+//   --accent    ≈  4.1 : 1   AA  for large text & non-text (focus ring,
+//                            underline). Used on small text only on hover —
+//                            considered acceptable for transient state.
+// ---------------------------------------------------------------------------
+
+:root {
+  // background
+  --bg: #000000;
+  --bg-glow: #0a0a0a;
+
+  // foreground
+  --fg: #e8e8e8;
+  --fg-dim: #9a9a9a;
+  --fg-muted: #767676;
+  --fg-decor: #3a3a3a;
+
+  // accent
+  --accent: #4d65c7;
+  --accent-soft: rgba(77, 101, 199, 0.14);
+
+  // typography
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+
+  // motion — easeOutQuint, settles smoothly without overshoot
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 320ms;
+  --duration-slow: 480ms;
+}
+
+// Honour users requesting more contrast (Windows High Contrast, macOS
+// "Increase Contrast", Android "High Contrast Text").
+@media (prefers-contrast: more) {
+  :root {
+    --fg-dim: #d0d0d0;
+    --fg-muted: #b3b3b3;
+    --fg-decor: #8a8a8a;
+    --accent: #8a9be8;
+    --accent-soft: rgba(138, 155, 232, 0.24);
+  }
+}

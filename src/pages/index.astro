@@ -1,17 +1,22 @@
 ---
-import "../styles/global.css";
+import "@fontsource/jetbrains-mono/latin-400.css";
+import "@fontsource/jetbrains-mono/latin-500.css";
+import "../styles/main.scss";
 
 const links = [
-  { label: "linkedin", href: "#" },
-  { label: "github", href: "#" },
-  { label: "twitch", href: "#" },
-  { label: "youtube", href: "#" },
-  { label: "studio-val", href: "#" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/valentin-grenier/" },
+  { label: "github", href: "https://github.com/valentin-grenier/" },
+  { label: "twitch", href: "https://www.twitch.tv/studioval" },
+  { label: "youtube", href: "https://www.youtube.com/@valentin-grenier" },
+  { label: "studio-val", href: "https://studio-val.fr" },
 ];
 
 const name = "valentin grenier";
+const displayName = "Valentin Grenier";
 const tagline = "// web developer — toulouse, france";
-const email = "valentin@studio-val.fr";
+const email = "valentin(at)studio-val.fr";
+const emailReadable = email.replace("(at)", "@");
+const pageTitle = `${displayName} — Web developer`;
 const year = new Date().getFullYear();
 ---
 
@@ -21,23 +26,30 @@ const year = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="Valentin Grenier — web developer based in Toulouse, France." />
+    <meta
+      name="description"
+      content="Valentin Grenier — web developer based in Toulouse, France."
+    />
+    <meta name="author" content={displayName} />
     <meta name="theme-color" content="#000000" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{name}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <main class="page">
       <header class="head">
         <h1 class="name">
-          <span class="prompt">&gt;</span>
-          <span class="name-text">{name}</span><span class="cursor" aria-hidden="true">_</span>
+          <span class="prompt" aria-hidden="true">&gt;</span>
+          <span class="name-text">{name}</span><span
+            class="cursor"
+            aria-hidden="true">_</span
+          >
         </h1>
         <p class="tagline">{tagline}</p>
       </header>
 
       <nav class="links" aria-label="Social links">
-        <ul>
+        <ul role="list">
           {
             links.map((link, i) => (
               <li>
@@ -47,9 +59,14 @@ const year = new Date().getFullYear();
                   rel="noopener noreferrer"
                   class="link"
                 >
-                  <span class="num">[{String(i + 1).padStart(2, "0")}]</span>
+                  <span class="num" aria-hidden="true">
+                    [{String(i + 1).padStart(2, "0")}]
+                  </span>
                   <span class="label">{link.label}</span>
-                  <span class="arrow" aria-hidden="true">↗</span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                  <span class="sr-only">(opens in a new tab)</span>
                 </a>
               </li>
             ))
@@ -59,198 +76,15 @@ const year = new Date().getFullYear();
 
       <footer class="foot">
         <span>© {year}</span>
-        <span class="sep">·</span>
-        <a href={`mailto:${email}`} class="mail">{email}</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a
+          href={`mailto:${email}`}
+          class="mail"
+          aria-label={`Send email to ${emailReadable}`}
+        >
+          {email}
+        </a>
       </footer>
     </main>
-
-    <style>
-      .page {
-        min-height: 100vh;
-        min-height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        max-width: 520px;
-        margin: 0 auto;
-        padding: 6rem 2rem 2rem;
-        gap: 3rem;
-      }
-
-      .head {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-
-      .name {
-        margin: 0;
-        font-size: clamp(1.5rem, 5vw, 2rem);
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        color: var(--fg);
-      }
-
-      .prompt {
-        color: var(--accent);
-        margin-right: 0.5em;
-      }
-
-      .cursor {
-        color: var(--accent);
-        animation: blink 1.05s steps(2) infinite;
-        margin-left: 0.05em;
-      }
-
-      .tagline {
-        margin: 0;
-        color: var(--fg-dim);
-        font-size: 0.9rem;
-      }
-
-      .links {
-        width: 100%;
-      }
-
-      .links ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-
-      .link {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.6rem 0.75rem;
-        margin-left: -0.75rem;
-        border-radius: 4px;
-        transition:
-          background-color var(--duration) var(--ease),
-          transform var(--duration) var(--ease),
-          color var(--duration) var(--ease);
-      }
-
-      .num {
-        color: var(--fg-muted);
-        font-size: 0.85rem;
-        transition: color var(--duration) var(--ease);
-      }
-
-      .label {
-        color: var(--fg);
-        font-size: 1rem;
-        position: relative;
-      }
-
-      .label::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -2px;
-        height: 1px;
-        background: var(--accent);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform var(--duration) var(--ease);
-      }
-
-      .arrow {
-        color: var(--fg-muted);
-        font-size: 0.95rem;
-        transition:
-          color var(--duration) var(--ease),
-          transform var(--duration) var(--ease);
-      }
-
-      .link:hover,
-      .link:focus-visible {
-        background-color: var(--accent-soft);
-        outline: none;
-        transform: translateX(4px);
-      }
-
-      .link:hover .num,
-      .link:focus-visible .num {
-        color: var(--accent);
-      }
-
-      .link:hover .label::after,
-      .link:focus-visible .label::after {
-        transform: scaleX(1);
-      }
-
-      .link:hover .arrow,
-      .link:focus-visible .arrow {
-        color: var(--accent);
-        transform: translate(2px, -2px);
-      }
-
-      .foot {
-        font-size: 0.78rem;
-        color: var(--fg-muted);
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .foot .sep {
-        opacity: 0.6;
-      }
-
-      .foot .mail {
-        transition: color var(--duration) var(--ease);
-      }
-
-      .foot .mail:hover,
-      .foot .mail:focus-visible {
-        color: var(--accent);
-        outline: none;
-      }
-
-      @keyframes blink {
-        50% {
-          opacity: 0;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .cursor {
-          animation: none;
-        }
-        .link,
-        .num,
-        .arrow,
-        .label::after,
-        .foot .mail {
-          transition: none;
-        }
-        .link:hover,
-        .link:focus-visible {
-          transform: none;
-        }
-        .link:hover .arrow,
-        .link:focus-visible .arrow {
-          transform: none;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .page {
-          padding: 4rem 1.5rem 2rem;
-          gap: 2.25rem;
-        }
-        .link {
-          gap: 0.75rem;
-        }
-      }
-    </style>
   </body>
 </html>
