@@ -1,43 +1,23 @@
 {
-  "name": "portfolio-nextjs",
-  "version": "0.1.0",
+  "name": "portfolio",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "engines": {
-    "node": ">=20.x"
+    "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@hcaptcha/react-hcaptcha": "^1.8.1",
-    "@lottiefiles/react-lottie-player": "^3.5.3",
-    "@mui/icons-material": "^5.14.11",
-    "@mui/material": "^5.14.11",
-    "axios": "^1.5.1",
-    "next": "^14.2.0",
-    "next-plausible": "^3.11.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-slick": "^0.29.0",
-    "sharp": "^0.32.6",
-    "slick-carousel": "^1.8.1",
-    "universal-cookie": "^6.1.1"
+    "@fontsource/jetbrains-mono": "^5.1.2",
+    "astro": "^5.1.0"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "@types/react-slick": "^0.23.10",
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest"
+    "typescript": "^5.6.0"
   }
 }

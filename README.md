@@ -1,9 +1,31 @@
-# Welcome to my portfolio repository!
+# portfolio
 
-This repository is the source code of the front-end part of my portfolio made with **NextJS** and **TypeScript**. There are a couple of improvements that I will make every month, but the basic version is online and accessible through [https://valentingrenier.fr](https://valentingrenier.fr).
+Minimalist one-page portfolio — a single static page with links to my socials.
 
-## About
+Live: [https://valentingrenier.fr](https://valentingrenier.fr)
 
-I'm a french web developer based in Toulouse, France. I work as a freelancer since 2018 and I help french and canadian companies to build beautiful and functional websites. I mainly work with WordPress, but I am creating more and more websites and web app with React, NextJS and TypeScript.
+## Stack
 
-Wanna contact me? Just [click here](https://valentingrenier.fr/contact) or send me an email at valentin@studio-val.fr 👋🏼
+- [Astro](https://astro.build/) (static output)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) via `@fontsource`
+- Vanilla CSS, no UI framework
+
+## Develop
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # → dist/
+npm run preview  # serves dist/
+```
+
+Requires Node `>=20`.
+
+## Edit content
+
+Links, name, tagline and email live at the top of [src/pages/index.astro](src/pages/index.astro).
+Colors and font live at the top of [src/styles/global.css](src/styles/global.css).
+
+## Contact
+
+`valentin@studio-val.fr`

@@ -1,0 +1,56 @@
+@import "@fontsource/jetbrains-mono/latin-400.css";
+@import "@fontsource/jetbrains-mono/latin-500.css";
+
+:root {
+  --bg: #000000;
+  --bg-glow: #0a0a0a;
+  --fg: #e8e8e8;
+  --fg-dim: #6b6b6b;
+  --fg-muted: #3a3a3a;
+  --accent: #ff7a1a;
+  --accent-soft: rgba(255, 122, 26, 0.12);
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+  --duration: 180ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg);
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    var(--bg-glow) 0%,
+    var(--bg) 70%
+  );
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
