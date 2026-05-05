@@ -52,6 +52,7 @@
   margin: 0;
   color: var(--fg-dim);
   font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 // ----- links -----
@@ -67,6 +68,15 @@
     flex-direction: column;
     gap: 0.25rem;
   }
+}
+
+// Decorative "command" line shown above the link list.
+// Hidden from AT — `<nav aria-label="Social links">` provides semantics.
+.cmd {
+  font-size: 0.85rem;
+  color: var(--fg-dim);
+  margin: 0 0 0.85rem;
+  user-select: none;
 }
 
 .link {
@@ -162,7 +172,7 @@
     color: var(--fg-decor);
   }
 
-  .mail {
+  a {
     transition: color var(--duration) var(--ease);
     border-radius: 2px;
 
@@ -247,7 +257,7 @@
   .num,
   .arrow,
   .label::after,
-  .foot .mail {
+  .foot a {
     transition: none;
   }
 

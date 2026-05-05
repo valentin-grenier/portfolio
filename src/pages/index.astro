@@ -13,13 +13,20 @@ const links = [
 
 const name = "valentin grenier";
 const displayName = "Valentin Grenier";
-const tagline = "// web developer — toulouse, france";
-const email = "valentin(at)studio-val.fr";
-const emailReadable = email.replace("(at)", "@");
+const taglines = [
+  "// web developer · toulouse, france",
+  "// react · next.js · typescript · wordpress",
+];
+const sourceUrl = "https://github.com/valentin-grenier/portfolio";
 const pageTitle = `${displayName} — Web developer`;
 const year = new Date().getFullYear();
 ---
 
+<!--
+  hi, dev. you found the source.
+  built with astro · scss · jetbrains mono
+  https://github.com/valentin-grenier/portfolio
+-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,10 +52,13 @@ const year = new Date().getFullYear();
             aria-hidden="true">_</span
           >
         </h1>
-        <p class="tagline">{tagline}</p>
+        {taglines.map((line) => <p class="tagline">{line}</p>)}
       </header>
 
       <nav class="links" aria-label="Social links">
+        <div class="cmd" aria-hidden="true">
+          <span class="prompt">&gt;</span> ls socials/
+        </div>
         <ul role="list">
           {
             links.map((link, i) => (
@@ -78,13 +88,24 @@ const year = new Date().getFullYear();
         <span>© {year}</span>
         <span class="sep" aria-hidden="true">·</span>
         <a
-          href={`mailto:${email}`}
-          class="mail"
-          aria-label={`Send email to ${emailReadable}`}
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="src"
         >
-          {email}
+          source
+          <span class="sr-only">(opens in a new tab)</span>
         </a>
       </footer>
     </main>
+
+    <script is:inline>
+      console.log(
+        "%cvalentin grenier %c· web developer\n%csource: https://github.com/valentin-grenier/portfolio",
+        "color:#4d65c7;font-weight:700;font-size:13px;font-family:ui-monospace,monospace;",
+        "color:#9a9a9a;font-family:ui-monospace,monospace;",
+        "color:#767676;font-family:ui-monospace,monospace;"
+      );
+    </script>
   </body>
 </html>
