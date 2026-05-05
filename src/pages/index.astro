@@ -1,7 +1,5 @@
 ---
-import "@fontsource/jetbrains-mono/latin-400.css";
-import "@fontsource/jetbrains-mono/latin-500.css";
-import "../styles/main.scss";
+import Terminal from "../layouts/Terminal.astro";
 import Prompt from "../components/Prompt.astro";
 
 const links = [
@@ -13,111 +11,60 @@ const links = [
 ];
 
 const name = "valentin grenier";
-const displayName = "Valentin Grenier";
 const taglines = [
   "// web developer · toulouse, france",
   "// wordpress · gutenberg · react · next.js",
 ];
-const sourceUrl = "https://github.com/valentin-grenier/portfolio";
-const pageTitle = `${displayName} — Web developer`;
-const year = new Date().getFullYear();
-
-const windowTitle = "valentin@portfolio: ~";
 ---
 
-<!--
-  hi, dev. you found the source.
-  built with astro · scss · jetbrains mono
-  https://github.com/valentin-grenier/portfolio
--->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
-    <meta
-      name="description"
-      content="Valentin Grenier — web developer based in Toulouse, France."
-    />
-    <meta name="author" content={displayName} />
-    <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <main class="terminal" aria-label="Terminal window">
-      <header class="terminal__chrome" aria-hidden="true">
-        <span class="dots">
-          <span class="dot dot--close"></span>
-          <span class="dot dot--min"></span>
-          <span class="dot dot--max"></span>
-        </span>
-        <span class="terminal__title">{windowTitle}</span>
-        <span class="dots dots--spacer"></span>
-      </header>
+<Terminal
+  title="Valentin Grenier — Web developer"
+  description="Valentin Grenier — web developer based in Toulouse, France."
+>
+  <section class="block">
+    <Prompt cmd="whoami" />
+    <h1 class="output output--name">{name}</h1>
+    {taglines.map((line) => <p class="output output--dim">{line}</p>)}
+  </section>
 
-      <div class="terminal__body">
-        <section class="block">
-          <Prompt cmd="whoami" />
-          <h1 class="output output--name">{name}</h1>
-          {taglines.map((line) => <p class="output output--dim">{line}</p>)}
-        </section>
+  <section class="block">
+    <Prompt cmd="ls socials/" />
+    <nav class="links" aria-label="Social links">
+      <ul role="list">
+        {
+          links.map((link, i) => (
+            <li>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+              >
+                <span class="num" aria-hidden="true">
+                  [{String(i + 1).padStart(2, "0")}]
+                </span>
+                <span class="label">{link.label}</span>
+                <span class="arrow" aria-hidden="true">
+                  ↗
+                </span>
+                <span class="sr-only">(opens in a new tab)</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </section>
 
-        <section class="block">
-          <Prompt cmd="ls socials/" />
-          <nav class="links" aria-label="Social links">
-            <ul role="list">
-              {
-                links.map((link, i) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="link"
-                    >
-                      <span class="num" aria-hidden="true">
-                        [{String(i + 1).padStart(2, "0")}]
-                      </span>
-                      <span class="label">{link.label}</span>
-                      <span class="arrow" aria-hidden="true">
-                        ↗
-                      </span>
-                      <span class="sr-only">(opens in a new tab)</span>
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
-        </section>
+  <section class="block">
+    <Prompt cmd="cat privacy.note" />
+    <p class="output output--dim">
+      // privacy-friendly analytics — no cookies, no personal data collected.
+    </p>
+    <p class="output output--dim">
+      // full notice: <a href="/privacy" class="inline-link">/privacy</a>
+    </p>
+  </section>
 
-        <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
-      </div>
-    </main>
-
-    <footer class="foot">
-      <span>© {year}</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="src"
-      >
-        source
-        <span class="sr-only">(opens in a new tab)</span>
-      </a>
-    </footer>
-
-    <script is:inline>
-      console.log(
-        "%cvalentin grenier %c· web developer\n%csource: https://github.com/valentin-grenier/portfolio",
-        "color:#4d65c7;font-weight:700;font-size:13px;font-family:ui-monospace,monospace;",
-        "color:#9a9a9a;font-family:ui-monospace,monospace;",
-        "color:#767676;font-family:ui-monospace,monospace;"
-      );
-    </script>
-  </body>
-</html>
+  <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+</Terminal>

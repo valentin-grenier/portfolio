@@ -1,0 +1,142 @@
+---
+import Terminal from "../layouts/Terminal.astro";
+import Prompt from "../components/Prompt.astro";
+
+const year = new Date().getFullYear();
+---
+
+<Terminal
+  title="Privacy — Valentin Grenier"
+  description="Privacy notice for valentingrenier.fr — cookieless, GDPR-compliant analytics."
+  windowTitle="valentin@portfolio: ~/privacy"
+>
+  <section class="block">
+    <Prompt cmd="cat privacy.md" />
+    <h1 class="output output--head">
+      <span class="md-prefix" aria-hidden="true"># </span>privacy notice
+    </h1>
+    <p class="output output--dim">// last updated: {year}</p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>summary
+    </h2>
+    <p class="output">
+      this site uses
+      <a
+        href="https://plausible.io"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-link">plausible analytics</a
+      >, a privacy-focused, cookieless analytics service hosted in the european
+      union. no personal data is collected, no cookies are set, and no
+      information is shared with advertisers or third parties.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>what is collected
+    </h2>
+    <p class="output">plausible records anonymous, aggregated visit data:</p>
+    <ul class="term-list" role="list">
+      <li>page url and referrer</li>
+      <li>browser, operating system, device type</li>
+      <li>country (derived from ip, then immediately discarded)</li>
+      <li>timestamp of the visit</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>what is not collected
+    </h2>
+    <ul class="term-list" role="list">
+      <li>no cookies are placed on your device</li>
+      <li>no ip addresses are stored</li>
+      <li>no personal information</li>
+      <li>no fingerprinting or cross-site tracking</li>
+      <li>no data sold or shared with advertisers</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>legal basis
+    </h2>
+    <p class="output">
+      processing is performed under article 6(1)(f) of the gdpr — legitimate
+      interest in understanding how this site is used and improving it. no
+      consent is required because no personal data is processed.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>controller
+    </h2>
+    <p class="output">
+      valentin grenier — contact:
+      <a
+        href="https://studio-val.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-link">studio-val.fr ↗</a
+      >
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>processor
+    </h2>
+    <p class="output">
+      plausible insights oü — tallinn, estonia (eu). full data policy:
+      <a
+        href="https://plausible.io/data-policy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-link">plausible.io/data-policy ↗</a
+      >
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>your rights
+    </h2>
+    <p class="output">
+      under articles 15 to 22 of the gdpr, you may request access,
+      rectification, erasure, restriction, or portability of any personal data,
+      and you may object to processing. you may also lodge a complaint with
+      your supervisory authority — in france:
+      <a
+        href="https://www.cnil.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-link">cnil.fr ↗</a
+      >.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="output output--head">
+      <span class="md-prefix" aria-hidden="true">## </span>opting out
+    </h2>
+    <p class="output">
+      plausible honours the do not track signal. enabling do not track in your
+      browser, or using a privacy-respecting browser, prevents any data from
+      being collected.
+    </p>
+  </section>
+
+  <section class="block">
+    <Prompt cmd="cd ~" />
+    <p class="output">
+      <a href="/" class="inline-link">← back to home</a>
+    </p>
+  </section>
+
+  <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+</Terminal>
