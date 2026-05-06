@@ -343,6 +343,135 @@ body {
   }
 }
 
+// ----- boot reveal -----
+
+// Boot section: empty in the static markup, populated line-by-line by JS.
+// Hidden when empty so reduced-motion / no-JS sessions show no gap.
+.boot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.boot-line {
+  animation: bootLineIn 220ms var(--ease) both;
+}
+
+.boot-line--ok {
+  color: #27c93f;
+}
+
+// Reveal wrapper: re-creates the body's flex+gap so the terminal layout is
+// preserved whether or not the reveal animation runs.
+.reveal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+// Only hide the reveal when JS confirmed it can animate it back in — keeps
+// the no-JS / reduced-motion fallback fully accessible.
+html.js-reveal .reveal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.js-reveal .reveal.is-revealed {
+  opacity: 1;
+  pointer-events: auto;
+  animation: fadeUp 700ms var(--ease) both;
+}
+
+// ----- interactive shell -----
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pill {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.1rem 0.3rem;
+  margin: 0;
+  font: inherit;
+  font-size: inherit;
+  color: var(--fg);
+  cursor: pointer;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  transition:
+    color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    background-color: var(--accent-soft);
+
+    .pill__bracket {
+      color: var(--accent);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.pill__bracket {
+  color: var(--fg-decor);
+  transition: color var(--duration) var(--ease);
+}
+
+// ----- help command output -----
+
+.help-list {
+  list-style: none;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.6rem;
+  row-gap: 0;
+
+  li {
+    display: contents;
+  }
+}
+
+.help-cmd {
+  color: var(--accent);
+}
+
 // ----- animations -----
 
 @keyframes blink {
@@ -366,12 +495,25 @@ body {
   }
 }
 
+@keyframes bootLineIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // ----- accessibility -----
 
 @media (prefers-reduced-motion: reduce) {
   .terminal,
   .foot,
-  .cursor {
+  .cursor,
+  .boot-line,
+  .reveal {
     animation: none;
   }
 
@@ -379,7 +521,9 @@ body {
   .num,
   .arrow,
   .label::after,
-  .foot a {
+  .foot a,
+  .pill,
+  .pill__bracket {
     transition: none;
   }
 

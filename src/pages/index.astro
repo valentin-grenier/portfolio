@@ -11,26 +11,10 @@ const links = [
 ];
 
 const projects = [
-  {
-    label: "wp-rocket",
-    description: "gutenberg blocks development",
-    href: "https://wp-rocket.me",
-  },
-  {
-    label: "rank-math",
-    description: "support page redesign",
-    href: "https://rankmath.com/support/",
-  },
-  {
-    label: "axonaut",
-    description: "blog redesign & development",
-    href: "https://axonaut.com/blog/",
-  },
-  {
-    label: "lemlist",
-    description: "academy development on wordpress",
-    href: "https://academy.lemlist.com/",
-  },
+  { label: "wp-rocket", description: "gutenberg blocks development", href: "https://wp-rocket.me" },
+  { label: "rank-math", description: "support page redesign", href: "https://rankmath.com/support/" },
+  { label: "axonaut", description: "blog redesign & development", href: "https://axonaut.com/blog/" },
+  { label: "lemlist", description: "academy development on wordpress", href: "https://academy.lemlist.com/" },
 ];
 
 const name = "valentin grenier";
@@ -49,30 +33,84 @@ const status = [
   "// status: open to freelance.",
   "// available for wordpress, gutenberg, headless, and front-end work.",
 ];
+
+const commands = [
+  { name: "help",     description: "list available commands" },
+  { name: "whoami",   description: "display user info" },
+  { name: "about",    description: "show bio" },
+  { name: "status",   description: "show availability" },
+  { name: "projects", description: "list selected projects" },
+  { name: "socials",  description: "list social links" },
+  { name: "privacy",  description: "show privacy note" },
+  { name: "clear",    description: "clear the screen" },
+];
 ---
 
 <Terminal
   title="Valentin Grenier — Web developer"
   description="Valentin Grenier — web developer based in Toulouse, France."
 >
-  <section class="block">
-    <Prompt cmd="whoami" />
+  <div class="boot" data-boot aria-hidden="true"></div>
+
+  <div class="reveal" data-reveal>
+    <div class="history" data-history aria-live="polite" aria-atomic="false"></div>
+
+    <div class="shell" data-shell>
+      <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+      <nav
+        class="pills"
+        data-pills
+        role="toolbar"
+        aria-label="Available commands"
+      >
+        {
+          commands.map((cmd, i) => (
+            <button
+              class="pill"
+              data-pill={cmd.name}
+              tabindex={i === 0 ? 0 : -1}
+              type="button"
+            >
+              <span class="pill__bracket" aria-hidden="true">[</span>
+              <span class="pill__name">{cmd.name}</span>
+              <span class="pill__bracket" aria-hidden="true">]</span>
+            </button>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+
+  <template data-cmd="help">
+    <p class="output output--dim">
+      // click a pill below, or use ← → + enter.
+    </p>
+    <ul class="help-list" role="list">
+      {
+        commands.map((cmd) => (
+          <li>
+            <span class="help-cmd">{cmd.name}</span>
+            <span class="output--dim">— {cmd.description}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </template>
+
+  <template data-cmd="whoami">
     <h1 class="output output--name">{name}</h1>
     {taglines.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+  </template>
 
-  <section class="block">
-    <Prompt cmd="cat about.txt" />
+  <template data-cmd="about">
     {about.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+  </template>
 
-  <section class="block">
-    <Prompt cmd="cat status.txt" />
+  <template data-cmd="status">
     {status.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+  </template>
 
-  <section class="block">
-    <Prompt cmd="ls projects/" />
+  <template data-cmd="projects">
     <nav class="links" aria-label="Projects">
       <ul role="list">
         {
@@ -90,9 +128,7 @@ const status = [
                 <span class="label">
                   {project.label} — {project.description}
                 </span>
-                <span class="arrow" aria-hidden="true">
-                  ↗
-                </span>
+                <span class="arrow" aria-hidden="true">↗</span>
                 <span class="sr-only">(opens in a new tab)</span>
               </a>
             </li>
@@ -100,10 +136,9 @@ const status = [
         }
       </ul>
     </nav>
-  </section>
+  </template>
 
-  <section class="block">
-    <Prompt cmd="ls socials/" />
+  <template data-cmd="socials">
     <nav class="links" aria-label="Social links">
       <ul role="list">
         {
@@ -119,9 +154,7 @@ const status = [
                   [{String(i + 1).padStart(2, "0")}]
                 </span>
                 <span class="label">{link.label}</span>
-                <span class="arrow" aria-hidden="true">
-                  ↗
-                </span>
+                <span class="arrow" aria-hidden="true">↗</span>
                 <span class="sr-only">(opens in a new tab)</span>
               </a>
             </li>
@@ -129,17 +162,171 @@ const status = [
         }
       </ul>
     </nav>
-  </section>
+  </template>
 
-  <section class="block">
-    <Prompt cmd="cat privacy.note" />
+  <template data-cmd="privacy">
     <p class="output output--dim">
       // privacy-friendly analytics — no cookies, no personal data collected.
     </p>
     <p class="output output--dim">
       // full notice: <a href="/privacy" class="inline-link">/privacy</a>
     </p>
-  </section>
+  </template>
 
-  <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+  <script is:inline>
+    (() => {
+      const root = document.documentElement;
+      const boot = document.querySelector("[data-boot]");
+      const reveal = document.querySelector("[data-reveal]");
+      const history = document.querySelector("[data-history]");
+      const shell = document.querySelector("[data-shell]");
+      const pills = document.querySelector("[data-pills]");
+      if (!boot || !reveal || !history || !shell || !pills) return;
+
+      const PROMPT_HTML =
+        '<span class="ps-user">valentin</span>' +
+        '<span class="ps-sep">@</span>' +
+        '<span class="ps-host">portfolio</span>' +
+        '<span class="ps-sep">:</span>' +
+        '<span class="ps-path">~</span>' +
+        '<span class="ps-dollar">$</span>';
+
+      const escapeHtml = (s) =>
+        s.replace(/[&<>"']/g, (c) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[c]));
+
+      function runCommand(cmd) {
+        if (cmd === "clear") {
+          history.replaceChildren();
+          return;
+        }
+
+        const tpl = document.querySelector(
+          'template[data-cmd="' + cmd + '"]'
+        );
+        const block = document.createElement("section");
+        block.className = "block";
+
+        const promptLine = document.createElement("p");
+        promptLine.className = "prompt-line";
+        promptLine.innerHTML =
+          PROMPT_HTML +
+          ' <span class="ps-cmd">' +
+          escapeHtml(cmd) +
+          "</span>";
+        block.appendChild(promptLine);
+
+        if (tpl) {
+          block.appendChild(tpl.content.cloneNode(true));
+        }
+
+        history.appendChild(block);
+        shell.scrollIntoView({ block: "end", behavior: "smooth" });
+      }
+
+      // -------- pill row keyboard nav --------
+
+      const pillItems = () => Array.from(pills.querySelectorAll(".pill"));
+
+      function focusPill(idx) {
+        const list = pillItems();
+        if (!list.length) return;
+        const i = ((idx % list.length) + list.length) % list.length;
+        list.forEach((b) => b.setAttribute("tabindex", "-1"));
+        list[i].setAttribute("tabindex", "0");
+        list[i].focus();
+      }
+
+      pills.addEventListener("click", (e) => {
+        const pill = e.target.closest(".pill");
+        if (!pill) return;
+        const cmd = pill.dataset.pill;
+        if (!cmd) return;
+        pillItems().forEach((b) => b.setAttribute("tabindex", "-1"));
+        pill.setAttribute("tabindex", "0");
+        runCommand(cmd);
+      });
+
+      pills.addEventListener("keydown", (e) => {
+        const list = pillItems();
+        const idx = list.indexOf(document.activeElement);
+        if (idx < 0) return;
+        switch (e.key) {
+          case "ArrowRight":
+          case "ArrowDown":
+            e.preventDefault();
+            focusPill(idx + 1);
+            break;
+          case "ArrowLeft":
+          case "ArrowUp":
+            e.preventDefault();
+            focusPill(idx - 1);
+            break;
+          case "Home":
+            e.preventDefault();
+            focusPill(0);
+            break;
+          case "End":
+            e.preventDefault();
+            focusPill(list.length - 1);
+            break;
+        }
+      });
+
+      // -------- boot animation → reveal --------
+
+      function startInteractive() {
+        runCommand("help");
+        reveal.classList.add("is-revealed");
+      }
+
+      const animate = root.classList.contains("js-reveal");
+
+      if (!animate) {
+        startInteractive();
+        return;
+      }
+
+      const date = new Date().toUTCString().replace("GMT", "UTC");
+      const localPromptHtml =
+        '<span class="ps-user">guest</span>' +
+        '<span class="ps-sep">@</span>' +
+        '<span class="ps-host">web</span>' +
+        '<span class="ps-sep">:</span>' +
+        '<span class="ps-path">~</span>' +
+        '<span class="ps-dollar">$</span> ' +
+        '<span class="ps-cmd">ssh valentin@portfolio</span>';
+
+      const lines = [
+        { delay: 200, html: localPromptHtml },
+        { delay: 450, text: "Connecting to portfolio.valentin.dev...", dim: true },
+        { delay: 600, text: "Authenticating session...", dim: true },
+        { delay: 500, text: "Connection established.", cls: "boot-line--ok" },
+        { delay: 350, text: "Last login: " + date + ".", dim: true },
+        { delay: 350, text: "Welcome to portfolio.valentin.dev." },
+      ];
+
+      let t = 0;
+      lines.forEach((line) => {
+        t += line.delay;
+        setTimeout(() => {
+          const p = document.createElement("p");
+          p.className =
+            "output boot-line" +
+            (line.dim ? " output--dim" : "") +
+            (line.cls ? " " + line.cls : "");
+          if (line.html) p.innerHTML = line.html;
+          else p.textContent = line.text;
+          boot.appendChild(p);
+        }, t);
+      });
+
+      setTimeout(startInteractive, t + 500);
+    })();
+  </script>
 </Terminal>
