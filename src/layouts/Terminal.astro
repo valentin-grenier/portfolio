@@ -33,6 +33,11 @@ const year = new Date().getFullYear();
     <meta name="description" content={description} />
     <meta name="author" content="Valentin Grenier" />
     <meta name="theme-color" content="#000000" />
+    <script is:inline>
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-reveal");
+      }
+    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <!-- Privacy-friendly analytics by Plausible -->
     <script

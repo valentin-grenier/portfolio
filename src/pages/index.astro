@@ -55,91 +55,144 @@ const status = [
   title="Valentin Grenier — Web developer"
   description="Valentin Grenier — web developer based in Toulouse, France."
 >
-  <section class="block">
-    <Prompt cmd="whoami" />
-    <h1 class="output output--name">{name}</h1>
-    {taglines.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+  <div class="boot" data-boot aria-hidden="true"></div>
 
-  <section class="block">
-    <Prompt cmd="cat about.txt" />
-    {about.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+  <div class="reveal" data-reveal>
+    <section class="block">
+      <Prompt cmd="whoami" />
+      <h1 class="output output--name">{name}</h1>
+      {taglines.map((line) => <p class="output output--dim">{line}</p>)}
+    </section>
 
-  <section class="block">
-    <Prompt cmd="cat status.txt" />
-    {status.map((line) => <p class="output output--dim">{line}</p>)}
-  </section>
+    <section class="block">
+      <Prompt cmd="cat about.txt" />
+      {about.map((line) => <p class="output output--dim">{line}</p>)}
+    </section>
 
-  <section class="block">
-    <Prompt cmd="ls projects/" />
-    <nav class="links" aria-label="Projects">
-      <ul role="list">
-        {
-          projects.map((project, i) => (
-            <li>
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="link"
-              >
-                <span class="num" aria-hidden="true">
-                  [{String(i + 1).padStart(2, "0")}]
-                </span>
-                <span class="label">
-                  {project.label} — {project.description}
-                </span>
-                <span class="arrow" aria-hidden="true">
-                  ↗
-                </span>
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </section>
+    <section class="block">
+      <Prompt cmd="cat status.txt" />
+      {status.map((line) => <p class="output output--dim">{line}</p>)}
+    </section>
 
-  <section class="block">
-    <Prompt cmd="ls socials/" />
-    <nav class="links" aria-label="Social links">
-      <ul role="list">
-        {
-          links.map((link, i) => (
-            <li>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="link"
-              >
-                <span class="num" aria-hidden="true">
-                  [{String(i + 1).padStart(2, "0")}]
-                </span>
-                <span class="label">{link.label}</span>
-                <span class="arrow" aria-hidden="true">
-                  ↗
-                </span>
-                <span class="sr-only">(opens in a new tab)</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </section>
+    <section class="block">
+      <Prompt cmd="ls projects/" />
+      <nav class="links" aria-label="Projects">
+        <ul role="list">
+          {
+            projects.map((project, i) => (
+              <li>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                >
+                  <span class="num" aria-hidden="true">
+                    [{String(i + 1).padStart(2, "0")}]
+                  </span>
+                  <span class="label">
+                    {project.label} — {project.description}
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </section>
 
-  <section class="block">
-    <Prompt cmd="cat privacy.note" />
-    <p class="output output--dim">
-      // privacy-friendly analytics — no cookies, no personal data collected.
-    </p>
-    <p class="output output--dim">
-      // full notice: <a href="/privacy" class="inline-link">/privacy</a>
-    </p>
-  </section>
+    <section class="block">
+      <Prompt cmd="ls socials/" />
+      <nav class="links" aria-label="Social links">
+        <ul role="list">
+          {
+            links.map((link, i) => (
+              <li>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                >
+                  <span class="num" aria-hidden="true">
+                    [{String(i + 1).padStart(2, "0")}]
+                  </span>
+                  <span class="label">{link.label}</span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </section>
 
-  <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+    <section class="block">
+      <Prompt cmd="cat privacy.note" />
+      <p class="output output--dim">
+        // privacy-friendly analytics — no cookies, no personal data collected.
+      </p>
+      <p class="output output--dim">
+        // full notice: <a href="/privacy" class="inline-link">/privacy</a>
+      </p>
+    </section>
+
+    <Prompt><span class="cursor" aria-hidden="true">█</span></Prompt>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const boot = document.querySelector("[data-boot]");
+      const reveal = document.querySelector("[data-reveal]");
+      if (!boot || !reveal) return;
+
+      if (!document.documentElement.classList.contains("js-reveal")) {
+        reveal.classList.add("is-revealed");
+        return;
+      }
+
+      const date = new Date().toUTCString().replace("GMT", "UTC");
+      const promptHtml =
+        '<span class="ps-user">guest</span>' +
+        '<span class="ps-sep">@</span>' +
+        '<span class="ps-host">web</span>' +
+        '<span class="ps-sep">:</span>' +
+        '<span class="ps-path">~</span>' +
+        '<span class="ps-dollar">$</span> ' +
+        '<span class="ps-cmd">ssh valentin@portfolio</span>';
+
+      const lines = [
+        { delay: 200, html: promptHtml },
+        { delay: 450, text: "Connecting to portfolio.valentin.dev...", dim: true },
+        { delay: 600, text: "Authenticating session...", dim: true },
+        { delay: 500, text: "Connection established.", cls: "boot-line--ok" },
+        { delay: 350, text: "Last login: " + date + ".", dim: true },
+        { delay: 350, text: "Welcome to portfolio.valentin.dev." },
+      ];
+
+      let t = 0;
+      lines.forEach((line) => {
+        t += line.delay;
+        setTimeout(() => {
+          const p = document.createElement("p");
+          p.className =
+            "output boot-line" +
+            (line.dim ? " output--dim" : "") +
+            (line.cls ? " " + line.cls : "");
+          if (line.html) p.innerHTML = line.html;
+          else p.textContent = line.text;
+          boot.appendChild(p);
+        }, t);
+      });
+
+      setTimeout(() => reveal.classList.add("is-revealed"), t + 500);
+    })();
+  </script>
 </Terminal>

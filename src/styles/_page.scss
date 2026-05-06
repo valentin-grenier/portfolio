@@ -343,6 +343,49 @@ body {
   }
 }
 
+// ----- boot reveal -----
+
+// Boot section: empty in the static markup, populated line-by-line by JS.
+// Hidden when empty so reduced-motion / no-JS sessions show no gap.
+.boot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.boot-line {
+  animation: bootLineIn 220ms var(--ease) both;
+}
+
+.boot-line--ok {
+  color: #27c93f;
+}
+
+// Reveal wrapper: re-creates the body's flex+gap so the terminal layout is
+// preserved whether or not the reveal animation runs.
+.reveal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+// Only hide the reveal when JS confirmed it can animate it back in — keeps
+// the no-JS / no-CSS / reduced-motion fallback fully accessible.
+html.js-reveal .reveal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.js-reveal .reveal.is-revealed {
+  opacity: 1;
+  pointer-events: auto;
+  animation: fadeUp 700ms var(--ease) both;
+}
+
 // ----- animations -----
 
 @keyframes blink {
@@ -366,12 +409,25 @@ body {
   }
 }
 
+@keyframes bootLineIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // ----- accessibility -----
 
 @media (prefers-reduced-motion: reduce) {
   .terminal,
   .foot,
-  .cursor {
+  .cursor,
+  .boot-line,
+  .reveal {
     animation: none;
   }
 
